@@ -1,0 +1,92 @@
+Running phase: unpackPhase
+@nix { "action": "setPhase", "phase": "unpackPhase" }
+unpacking source archive /nix/store/pdyvdwb4as2sq269fd9s0xsavd1mricn-source
+source root is source
+Running phase: patchPhase
+@nix { "action": "setPhase", "phase": "patchPhase" }
+Running phase: updateAutotoolsGnuConfigScriptsPhase
+@nix { "action": "setPhase", "phase": "updateAutotoolsGnuConfigScriptsPhase" }
+Running phase: configurePhase
+@nix { "action": "setPhase", "phase": "configurePhase" }
+fixing cmake files...
+cmake flags: -GNinja -DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_INSTALL_LOCALEDIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/share/locale -DCMAKE_INSTALL_LIBEXECDIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/libexec -DCMAKE_INSTALL_LIBDIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/lib -DCMAKE_INSTALL_DOCDIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/share/doc/pagedmov-dotfiles -DCMAKE_INSTALL_INFODIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/share/info -DCMAKE_INSTALL_MANDIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/share/man -DCMAKE_INSTALL_OLDINCLUDEDIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/include -DCMAKE_INSTALL_INCLUDEDIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/include -DCMAKE_INSTALL_SBINDIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/sbin -DCMAKE_INSTALL_BINDIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/bin -DCMAKE_INSTALL_NAME_DIR=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles/lib -DCMAKE_POLICY_DEFAULT_CMP0025=NEW -DCMAKE_OSX_SYSROOT= -DCMAKE_FIND_FRAMEWORK=LAST -DCMAKE_STRIP=/nix/store/zznja5f8v3jafffyah1rk46vpfcn38dv-gcc-wrapper-13.3.0/bin/strip -DCMAKE_RANLIB=/nix/store/zznja5f8v3jafffyah1rk46vpfcn38dv-gcc-wrapper-13.3.0/bin/ranlib -DCMAKE_AR=/nix/store/zznja5f8v3jafffyah1rk46vpfcn38dv-gcc-wrapper-13.3.0/bin/ar -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PREFIX=/nix/store/ldwlqdbslcl2s5s2dasvniydlxd7i381-pagedmov-dotfiles
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /nix/store/zznja5f8v3jafffyah1rk46vpfcn38dv-gcc-wrapper-13.3.0/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /nix/store/zznja5f8v3jafffyah1rk46vpfcn38dv-gcc-wrapper-13.3.0/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Gathering git info
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+-- Found Python3: /nix/store/h3i0acpmr8mrjx07519xxmidv8mpax4y-python3-3.12.5/bin/python3.12 (found version "3.12.5") found components: Interpreter
+[0mBuilding itab.c/itab.h...[0m
+-- Found PkgConfig: /nix/store/02vzklfgfpaf457rq927fq3jj5hn133f-pkg-config-wrapper-0.29.2/bin/pkg-config (found version "0.29.2")
+Package wayland-protocols was not found in the pkg-config search path.
+Perhaps you should add the directory containing `wayland-protocols.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'wayland-protocols' found
+-- Found wayland-protocols at 
+Package wayland-scanner was not found in the pkg-config search path.
+Perhaps you should add the directory containing `wayland-scanner.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'wayland-scanner' found
+-- Found wayland-scanner pkgdatadir at 
+-- Configuring Hyprland in Release with CMake
+-- Checking deps...
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found OpenGL: /nix/store/shvpkfqpaas60fakhw62hp3xgpfh4kdm-libglvnd-1.7.0/lib/libOpenGL.so  found components: GLES3
+-- Checking for module 'hyprutils>=0.2.1'
+--   Found hyprutils, version 0.2.1
+-- Checking for modules 'aquamarine;xkbcommon;uuid;wayland-server;wayland-protocols;cairo;pango;pangocairo;pixman-1;xcursor;libdrm;libinput;gbm;gio-2.0;hyprlang>=0.3.2;hyprcursor>=0.1.7;hyprutils>=0.2.1'
+--   No package 'aquamarine' found
+--   No package 'xkbcommon' found
+--   No package 'uuid' found
+--   No package 'wayland-server' found
+--   No package 'wayland-protocols' found
+--   No package 'cairo' found
+--   No package 'pango' found
+--   No package 'pangocairo' found
+--   No package 'pixman-1' found
+--   No package 'xcursor' found
+--   No package 'libinput' found
+--   No package 'gio-2.0' found
+--   No package 'hyprlang' found
+--   No package 'hyprcursor' found
+[31mCMake Error at /nix/store/yzi080r2c1zn2jzrhcfdv7dmr92yw07l-cmake-3.29.6/share/cmake-3.29/Modules/FindPkgConfig.cmake:634 (message):
+  The following required packages were not found:
+
+   - aquamarine
+   - xkbcommon
+   - uuid
+   - wayland-server
+   - wayland-protocols
+   - cairo
+   - pango
+   - pangocairo
+   - pixman-1
+   - xcursor
+   - libinput
+   - gio-2.0
+   - hyprlang>=0.3.2
+   - hyprcursor>=0.1.7
+
+Call Stack (most recent call first):
+  /nix/store/yzi080r2c1zn2jzrhcfdv7dmr92yw07l-cmake-3.29.6/share/cmake-3.29/Modules/FindPkgConfig.cmake:862 (_pkg_check_modules_internal)
+  CMakeLists.txt:94 (pkg_check_modules)
+
+[0m
+-- Configuring incomplete, errors occurred!

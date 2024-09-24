@@ -1,0 +1,10 @@
+[pyprland]
+plugins = [
+	"scratchpads"
+]
+
+[scratchpads.wiki]
+command = "kitty nvim /home/pagedmov/vimwiki/index.wiki"
+class = "wiki"
+size = "30% 30%"
+animation = "fromTop"
