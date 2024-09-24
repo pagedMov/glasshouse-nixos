@@ -15,5 +15,10 @@
 					configFile = ./kitty.conf;
 				});
 			};
+		
+
+		devShells.default = pkgs.mkShell {
+			buildInputs = [ pkgs.kitty ];
 		};
+	};
 }

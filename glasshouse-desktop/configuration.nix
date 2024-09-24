@@ -22,7 +22,7 @@
 
 	programs.hyprland.enable = true;
 	programs.steam.enable = true;
-
+	home-manager.backupFileExtension = "backup";
 
 # Enable sound.
 	#hardware.pulseaudio.enable = true;
@@ -45,12 +45,14 @@
 
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [
+		parted
 		vim 
 		wget
 		alsa-utils
 		alsa-lib
 		zsh
 		git
+		kitty
 		xwaylandvideobridge
 		xpad
 		wl-clipboard

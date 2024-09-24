@@ -53,7 +53,17 @@
 		#   org.gradle.console=verbose
 		#   org.gradle.daemon.idletimeout=3600000
 		# ''
-
+		".config/dunst/dunstrc".source = ./dotfiles/packages/dunst/dunstrc;
+		".config/hypr/hyprland.conf".source = ./dotfiles/packages/hyprland/hyprland.conf;
+		".config/hypr/hyprpaper.conf".source = ./dotfiles/packages/hyprland/hyprpaper.conf;
+		".config/kitty/kitty.conf".source = ./dotfiles/packages/kitty/kitty.conf;
+		".config/ranger/rc.conf".source = ./dotfiles/packages/ranger/rc.conf;
+		".config/ranger/rifle.conf".source = ./dotfiles/packages/ranger/rifle.conf;
+		".config/ranger/scope.sh".source = ./dotfiles/packages/ranger/scope.sh;
+		".config/rofi/launcher.rasi".source = ./dotfiles/packages/rofi/launcher.rasi;
+		".config/starship/starship.toml".source = ./dotfiles/packages/starship/starship.toml;
+		".config/waybar/config".source = ./dotfiles/packages/waybar/config/config;
+		".config/waybar/style.css".source = ./dotfiles/packages/waybar/config/style.css;
 
 	};
 
