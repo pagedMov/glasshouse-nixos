@@ -39,6 +39,10 @@
 		obs-studio
 		neovide
 		chromium
+		zsh
+		zsh-syntax-highlighting
+		zsh-history-substring-search
+		zsh-autosuggestions
 		desktop-utils
 	];
 

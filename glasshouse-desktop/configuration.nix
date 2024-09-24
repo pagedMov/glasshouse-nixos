@@ -51,9 +51,6 @@
 		alsa-lib
 		zsh
 		git
-		zsh-syntax-highlighting
-		zsh-history-substring-search
-		zsh-autosuggestions
 		xwaylandvideobridge
 		xpad
 		wl-clipboard
