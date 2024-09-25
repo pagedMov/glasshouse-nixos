@@ -196,16 +196,16 @@ screengrab() {
 }
 
 nixswitch() {
-	cd $HOME/sysflakes
+	cd "$HOME/sysflakes"
 	gen=$(readlink /nix/var/nix/profiles/system | sed 's/.*system-\([0-9]*\)-link/\1/')
 	gen=$((gen + 1))
-	git diff --cached --quiet
-	if [ $? = 0 ]; then
+	
+	if git diff --cached --quiet ; then
 		git add .
 		git commit -m "Commit for generation $gen"
 		git push
 	fi
-	sudo nixos-rebuild switch --flake $HOME/sysflakes#glasshouse
+	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 }
 		'';
 
