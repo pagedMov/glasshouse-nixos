@@ -24,7 +24,7 @@
 			utar = "tar -zxvf"; # utar <archive_decompress> <file_list>;
 			z = "zip -r"; # z <archive_compress> <file_list>;
 			uz = "unzip"; # uz <archive_decompress> -d <dir>;
-			sr = "source ~/hmconf/.zshrc";
+			sr = "source ~/.zshrc";
 			".." = "cd ..";
 			psg = "ps aux | grep -v grep | grep -i -e VSZ -e" ;
 			mkdir = "mkdir -p";
@@ -218,7 +218,7 @@ journal() {
 		'';
 
 		initExtraBeforeCompInit = ''
-			source ~/hmconf/.zstyle
+			source ~/.zstyle
 		'';
 		initExtra = ''
 if [ ! -e $HOME/.zsh_history ]; then
@@ -276,7 +276,7 @@ eval "$(starship init zsh)"
 		# Options
 
 		enableCompletion = true;
-		dotDir = "hmconf";
+		dotDir = "~/";
 		history = {
 			path = ".zsh_history";
 			save = 10000;
