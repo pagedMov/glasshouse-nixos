@@ -206,7 +206,14 @@ nixswitch() {
 		git push
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
+	cd $OLDPWD
 }
+journal() {
+	# journal for keeping track of stuff I do that isn't declared in my nix config
+	[ ! -f "$HOME/loose_ends" ] && touch "$HOME/loose_ends" 
+	echo "$1" >> "$HOME/loose_ends" 
+}
+
 		'';
 
 		initExtraBeforeCompInit = ''
