@@ -55,7 +55,7 @@
 			gtk.enable = true;
 			x11.enable = true;
 			name = name;
-			size = 8;
+			size = 24;
 			package = pkgs.runCommand "moveUp" {} ''
 				mkdir -p $out/share/icons
 				ln -s ${pkgs.fetchzip {
@@ -67,6 +67,7 @@
 	in
 		getFrom 
 			"https://gitlab.com/-/project/6703061/uploads/013137de48e6da3edc32bba068cf4c52/Hackneyed-Dark-24px-0.9.2-right-handed.tar.bz2"
+			"sha256-fEAyeeEEknbGEGycmvMcU4M77x1InsQCuIBwcSasOcw="
 			"Hackneyed-Dark";
 
 	home.file = { # dotfiles

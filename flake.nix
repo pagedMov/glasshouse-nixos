@@ -8,11 +8,13 @@
 		#glasshouse-desktop dots
 		nvim.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/packages/nixvim";
 		toilet.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/packages/toilet";
+		rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 	};
 
 	outputs = { nixpkgs, home-manager, nvim, toilet, ... }@inputs: {
 		nixosConfigurations = {
 			glasshouse = nixpkgs.lib.nixosSystem {
+				specialArgs = { inherit inputs; };
 				system = "x86_64-linux";
 				modules = [
 					./glasshouse-desktop/configuration.nix
