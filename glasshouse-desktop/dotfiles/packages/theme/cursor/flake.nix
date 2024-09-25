@@ -1,5 +1,5 @@
 {
-	description = "Flake Boilerplate";
+	description = "Hackneyed X11 Cursors";
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -12,26 +12,17 @@
 		in {
 			packages.${system} = {
 				default = pkgs.stdenv.mkDerivation {
-					pname = "hackneyed-cursors";
+					pname = "hackneyed-cursors-dark-right-48px";
 					version = "0.9.2";
 
-					src = pkgs.fetchFromGitHub {
-						owner = "Enthymeme";
-						repo = "hackneyed-x11-cursors";
-						rev = "master";
+					src = pkgs.fetchurl {
+						url = "https://gitlab.com/-/project/6703061/uploads/53e6cb854a0bd446b326ca7c40fb5cdf/Hackneyed-Dark-48px-0.9.2-right-handed.tar.bz2";
 						sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAA=";
 					};
 
-					buildInputs = with pkgs; [
-						imagemagick
-						inkscape
-						make
-						bash
-						xorg.xcursorgen
-					];
-
-					buildPhase = ''
-						./build-all-themes.sh --dark-theme-only -j dist.large
+					installPhase = ''
+						mkdir -p $out/share/icons/Hackneyed-Dark
+						tar xjf $src -C $out/share/icons/Hackneyed-Dark --strip-components=1
 					'';
 				};
 			};

@@ -6,10 +6,11 @@
 		home-manager.url = "github:nix-community/home-manager";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 		#glasshouse-desktop dots
-		desktop-utils.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles";
+		nvim.url = "path:glasshouse-desktop/dotfiles/packages/nixvim";
+		toilet.url = "path:glasshouse-desktop/dotfiles/packages/toilet";
 	};
 
-	outputs = { nixpkgs, home-manager, desktop-utils, ... }@inputs: {
+	outputs = { nixpkgs, home-manager, nvim, toilet, ... }@inputs: {
 		nixosConfigurations = {
 			glasshouse = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
@@ -21,11 +22,11 @@
 						home-manager.useUserPackages = true;
 						home-manager.users.pagedmov = import ./glasshouse-desktop/home.nix;
 						home-manager.extraSpecialArgs = {
-						  desktop-utils = desktop-utils.packages."x86_64-linux".default;
+						  nvim = nvim.packages."x86_64-linux".default;
+						  toilet = toilet.packages."x86_64-linux".default;
 						};
 					}
 				];
-
 			};
 		};
 	};
