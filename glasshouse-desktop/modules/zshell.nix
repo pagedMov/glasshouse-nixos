@@ -8,7 +8,7 @@
 			VISUAL = "/nixbin/nvim";
 			LANG = "en_US.UTF-8";
 			BROWSER = "/nixbin/firefox";
-			STARSHIP_CONFIG = "/home/pagedmov/.config/starship/starship.toml";
+			STARSHIP_CONFIG = /home/pagedmov/.config/starship/starship.toml;
 			FZF_DEFAULT_COMMAND = "find $HOME \( -path \"$HOME/.steam\" -o -path \"$HOME/.mozilla\" -o -path \"$HOME/go\" \) -prune -o -type f -print";
 		};
 
@@ -276,7 +276,6 @@ eval "$(starship init zsh)"
 		# Options
 
 		enableCompletion = true;
-		dotDir = "";
 		history = {
 			path = ".zsh_history";
 			save = 10000;
