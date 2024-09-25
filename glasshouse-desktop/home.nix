@@ -10,6 +10,9 @@
 		username = "pagedmov";
 		homeDirectory = "/home/pagedmov";
 		enableNixpkgsReleaseCheck = false;
+		sessionVariables = {
+			GTK_THEME = "Adwaita:dark";
+		};
 
 
 # This value determines the Home Manager release that your configuration is
@@ -79,15 +82,6 @@
 				".config/waybar/style.css".source = ./dotfiles/packages/waybar/config/style.css;
 			};
 		};
-
-	xdg = {
-		settings = {
-			gtk = {
-				theme = "Adwaita-dark";
-				iconTheme = "Adwaita";
-			};
-		};
-	};
 
 # Let Home Manager install and manage itself.
 	programs = { 
