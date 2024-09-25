@@ -92,6 +92,6 @@
 # Let Home Manager install and manage itself.
 	programs = { 
 		zsh.enable = true;
-		programs.home-manager.enable = true;
+		home-manager.enable = true;
 	};
 }
