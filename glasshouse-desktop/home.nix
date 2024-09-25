@@ -66,7 +66,7 @@
 		};
 	in
 		getFrom 
-			"https://gitlab.com/-/project/6703061/uploads/d9fff71234e87f607f0bb38717baca7c/Hackneyed-36px-0.9.2-right-handed.tar.bz2"
+			"https://gitlab.com/-/project/6703061/uploads/013137de48e6da3edc32bba068cf4c52/Hackneyed-Dark-24px-0.9.2-right-handed.tar.bz2"
 			"sha256-fEAyeeEEknbGEGycmvMcU4M77x1InsQCuIBwcSasOcw="
 			"Hackneyed-Dark";
 
