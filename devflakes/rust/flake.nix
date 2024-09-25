@@ -32,6 +32,8 @@
 
 			shellHook = ''
 				echo "Rust dev environment initialized"
+				export SHELL=$(which zsh)
+				[ -f $HOME/.zshrc ] && source $HOME/.zshrc
 				rustup default stable
 			'';
 		};
