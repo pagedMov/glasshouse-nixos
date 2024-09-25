@@ -46,6 +46,7 @@
 			hmconf = "nvim $HOME/sysflakes/glasshouse-desktop/home.nix";
 			nixconf = "nvim $HOME/sysflakes/glasshouse-desktop/configuration.nix";
 			viflake = "nvim flake.nix";
+			nvimcfg = "ranger $HOME/sysflakes/glasshouse-desktop/dotfiles/packages/nixvim/";
 		};
 
 		initExtraFirst = ''

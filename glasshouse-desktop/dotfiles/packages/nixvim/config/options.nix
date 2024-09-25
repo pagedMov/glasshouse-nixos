@@ -21,7 +21,7 @@
 			vim.opt.ruler = true
 			vim.opt.scrolloff = 6
 			vim.opt.undofile = true
-			vim.opt.foldmethod = "indent"
+			vim.opt.foldmethod = "manual"
 			vim.opt.wrap = true
 			vim.opt.linebreak = true
 			vim.opt.textwidth = 135
