@@ -42,6 +42,7 @@
 			navhelp = "navhelp | less";
 			svc = "systemctl --user";
 			hmswitch = "home-manager switch";
+			hyprconf = "nvim $HOME/sysflakes/glasshouse-desktop/dotfiles/packages/hyprland/hyprland.conf";
 			hmconf = "nvim $HOME/sysflakes/glasshouse-desktop/home.nix";
 			nixconf = "nvim $HOME/sysflakes/glasshouse-desktop/configuration.nix";
 			viflake = "nvim flake.nix";
