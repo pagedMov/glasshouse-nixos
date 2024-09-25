@@ -388,13 +388,13 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1,
+        "lastModified": 1727237241,
         "narHash": "sha256-Y+21IYiPTQWOuHzD+KucrdVnBokpyDRZTrFp0Ir8qVE=",
-        "path": "glasshouse-desktop/dotfiles/packages/nixvim",
+        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/packages/nixvim",
         "type": "path"
       },
       "original": {
-        "path": "glasshouse-desktop/dotfiles/packages/nixvim",
+        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/packages/nixvim",
         "type": "path"
       }
     },
@@ -450,13 +450,13 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1,
+        "lastModified": 1727237241,
         "narHash": "sha256-S3crmqg/CDKf+QTwnZUR6udyjsvqS0P0y56wGuJmOno=",
-        "path": "glasshouse-desktop/dotfiles/packages/toilet",
+        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/packages/toilet",
         "type": "path"
       },
       "original": {
-        "path": "glasshouse-desktop/dotfiles/packages/toilet",
+        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/packages/toilet",
         "type": "path"
       }
     },
