@@ -99,6 +99,7 @@
 		cmake
 		clang
 		cava
+		quintom-cursor-theme
 	];
 
 
