@@ -51,7 +51,7 @@
 
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [
-		inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+		rose-pine-hyprcursor.packages.${pkgs.system}.default
 		parted
 		vim 
 		gnumake
