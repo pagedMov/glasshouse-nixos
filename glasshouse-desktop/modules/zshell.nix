@@ -44,6 +44,7 @@
 			hmswitch = "home-manager switch";
 			hmconf = "nvim $HOME/sysflakes/glasshouse-desktop/home.nix";
 			nixconf = "nvim $HOME/sysflakes/glasshouse-desktop/configuration.nix";
+			viflake = "nvim flake.nix";
 		};
 
 		initExtraFirst = ''
