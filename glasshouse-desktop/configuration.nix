@@ -1,5 +1,5 @@
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, rose-pine-hyprcursor, ... }:
 
 {
 	imports =
