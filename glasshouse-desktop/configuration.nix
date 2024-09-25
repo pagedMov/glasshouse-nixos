@@ -59,8 +59,6 @@
 		alsa-utils
 		alsa-lib
 		zsh
-		rustc
-		cargo
 		git
 		kitty
 		xwaylandvideobridge
