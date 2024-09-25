@@ -6,8 +6,8 @@
 		home-manager.url = "github:nix-community/home-manager";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 		#glasshouse-desktop dots
-		nvim.url = "path:glasshouse-desktop/dotfiles/packages/nixvim";
-		toilet.url = "path:glasshouse-desktop/dotfiles/packages/toilet";
+		nvim.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/packages/nixvim";
+		toilet.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/packages/toilet";
 	};
 
 	outputs = { nixpkgs, home-manager, nvim, toilet, ... }@inputs: {
