@@ -56,7 +56,7 @@
 			x11.enable = true;
 			name = name;
 			size = 48;
-			package = pkgs.runcommand "moveUp" {} ''
+			package = pkgs.runCommand "moveUp" {} ''
 				mkdir -p $out/share/icons
 				ln -s ${pkgs.fetchzip {
 					url = url;
