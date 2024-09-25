@@ -23,7 +23,7 @@
 # hi
 # The home.packages option allows you to install Nix packages into your
 # environment.
-		hompackages = with pkgs; [
+		packages = with pkgs; [
 			hello
 			gtk3
 			adwaita-icon-theme
