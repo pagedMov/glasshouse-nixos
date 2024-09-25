@@ -29,10 +29,10 @@
 						};
 					}
 				];
-					environment.systemPackages = with nixpkgs; environment.systemPackages ++ [
-						rose-pine-hyprcursor.packages."x86_64-linux".default
-					];
 			};
+			environment.systemPackages = with nixpkgs; environment.systemPackages ++ [
+				rose-pine-hyprcursor.packages."x86_64-linux".default
+			];
 		};
 	};
 }
