@@ -23,6 +23,8 @@
 # environment.
 	home.packages = with pkgs; [
 		hello
+		gtk3
+		adwaita-icon-theme
 		waybar
 		dunst
 		rofi
