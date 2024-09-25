@@ -12,10 +12,12 @@
 
 	networking = {
 		networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+		hostName = "glasshouse";
 			hosts = {
 				"192.168.1.163" = [ "glasshouse.info" ];
 			};
 	};
+
 
 	time.timeZone = "America/New_York";
 	i18n.defaultLocale = "en_US.UTF-8";
@@ -47,6 +49,7 @@
 	environment.systemPackages = with pkgs; [
 		parted
 		vim 
+		gnumake
 		wget
 		alsa-utils
 		alsa-lib
@@ -84,6 +87,7 @@
 		hyprland-workspaces
 		hyprland
 		htop
+		mpd
 		inetutils
 		fzf
 		feh

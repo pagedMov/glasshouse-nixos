@@ -43,7 +43,6 @@
 			navhelp = "navhelp | less";
 			svc = "systemctl --user";
 			hmswitch = "home-manager switch";
-			nixswitch = "sudo nixos-rebuild switch --flake $HOME/sysflakes#glasshouse";
 			hmconf = "nvim $HOME/sysflakes/glasshouse-desktop/home.nix";
 			nixconf = "nvim $HOME/sysflakes/glasshouse-desktop/configuration.nix";
 		};
@@ -194,6 +193,19 @@ screengrab() {
 		name="$(date +%s | md5sum | cut -d ' ' -f 1).png"
 	fi
 	grimblast save area $name
+}
+
+nixswitch() {
+	cd $HOME/sysflakes
+	gen=$(readlink /nix/var/nix/profiles/system | sed 's/.*system-\([0-9]*\)-link/\1/')
+	gen=$((gen + 1))
+	git diff --cached --quiet
+	if [ $? = 0 ]; then
+		git add .
+		git commit -m "Commit for generation $gen"
+		git push
+	fi
+	sudo nixos-rebuild switch --flake $HOME/sysflakes#glasshouse
 }
 		'';
 

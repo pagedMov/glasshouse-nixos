@@ -18,7 +18,7 @@
 # release notes.
 	home.stateVersion = "24.05"; # Please read the comment before changing.
 
-
+# hi
 # The home.packages option allows you to install Nix packages into your
 # environment.
 	home.packages = with pkgs; [
@@ -28,8 +28,8 @@
 		rofi
 		starship
 		ranger
-		firefox
 		zathura
+		firefox
 		yt-dlp
 		vlc
 		spotify
@@ -68,5 +68,6 @@
 	};
 
 # Let Home Manager install and manage itself.
+	programs.zsh.enable = true;
 	programs.home-manager.enable = true;
 }
