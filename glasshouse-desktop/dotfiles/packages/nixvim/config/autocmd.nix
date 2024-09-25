@@ -5,5 +5,15 @@
 			event = [ "VimEnter" ];
 			pattern = [ "*" ];
 		}
+		{
+			command = "silent! mkview";
+			event = [ "BufWinLeave" ];
+			pattern = [ "*" ];
+		}
+		{
+			command = "silent! loadview";
+			event = [ "BufWinEnter" ];
+			pattern = [ "*" ];
+		}
 	];
 }
