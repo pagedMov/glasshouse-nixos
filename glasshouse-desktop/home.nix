@@ -3,11 +3,14 @@
 {
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
-	home.username = "pagedmov";
-	home.homeDirectory = "/home/pagedmov";
-	home.enableNixpkgsReleaseCheck = false;
-
 	imports = [ ./modules/zshell.nix ];
+
+	home = { 
+		stateVersion = "24.05"; # Please read the comment before changing.
+		username = "pagedmov";
+		homeDirectory = "/home/pagedmov";
+		enableNixpkgsReleaseCheck = false;
+
 
 # This value determines the Home Manager release that your configuration is
 # compatible with. This helps avoid breakage when a new Home Manager release
@@ -16,69 +19,79 @@
 # You should not change this value, even if you update Home Manager. If you do
 # want to update the value, then make sure to first check the Home Manager
 # release notes.
-	home.stateVersion = "24.05"; # Please read the comment before changing.
 
 # hi
 # The home.packages option allows you to install Nix packages into your
 # environment.
-	home.packages = with pkgs; [
-		hello
-		gtk3
-		adwaita-icon-theme
-		waybar
-		dunst
-		rofi
-		starship
-		ranger
-		zathura
-		inkscape
-		imagemagick
-		firefox
-		yt-dlp
-		vlc
-		spotify
-		speedtest-cli
-		vesktop
-		qbittorrent
-		obs-studio
-		neovide
-		chromium
-		zsh
-		zsh-syntax-highlighting
-		zsh-history-substring-search
-		zsh-autosuggestions
-		nvim
-		toilet
-	];
+		hompackages = with pkgs; [
+			hello
+			gtk3
+			adwaita-icon-theme
+			waybar
+			dunst
+			rofi
+			starship
+			ranger
+			zathura
+			inkscape
+			imagemagick
+			firefox
+			yt-dlp
+			vlc
+			spotify
+			speedtest-cli
+			vesktop
+			qbittorrent
+			obs-studio
+			neovide
+			chromium
+			zsh
+			zsh-syntax-highlighting
+			zsh-history-substring-search
+			zsh-autosuggestions
+			nvim
+			toilet
+		];
 
-	home.pointerCursor = {
+	pointerCursor = {
 		name = "Quintom_Ink";
 		size = 36;
 		package = pkgs.quintom-cursor-theme;
 	};
 
-	home.file = { # dotfiles
-		# example
-		# ".screenrc".source = dotfiles/screenrc;
-		# ".gradle/gradle.properties".text = ''
-		#   org.gradle.console=verbose
-		#   org.gradle.daemon.idletimeout=3600000
-		# ''
-		".config/dunst/dunstrc".source = ./dotfiles/packages/dunst/dunstrc;
-		".config/hypr/hyprland.conf".source = ./dotfiles/packages/hyprland/hyprland.conf;
-		".config/hypr/hyprpaper.conf".source = ./dotfiles/packages/hyprland/hyprpaper.conf;
-		".config/kitty/kitty.conf".source = ./dotfiles/packages/kitty/kitty.conf;
-		".config/ranger/rc.conf".source = ./dotfiles/packages/ranger/rc.conf;
-		".config/ranger/rifle.conf".source = ./dotfiles/packages/ranger/rifle.conf;
-		".config/ranger/scope.sh".source = ./dotfiles/packages/ranger/scope.sh;
-		".config/rofi/launcher.rasi".source = ./dotfiles/packages/rofi/launcher.rasi;
-		".config/starship/starship.toml".source = ./dotfiles/packages/starship/starship.toml;
-		".config/waybar/config".source = ./dotfiles/packages/waybar/config/config;
-		".config/waybar/style.css".source = ./dotfiles/packages/waybar/config/style.css;
+		file = { # dotfiles
+			# example
+			# ".screenrc".source = dotfiles/screenrc;
+			# ".gradle/gradle.properties".text = ''
+			#   org.gradle.console=verbose
+			#   org.gradle.daemon.idletimeout=3600000
+			# ''
+			".config/dunst/dunstrc".source = ./dotfiles/packages/dunst/dunstrc;
+			".config/hypr/hyprland.conf".source = ./dotfiles/packages/hyprland/hyprland.conf;
+			".config/hypr/hyprpaper.conf".source = ./dotfiles/packages/hyprland/hyprpaper.conf;
+			".config/kitty/kitty.conf".source = ./dotfiles/packages/kitty/kitty.conf;
+			".config/ranger/rc.conf".source = ./dotfiles/packages/ranger/rc.conf;
+			".config/ranger/rifle.conf".source = ./dotfiles/packages/ranger/rifle.conf;
+			".config/ranger/scope.sh".source = ./dotfiles/packages/ranger/scope.sh;
+			".config/rofi/launcher.rasi".source = ./dotfiles/packages/rofi/launcher.rasi;
+			".config/starship/starship.toml".source = ./dotfiles/packages/starship/starship.toml;
+			".config/waybar/config".source = ./dotfiles/packages/waybar/config/config;
+			".config/waybar/style.css".source = ./dotfiles/packages/waybar/config/style.css;
+		};
+	};
 
+	xdg = {
+		settings = {
+			gtk = {
+				theme = "Adwaita-dark";
+				iconTheme = "Adwaita";
+			};
+		};
 	};
 
 # Let Home Manager install and manage itself.
-	programs.zsh.enable = true;
-	programs.home-manager.enable = true;
+	programs = { 
+		zsh.enable = true;
+		programs.home-manager.enable = true;
+	};
 }
