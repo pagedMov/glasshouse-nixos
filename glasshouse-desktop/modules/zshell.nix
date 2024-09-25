@@ -3,12 +3,12 @@
 		enable = true;
 
 		sessionVariables = {
-			EDITOR = /nixbin/nvim;
-			SUDO_EDITOR = /nixbin/nvim;
-			VISUAL = /nixbin/nvim;
+			EDITOR = "nixbin/nvim";
+			SUDO_EDITOR = "/nixbin/nvim";
+			VISUAL = "/nixbin/nvim";
 			LANG = "en_US.UTF-8";
-			BROWSER = /nixbin/firefox;
-			STARSHIP_CONFIG = /home/pagedmov/.config/starship/starship.toml;
+			BROWSER = "/nixbin/firefox";
+			STARSHIP_CONFIG = "/home/pagedmov/.config/starship/starship.toml";
 			FZF_DEFAULT_COMMAND = "find $HOME \( -path \"$HOME/.steam\" -o -path \"$HOME/.mozilla\" -o -path \"$HOME/go\" \) -prune -o -type f -print";
 		};
 
