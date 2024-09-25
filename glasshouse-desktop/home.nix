@@ -49,26 +49,6 @@
 		toilet
 	];
 
-	home.pointerCursor = 
-	let
-		getFrom = url: hash: name: {
-			gtk.enable = true;
-			x11.enable = true;
-			name = name;
-			size = 24;
-			package = pkgs.runCommand "moveUp" {} ''
-				mkdir -p $out/share/icons
-				ln -s ${pkgs.fetchzip {
-					url = url;
-					hash = hash;
-					}} $out/share/icons/${name}
-			'';
-		};
-	in
-		getFrom 
-			"https://gitlab.com/-/project/6703061/uploads/53e6cb854a0bd446b326ca7c40fb5cdf/Hackneyed-Dark-48px-0.9.2-right-handed.tar.bz2"
-			"sha256-fEAyeeEEknbGEGycmvMcU4M77x1InsQCuIBwcSasOcw="
-			"Hackneyed-Dark";
 
 	home.file = { # dotfiles
 		# example
