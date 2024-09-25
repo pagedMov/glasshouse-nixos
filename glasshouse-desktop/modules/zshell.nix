@@ -14,7 +14,7 @@
 		};
 
 		shellAliases = {
-			wifi = "nmtui-connect";
+			enterwifi = "nmtui-connect";
 			grep = "grep --color=auto";
 			v = "nvim";
 			mv = "mv -v";
