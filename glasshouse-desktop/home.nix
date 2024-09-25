@@ -49,6 +49,12 @@
 		toilet
 	];
 
+	home.pointerCursor = {
+		name = "Quintom_Ink";
+		size = 24;
+		package = pkgs.quintom-cursor-theme;
+	};
+
 	home.file = { # dotfiles
 		# example
 		# ".screenrc".source = dotfiles/screenrc;
