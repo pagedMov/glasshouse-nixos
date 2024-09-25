@@ -276,7 +276,7 @@ eval "$(starship init zsh)"
 		# Options
 
 		enableCompletion = true;
-		dotDir = "~/";
+		dotDir = "";
 		history = {
 			path = ".zsh_history";
 			save = 10000;
