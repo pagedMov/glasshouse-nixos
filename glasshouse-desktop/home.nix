@@ -55,7 +55,7 @@
 			gtk.enable = true;
 			x11.enable = true;
 			name = name;
-			size = 24;
+			size = 8;
 			package = pkgs.runCommand "moveUp" {} ''
 				mkdir -p $out/share/icons
 				ln -s ${pkgs.fetchzip {
