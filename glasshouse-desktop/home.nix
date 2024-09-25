@@ -67,7 +67,7 @@
 	in
 		getFrom 
 			"https://gitlab.com/-/project/6703061/uploads/53e6cb854a0bd446b326ca7c40fb5cdf/Hackneyed-Dark-48px-0.9.2-right-handed.tar.bz2"
-			"sha256-UfFxLu1BzzIxQnTRMNF66QZVP65U/cNabTYldCFdqP0="
+			"sha256-fEAyeeEEknbGEGycmvMcU4M77x1InsQCuIBwcSasOcw="
 			"Hackneyed-Dark";
 
 	home.file = { # dotfiles
