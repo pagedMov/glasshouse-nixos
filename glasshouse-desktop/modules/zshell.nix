@@ -32,7 +32,6 @@
 			killjob = "kill -9 \$(jobs -l | awk '{print \$3}')";
 			rmf = "fzf -m | xargs -ro rm";
 			nwt = "ping google.com";
-			journal = "nvim ~/vimwiki/Journal.wiki";
 			wiki = "vimwiki";
 			uwiki = "wiki_update";
 			beep = "paplay $BEEP";
