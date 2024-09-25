@@ -11,7 +11,7 @@
 		rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 	};
 
-	outputs = { nixpkgs, home-manager, nvim, toilet, ... }@inputs: {
+	outputs = { nixpkgs, rose-pine-hyprcursor, home-manager, nvim, toilet, ... }@inputs: {
 		nixosConfigurations = {
 			glasshouse = nixpkgs.lib.nixosSystem {
 				specialArgs = { inherit inputs; };
@@ -29,6 +29,9 @@
 						};
 					}
 				];
+					environment.systemPackages = with nixpkgs; environment.systemPackages ++ [
+						rose-pine-hyprcursor.packages."x86_64-linux".default
+					];
 			};
 		};
 	};

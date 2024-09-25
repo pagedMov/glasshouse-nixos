@@ -1,5 +1,5 @@
 
-{ config, lib, pkgs, rose-pine-hyprcursor, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 	imports =
@@ -51,7 +51,6 @@
 
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [
-		rose-pine-hyprcursor.packages.${pkgs.system}.default
 		parted
 		vim 
 		gnumake
