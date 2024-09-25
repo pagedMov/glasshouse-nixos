@@ -29,6 +29,8 @@
 		starship
 		ranger
 		zathura
+		inkscape
+		imagemagick
 		firefox
 		yt-dlp
 		vlc
