@@ -53,6 +53,7 @@
 	environment.systemPackages = with pkgs; [
 		parted
 		vim 
+		pass
 		gnumake
 		wget
 		alsa-utils
