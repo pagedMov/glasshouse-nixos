@@ -33,7 +33,6 @@
 		imagemagick
 		firefox
 		yt-dlp
-		vlc
 		spotify
 		speedtest-cli
 		vesktop
