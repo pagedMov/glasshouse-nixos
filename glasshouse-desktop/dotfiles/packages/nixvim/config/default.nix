@@ -11,6 +11,7 @@
 		./plugins/telescope.nix
 		./options.nix
 		./keymaps.nix
+		./autocmd.nix
 	];
 }
 
