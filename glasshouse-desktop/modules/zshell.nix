@@ -3,7 +3,7 @@
 		enable = true;
 
 		sessionVariables = {
-			EDITOR = "nixbin/nvim";
+			EDITOR = "/nixbin/nvim";
 			SUDO_EDITOR = "/nixbin/nvim";
 			VISUAL = "/nixbin/nvim";
 			LANG = "en_US.UTF-8";
