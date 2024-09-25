@@ -81,7 +81,7 @@
 				".config/starship/starship.toml".source = ./dotfiles/packages/starship/starship.toml;
 				".config/waybar/config".source = ./dotfiles/packages/waybar/config/config;
 				".config/waybar/style.css".source = ./dotfiles/packages/waybar/config/style.css;
-				".zshenv".text = "";
+				".zstyle".source = ./dotfiles/zsh-style;
 			};
 		};
 
