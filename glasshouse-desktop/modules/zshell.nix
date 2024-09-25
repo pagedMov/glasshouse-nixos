@@ -152,7 +152,7 @@ safe_rm() {
         read -r confirm
     fi
     if [ "$check" = false ] || [ "$confirm" = "y" ]; then
-        /nixbin/rm -rfv "$dir"
+        /run/current-system/sw/bin/rm -rfv "$dir"
     else
         echo "Operation cancelled."
     fi
