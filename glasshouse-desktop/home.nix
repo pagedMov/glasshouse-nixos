@@ -51,7 +51,7 @@
 
 	home.pointerCursor = {
 		name = "Quintom_Ink";
-		size = 24;
+		size = 36;
 		package = pkgs.quintom-cursor-theme;
 	};
 
