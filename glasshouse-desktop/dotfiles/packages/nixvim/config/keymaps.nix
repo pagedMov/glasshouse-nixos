@@ -6,7 +6,7 @@
 			mode = "n";
 		}
 		{
-			action = "<cmd>FloatermNew --wintype=float --name=rangerterm --position=topleft --autoclose=2 --opener=edit --cwd=<buffer> --titleposition=left ranger<CR><CR>";
+			action = "<cmd>NvimTreeToggle";
 			key = "<F3>";
 			mode = "n";
 		}
