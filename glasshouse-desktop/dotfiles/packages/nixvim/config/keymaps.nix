@@ -1,8 +1,13 @@
 {
 	keymaps = [
 		{
-			action = "<C-w>w";
+			action = "<C-W>W";
 			key = "<S-Tab>";
+			mode = "n";
+		}
+		{
+			action = "<C-w>w";
+			key = "<Tab>";
 			mode = "n";
 		}
 		{
