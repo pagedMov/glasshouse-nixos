@@ -50,6 +50,7 @@
 	};
 
 	nixpkgs.config.allowUnfree = true;
+	fonts.fonts = with pkgs; [ nerdfonts jetbrains-mono ];
 	environment.systemPackages = with pkgs; [
 		parted
 		vim 
@@ -58,8 +59,6 @@
 		wget
 		alsa-utils
 		alsa-lib
-		nerdfonts
-		jetbrains-mono
 		zsh
 		git
 		kitty
