@@ -50,7 +50,7 @@
 	};
 
 	nixpkgs.config.allowUnfree = true;
-	fonts.fonts = with pkgs; [ nerdfonts jetbrains-mono ];
+	fonts.packages = with pkgs; [ nerdfonts jetbrains-mono ];
 	environment.systemPackages = with pkgs; [
 		parted
 		vim 
