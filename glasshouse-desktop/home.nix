@@ -36,6 +36,7 @@
 			dunst
 			rofi
 			cargo
+			sqlite
 			starship
 			ranger
 			zathura
