@@ -20,6 +20,25 @@
 			key = "<F3>";
 			mode = "t";
 		}
-
+		{
+			action = "<C-w>h";  # Move to the left split (Ctrl+W, then H)
+				key = "H";          # Shift+H key binding
+				mode = "n";         # Normal mode
+		}
+		{
+			action = "<C-w>j";  # Move to the bottom split (Ctrl+W, then J)
+				key = "J";
+			mode = "n";
+		}
+		{
+			action = "<C-w>k";  # Move to the top split (Ctrl+W, then K)
+				key = "K";
+			mode = "n";
+		}
+		{
+			action = "<C-w>l";  # Move to the right split (Ctrl+W, then L)
+				key = "L";
+			mode = "n";
+		}
 	];
 }
