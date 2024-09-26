@@ -200,6 +200,7 @@ screengrab() {
 
 nixswitch() {
 	cd "$HOME/sysflakes"
+	nix flake update
 	gen=$(readlink /nix/var/nix/profiles/system | sed 's/.*system-\([0-9]*\)-link/\1/')
 	gen=$((gen + 1))
 	
@@ -208,7 +209,6 @@ nixswitch() {
 		git commit -m "Commit for generation $gen"
 		git push
 	fi
-	nix flake update
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	cd $OLDPWD
 }
