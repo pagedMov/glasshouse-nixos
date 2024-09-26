@@ -58,6 +58,7 @@
 		wget
 		alsa-utils
 		alsa-lib
+		nerdfonts
 		zsh
 		git
 		kitty

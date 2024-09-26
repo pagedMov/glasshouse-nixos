@@ -28,7 +28,6 @@
 # environment.
 		packages = with pkgs; [
 			hello
-			nerdfonts
 			grimblast
 			gtk3
 			adwaita-icon-theme
