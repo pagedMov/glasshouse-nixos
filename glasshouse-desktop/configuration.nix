@@ -58,6 +58,7 @@
 		wget
 		alsa-utils
 		openssl
+		libgpg-error
 		alsa-lib
 		zsh
 		git
