@@ -6,7 +6,7 @@
 			mode = "n";
 		}
 		{
-			action = "<cmd>NvimTreeToggle";
+			action = "<cmd>NvimTreeToggle<CR>";
 			key = "<F3>";
 			mode = "n";
 		}
