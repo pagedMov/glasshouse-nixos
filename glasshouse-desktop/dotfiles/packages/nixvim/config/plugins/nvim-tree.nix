@@ -4,7 +4,6 @@
 			hijackUnnamedBufferWhenOpening = true;
 			openOnSetup = true;
 			onAttach = { __raw = ''
-local api = require('nvim-tree.api')
 vim.keymap.set('n', 'b', api.node.open.preview, opts('Open Preview'))
 			''; };
 			view = { 
