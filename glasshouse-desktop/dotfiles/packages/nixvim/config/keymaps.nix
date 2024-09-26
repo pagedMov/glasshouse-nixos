@@ -2,27 +2,22 @@
 	keymaps = [
 		{
 			action = "<C-w>h";
-			key = "<C-h>";
-			mode = "i";
-		}
-		{
-			action = "<C-w>h";
-			key = "<C-h>";
+			key = "H";
 			mode = "n";
 		}
 		{
 			action = "<C-w>j";
-			key = "<C-j>";
+			key = "J";
 			mode = "n";
 		}
 		{
 			action = "<C-w>k";
-			key = "<C-k>";
+			key = "K";
 			mode = "n";
 		}
 		{
 			action = "<C-w>l";
-			key = "<C-l>";
+			key = "L";
 			mode = "n";
 		}	
 		{
