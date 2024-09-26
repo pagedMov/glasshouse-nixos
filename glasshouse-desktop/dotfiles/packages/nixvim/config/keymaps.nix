@@ -1,21 +1,6 @@
 {
 	keymaps = [
 		{
-			action = "<cmd>FloatermToggle shadeterm<CR>";
-			key = "<F2>";
-			mode = "n";
-		}
-		{
-			action = "<cmd>NvimTreeToggle<CR>";
-			key = "<F3>";
-			mode = "n";
-		}
-		{
-			action = "<cmd>FloatermToggle shadeterm<CR>";
-			key = "<F2>";
-			mode = "t";
-		}
-		{
 			action = "<C-w>h";
 			key = "<C-h>";
 			mode = "i";
@@ -40,5 +25,20 @@
 			key = "<C-l>";
 			mode = "n";
 		}	
+		{
+			action = "<cmd>FloatermToggle shadeterm<CR>";
+			key = "<F2>";
+			mode = "n";
+		}
+		{
+			action = "<cmd>NvimTreeToggle<CR>";
+			key = "<F3>";
+			mode = "n";
+		}
+		{
+			action = "<cmd>FloatermToggle shadeterm<CR>";
+			key = "<F2>";
+			mode = "t";
+		}
 	];
 }
