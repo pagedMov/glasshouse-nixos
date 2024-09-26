@@ -199,8 +199,9 @@ screengrab() {
 }
 
 nixswitch() {
-	cd "$HOME/sysflakes"
+	builtin cd "$HOME/sysflakes"
 	nix flake update
+	
 	gen=$(readlink /nix/var/nix/profiles/system | sed 's/.*system-\([0-9]*\)-link/\1/')
 	gen=$((gen + 1))
 	
@@ -210,7 +211,7 @@ nixswitch() {
 		git push
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
-	cd $OLDPWD
+	builtin cd $OLDPWD
 }
 journal() {
 	# journal for keeping track of stuff I do that isn't declared in my nix config
