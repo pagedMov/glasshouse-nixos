@@ -18,6 +18,11 @@
 		{
 			action = "<C-w>h";
 			key = "<C-h>";
+			mode = "i";
+		}
+		{
+			action = "<C-w>h";
+			key = "<C-h>";
 			mode = "n";
 		}
 		{
