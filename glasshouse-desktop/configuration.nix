@@ -57,9 +57,6 @@
 		gnumake
 		wget
 		alsa-utils
-		openssl
-		libgpg-error
-		pkg-config
 		alsa-lib
 		zsh
 		git

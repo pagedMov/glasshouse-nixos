@@ -35,6 +35,7 @@
 			uhk-agent
 			dunst
 			rofi
+			cargo
 			starship
 			ranger
 			zathura
