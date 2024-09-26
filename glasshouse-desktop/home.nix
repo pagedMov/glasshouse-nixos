@@ -26,8 +26,10 @@
 # hi
 # The home.packages option allows you to install Nix packages into your
 # environment.
+		fonts.fontconfig.enable = true;
 		packages = with pkgs; [
 			hello
+			nerdfonts
 			grimblast
 			gtk3
 			adwaita-icon-theme
