@@ -216,6 +216,7 @@ journal() {
 	[ ! -f "$HOME/loose_ends" ] && touch "$HOME/loose_ends" 
 	echo "$(date) - $1" >> "$HOME/loose_ends" 
 }
+invoke() { nix run nixpkgs#"$@" }
 
 		'';
 
