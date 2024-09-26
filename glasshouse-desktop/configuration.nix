@@ -59,6 +59,7 @@
 		alsa-utils
 		alsa-lib
 		nerdfonts
+		jetbrains-mono
 		zsh
 		git
 		kitty
