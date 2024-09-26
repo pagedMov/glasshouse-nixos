@@ -1,25 +1,15 @@
 {
 	keymaps = [
 		{
-			action = "<C-w>h";
-			key = "H";
+			action = "<C-w>w";
+			key = "<C-w>";
 			mode = "n";
 		}
 		{
-			action = "<C-w>j";
-			key = "J";
+			action = "<C-W>W";
+			key = "<C-W>";
 			mode = "n";
 		}
-		{
-			action = "<C-w>k";
-			key = "K";
-			mode = "n";
-		}
-		{
-			action = "<C-w>l";
-			key = "L";
-			mode = "n";
-		}	
 		{
 			action = "<cmd>FloatermToggle shadeterm<CR>";
 			key = "<F2>";
