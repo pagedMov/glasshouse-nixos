@@ -57,6 +57,7 @@
 		gnumake
 		wget
 		alsa-utils
+		openssl
 		alsa-lib
 		zsh
 		git
