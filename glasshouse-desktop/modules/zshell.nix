@@ -203,7 +203,7 @@ nixswitch() {
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	builtin cd $OLDPWD
-	sr
+	source ~/.zshrc
 }
 journal() {
 	# journal for keeping track of stuff I do that isn't declared in my nix config
