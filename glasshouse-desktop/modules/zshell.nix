@@ -146,71 +146,48 @@ rc(){
 }
 
 safe_rm() {
-    dir="$@"
-    size=$(du -s "$dir" 2>/dev/null | awk '{print $1/1024}' | awk '{printf("%d\n", $1 + 0.5)}')
-    files=$(ls -R "$dir" 2>/dev/null | wc -l)
-    check=false
-    is_file_or_dir="directory"
-    if [ "$files" -gt 20 ]; then
-        echo "There's a lot of stuff in here ($files files)."
-        check=true
-    fi
-    if [ "$size" -gt 1024 ]; then
-        is_file_or_dir=$([ -f "$dir" ] && echo 'file' || echo 'directory')
-        size_in_gb=$(echo "scale=2; $size / 1024" | bc -l)
-        echo "This $is_file_or_dir is kind of big ($size_in_gb GB)."
-        check=true
-    fi
-    if [ "$check" = true ]; then
-        echo "Are you sure you want to remove this $is_file_or_dir? (y/n)"
-        read -r confirm
-    fi
-    if [ "$check" = false ] || [ "$confirm" = "y" ]; then
-        /run/current-system/sw/bin/rm -rfv "$dir"
-    else
-        echo "Operation cancelled."
-    fi
+    for dir in "$@"; do
+        # Check if it's a file or directory
+        if [ -d "$dir" ] || [ -f "$dir" ]; then
+            # Get size of the directory or file
+            size=$(du -s "$dir" 2>/dev/null | awk '{print $1/1024}' | awk '{printf("%d\n", $1 + 0.5)}')
+            
+            # Count files (recursively if it's a directory)
+            files=$(find "$dir" | wc -l)
+
+            check=false
+            is_file_or_dir=$([ -f "$dir" ] && echo 'file' || echo 'directory')
+
+            # If there are many files, or the size is big, warn the user
+            if [ "$files" -gt 20 ]; then
+                echo "There's a lot of stuff in here ($files files) in '$dir'."
+                check=true
+            fi
+
+            if [ "$size" -gt 1024 ]; then
+                size_in_gb=$(echo "scale=2; $size / 1024" | bc -l)
+                echo "This $is_file_or_dir is kind of big ($size_in_gb GB) in '$dir'."
+                check=true
+            fi
+
+            # Ask for confirmation only if necessary
+            if [ "$check" = true ]; then
+                echo "Are you sure you want to remove this $is_file_or_dir '$dir'? (y/n)"
+                read -r confirm
+            fi
+
+            # Perform the removal if no checks or confirmation is "y"
+            if [ "$check" = false ] || [ "$confirm" = "y" ]; then
+                /run/current-system/sw/bin/rm -rfv "$dir"
+            else
+                echo "Operation cancelled for '$dir'."
+            fi
+        else
+            echo "'$dir' does not exist or is not accessible."
+        fi
+    done
 }
 
-vimwiki() {
-	page="$@"
-	if [ -z "$page" ]; then
-		nvim ~/vimwiki/index.wiki
-	else
-		nvim ~/vimwiki/$page.wiki
-	fi
-}
-
-nvim_find() {
-	nvim "$(fzf)"
-}
-
-change_kitty_theme() {
-	newtheme="$(find /home/pagedmov/dots/kitty/themes/themes/ -exec basename {} \; | sed 's/\.conf$//' | sed 's/\_/ /g' | fzf)"
-	builtin cd ~/dots/kitty/
-	themename=$newtheme
-	newtheme=$(echo "$newtheme" | sed 's/ /\_/g')
-	newtheme="./themes/themes/$newtheme.conf"
-	[ ! -f "$newtheme" ] && echo "Theme not found." && return
-	[ -e "$newtheme" ] &&  /usr/bin/rm ./theme.conf && echo "replacing theme"
-	ln -s "$newtheme" "./theme.conf"
-	kitty @ set-colors -a "$newtheme"
-	echo "Theme changed to $themename"
-	builtin cd $OLDPWD
-}
-
-window_title() {
-	echo -ne "\033]0;$1\007"
-}
-
-screengrab() {
-	if [ -n "$1" ]; then
-		name="$1.png"
-	else
-		name="$(date +%s | md5sum | cut -d ' ' -f 1).png"
-	fi
-	grimblast save area $name
-}
 
 nixswitch() {
 	builtin cd "$HOME/sysflakes"
