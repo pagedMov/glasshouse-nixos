@@ -77,7 +77,7 @@ preexec() {
 	fi
 	cmd_count="$(cat /tmp/cmdcounter_$(whoami))"
 	cmd_count=$((cmd_count + 1))
-	echo "$cmd_count" > /tmp/cmdcounter_$(whoami)"
+	echo "$cmd_count" > "/tmp/cmdcounter_$(whoami)"
 }
 
 snd_restart() {
