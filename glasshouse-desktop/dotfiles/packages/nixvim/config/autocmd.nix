@@ -6,6 +6,11 @@
 			pattern = [ "*" ];
 		}
 		{
+			command = "NvimTreeOpen";
+			event = [ "VimEnter" ];
+			pattern = [ "*" ];
+		}
+		{
 			command = "silent! mkview";
 			event = [ "BufWinLeave" ];
 			pattern = [ "*" ];
