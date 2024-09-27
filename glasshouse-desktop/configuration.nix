@@ -42,6 +42,9 @@
 	};
 	services.udev.enable = true;
 	services.dbus.enable = true;
+	security.sudo.extraConfig = ''
+pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
+	'';
 
 
 	users.users.pagedmov = {
