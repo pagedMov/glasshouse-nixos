@@ -72,12 +72,17 @@ else
 fi
 
 preexec() {
-	if [[ ! -f "/tmp/cmdcounter_$(whoami)" ]]; then
-		echo 0 > "/tmp/cmdcounter_$(whoami)"
-	fi
-	cmd_count="$(cat /tmp/cmdcounter_$(whoami))"
-	cmd_count=$((cmd_count + 1))
-	echo "$cmd_count" > "/tmp/cmdcounter_$(whoami)"
+    cmdcounter="/tmp/cmdcounter_$(whoami)"
+    
+    if [[ ! -f "$cmdcounter" ]]; then
+        echo 0 > "$cmdcounter"
+    fi
+
+    cmd_count="$(cat "$cmdcounter")"
+    
+    cmd_count=$((cmd_count + 1))
+    
+    echo "$cmd_count" > "$cmdcounter"
 }
 
 snd_restart() {
@@ -221,6 +226,7 @@ nixswitch() {
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	builtin cd $OLDPWD
+	sr
 }
 journal() {
 	# journal for keeping track of stuff I do that isn't declared in my nix config
