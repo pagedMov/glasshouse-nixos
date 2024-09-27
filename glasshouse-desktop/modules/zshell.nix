@@ -71,6 +71,15 @@ else
 	mkdir -p "$comppath"
 fi
 
+preexec() {
+	if [[ ! -f "/tmp/cmdcounter_$(whoami)" ]]; then
+		echo 0 > "/tmp/cmdcounter_$(whoami)"
+	fi
+	cmd_count="$(cat /tmp/cmdcounter_$(whoami))"
+	cmd_count=$((cmd_count + 1))
+	echo "$cmd_count" > /tmp/cmdcounter_$(whoami))"
+}
+
 snd_restart() {
 	echo -n "Restarting wireplumber service... "
 	systemctl --user restart wireplumber; code1=$? && echo "SUCCESS" || echo "FAILED"
