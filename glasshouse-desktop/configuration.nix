@@ -112,6 +112,7 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 		cmake
 		clang
 		ffmpeg-full
+		pkg-config
 		clang-tools
 		libclang
 		cava
