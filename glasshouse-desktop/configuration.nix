@@ -20,6 +20,7 @@
 
 	environment.variables = {
 		XCURSOR_SIZE = "24";
+		PATH = "${pkgs.clang-tools}/bin:$PATH";
 	};
 
 
