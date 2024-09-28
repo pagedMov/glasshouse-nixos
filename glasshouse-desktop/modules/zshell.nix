@@ -201,7 +201,7 @@ nixswitch() {
 		git commit -m "Commit for generation $gen"
 		git push
 	fi
-	sudo -E nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
+	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	builtin cd $OLDPWD
 }
 journal() {
