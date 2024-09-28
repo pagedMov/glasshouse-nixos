@@ -18,6 +18,13 @@
 			};
 	};
 
+	nix-ld = {
+		enable = true;
+		libraries = with pkgs; [
+			stdenv.cc.cc
+		];
+	};
+
 	environment.variables = {
 		XCURSOR_SIZE = "24";
 		PATH = "${pkgs.clang-tools}/bin:$PATH";
