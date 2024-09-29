@@ -115,6 +115,7 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 		pkg-config
 		libcxx
 		gst_all_1.gstreamer
+		bc
 		clang-tools
 		libclang
 		cava
