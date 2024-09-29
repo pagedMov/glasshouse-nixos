@@ -1,7 +1,7 @@
 {
 	autoCmd = [
 		{
-			command = "FloatermNew --wintype=float --name=rangerterm --position=topleft --autoclose=2 --opener=edit --cwd=<buffer> --titleposition=left ranger<CR><CR>";
+			command = "FloatermNew --wintype=float --name=shadeterm --position=topright --autoclose=0 --silent --cwd=<buffer> --titleposition=left zsh";
 			event = [ "VimEnter" ];
 			pattern = [ "*" ];
 		}
