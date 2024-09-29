@@ -160,13 +160,13 @@ safe_rm() {
 
             # If there are many files, or the size is big, warn the user
             if [ "$files" -gt 20 ]; then
-                echo "There's a lot of stuff in here ($files files) in '$dir'."
+                echo "There's a lot of stuff in '$dir' ($files files) ."
                 check=true
             fi
 
             if [ "$size" -gt 1024 ]; then
                 size_in_gb=$(echo "scale=2; $size / 1024" | bc -l)
-                echo "This $is_file_or_dir is kind of big ($size_in_gb GB) in '$dir'."
+                echo "This $is_file_or_dir ('$dir') is kind of big ($size_in_gb GB)."
                 check=true
             fi
 
