@@ -61,7 +61,7 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	};
 
 	nixpkgs.config.allowUnfree = true;
-	fonts.packages = with pkgs; [ nerdfonts jetbrains-mono ];
+	fonts.packages = with pkgs; [ times-newer-roman nerdfonts jetbrains-mono ];
 	environment.systemPackages = with pkgs; [
 		parted
 		vim 
