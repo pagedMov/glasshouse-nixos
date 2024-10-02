@@ -156,6 +156,7 @@ rc(){
 }
 
 safe_rm() {
+	played_sound=false
     for dir in "$@"; do
         # Check if it's a file or directory
         if [ -d "$dir" ] || [ -f "$dir" ]; then
@@ -191,6 +192,8 @@ safe_rm() {
             # Perform the removal if no checks or confirmation is "y"
             if [ "$check" = false ] || [ "$confirm" = "y" ]; then
                 /run/current-system/sw/bin/rm -rfv "$dir"
+				[[ "$played_sound" -eq "0" ]] && (aplay ~/sound/sys/rm.wav > /dev/null 2>&1 &)
+				played_sound=1
             else
                 echo "Operation cancelled for '$dir'."
             fi
