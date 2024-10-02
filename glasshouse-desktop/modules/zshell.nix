@@ -126,13 +126,13 @@ wiki_update() {
 # Functions
 ls() {
   command ls --group-directories-first --color=always -F1 "$@" | sort -f -k1
-  sounds_enabled && (aplay ~/sound/sys/ls.wav 2> /dev/null &)
+  sounds_enabled && (aplay ~/sound/sys/ls.wav > /dev/null 2>&1 &)
 }
 
 # cd and ls after
 cd() {
 	builtin cd "$@" && ls
-	sounds_enabled && (aplay ~/sound/sys/cd.wav 2> /dev/null &)
+	sounds_enabled && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
 }
 src() {
 	autoload -U zrecompile
@@ -277,6 +277,7 @@ fi
 
 ~/coding/scripts/splash.sh
 eval "$(starship init zsh)"
+(aplay ~/sound/sh-source.wav > /dev/null 2>&1 &)
 		'';
 
 		# Options
