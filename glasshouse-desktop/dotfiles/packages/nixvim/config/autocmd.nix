@@ -11,9 +11,9 @@
 			pattern = [ "*" ];
 		}
 		{
-		  command = "lua vim.fn.jobstart({\"aplay\", \"~/sound/sys/cd.wav\"})";
-		  event = [ "BufWinLeave" ];
-		  pattern = [ "*" ];
+			command = "silent! !aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &";
+			event = [ "BufWinLeave" ];
+			pattern = [ "*" ];
 		}
 		{
 			command = "silent! loadview";
