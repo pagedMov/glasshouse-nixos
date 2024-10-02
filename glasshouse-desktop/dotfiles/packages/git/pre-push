@@ -1,3 +1,0 @@
-#!/nixbin/bash
-
-(aplay /home/pagedmov/sound/sys/login.wav > /dev/null 2>&1 &)

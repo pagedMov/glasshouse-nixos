@@ -1,3 +1,0 @@
-#!/nixbin/bash
-
-(aplay /home/pagedmov/sound/sys/update_alt.wav > /dev/null 2>&1 &)
