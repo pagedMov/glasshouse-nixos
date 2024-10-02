@@ -131,7 +131,9 @@ ls() {
 
 # cd and ls after
 cd() {
-	command ls --group-directories-first --color=always -F1 "$@" | sort -f -k1 && builtin cd "$@"
+	export SOUNDS_ENABLED=0
+	builtin cd "$@" && ls
+	export SOUNDS_ENABLED=1
 	sounds_enabled && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
 }
 src() {
