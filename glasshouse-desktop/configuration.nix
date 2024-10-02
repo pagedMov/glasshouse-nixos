@@ -53,6 +53,7 @@
 	security.sudo.extraConfig = ''
 pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	'';
+	asdasdasdasd
 	users.users.pagedmov = {
 		isNormalUser = true;
 		extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
