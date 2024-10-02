@@ -50,6 +50,7 @@
 			nixconf = "nvim $HOME/sysflakes/glasshouse-desktop/configuration.nix";
 			viflake = "nvim flake.nix";
 			nvimcfg = "ranger $HOME/sysflakes/glasshouse-desktop/dotfiles/packages/nixvim/";
+			nix = "nix-beep";
 		};
 
 		initExtraFirst = ''
