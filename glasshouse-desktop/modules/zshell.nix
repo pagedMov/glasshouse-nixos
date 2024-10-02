@@ -3,6 +3,7 @@
 		enable = true;
 
 		sessionVariables = {
+			SOUNDS_ENABLED = "1";
 			EDITOR = "/nixbin/nvim";
 			SUDO_EDITOR = "/nixbin/nvim";
 			VISUAL = "/nixbin/nvim";
@@ -11,6 +12,7 @@
 			STARSHIP_CONFIG = /home/pagedmov/.config/starship/starship.toml;
 			FZF_DEFAULT_COMMAND = "find $HOME \( -path \"$HOME/.steam\" -o -path \"$HOME/.mozilla\" -o -path \"$HOME/go\" \) -prune -o -type f -print";
 			GIT_TOKEN = "$(cat supersecret/git-token)";
+			PROMPT_COMMAND = "if [[ $? != 0 ]]; then check_sounds && aplay ~/sound/sys/error.wav; fi";
 		};
 
 		shellAliases = {
@@ -71,6 +73,9 @@ else
 	mkdir -p "$comppath"
 fi
 
+sounds_enabled() {[ "$SOUNDS_ENABLED" -eq "1" ]}
+
+
 preexec() {
     cmdcounter="/tmp/cmdcounter_$(whoami)"
     
@@ -121,11 +126,13 @@ wiki_update() {
 # Functions
 ls() {
   command ls --group-directories-first --color=always -F1 "$@" | sort -f -k1
+  checksound && aplay ~/sound/sys/ls.wav
 }
 
 # cd and ls after
 cd() {
 	builtin cd "$@" && ls
+	checksound && aplay ~/sound/sys/cd.wav
 }
 src() {
 	autoload -U zrecompile
@@ -178,6 +185,7 @@ safe_rm() {
 
             # Perform the removal if no checks or confirmation is "y"
             if [ "$check" = false ] || [ "$confirm" = "y" ]; then
+				check_sounds && aplay ~/sound/sys/rm.wav
                 /run/current-system/sw/bin/rm -rfv "$dir"
             else
                 echo "Operation cancelled for '$dir'."
@@ -190,6 +198,7 @@ safe_rm() {
 
 
 nixswitch() {
+	checksounds && aplay ~/sound/sys/nixswitch-start.wav
 	builtin cd "$HOME/sysflakes"
 	nix flake update
 	
@@ -203,6 +212,7 @@ nixswitch() {
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	builtin cd $OLDPWD
+	checksounds && aplay ~/sound/sys/update.wav
 }
 journal() {
 	# journal for keeping track of stuff I do that isn't declared in my nix config
