@@ -426,8 +426,8 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1727908687,
-        "narHash": "sha256-tQ9k7850VeG+Y9U9K+NqQ7TILVDUyn3sMpB5jRSG1lM=",
+        "lastModified": 1727908716,
+        "narHash": "sha256-Ns0pV0qxRmJ0TTcm+ozKKWqIDK3l8jrCqpM9d/FI5x8=",
         "path": "/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/packages/nixvim",
         "type": "path"
       },

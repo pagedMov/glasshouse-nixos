@@ -12,11 +12,6 @@
 			nil-ls.enable = true;
 			pyright.enable = true;
 			sqls.enable = true;
-			rust-analyzer = { 
-				enable = true;
-				installRustc = true;
-				installCargo = true;
-			};
 		};
 	};
 }
