@@ -11,6 +11,11 @@
 			pattern = [ "*" ];
 		}
 		{
+			command = "!aplay ~/sound/sys/cd.wav";
+			event = [ "BufWinLeave" ];
+			pattern = [ "*" ];
+		}
+		{
 			command = "silent! loadview";
 			event = [ "BufWinEnter" ];
 			pattern = [ "*" ];
