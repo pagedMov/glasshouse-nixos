@@ -58,6 +58,7 @@
 			zsh-autosuggestions
 			audacity
 			snes9x-gtk
+			rustup
 			libreoffice
 			nvim
 			toilet
