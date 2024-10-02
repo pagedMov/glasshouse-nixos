@@ -185,7 +185,7 @@ safe_rm() {
 
             # Perform the removal if no checks or confirmation is "y"
             if [ "$check" = false ] || [ "$confirm" = "y" ]; then
-				check_sounds && (aplay ~/sound/sys/rm.wav > /dev/null 2>&1 &)
+				sounds_enabled && (aplay ~/sound/sys/rm.wav > /dev/null 2>&1 &)
                 /run/current-system/sw/bin/rm -rfv "$dir"
             else
                 echo "Operation cancelled for '$dir'."
