@@ -185,7 +185,7 @@ safe_rm() {
 
             # Perform the removal if no checks or confirmation is "y"
             if [ "$check" = false ] || [ "$confirm" = "y" ]; then
-				check_sounds && (aplay ~/sound/sys/rm.wav 2> /dev/null &)
+				check_sounds && (aplay ~/sound/sys/rm.wav > /dev/null 2>&1 &)
                 /run/current-system/sw/bin/rm -rfv "$dir"
             else
                 echo "Operation cancelled for '$dir'."
@@ -198,7 +198,7 @@ safe_rm() {
 
 
 nixswitch() {
-	sounds_enabled && (aplay ~/sound/sys/nixswitch-start.wav 2> /dev/null &)
+	sounds_enabled && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
 	builtin cd "$HOME/sysflakes"
 	nix flake update
 	
@@ -212,7 +212,7 @@ nixswitch() {
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	builtin cd $OLDPWD
-	sounds_enabled && (aplay ~/sound/sys/update.wav 2> /dev/null &)
+	sounds_enabled && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
 }
 journal() {
 	# journal for keeping track of stuff I do that isn't declared in my nix config
