@@ -277,11 +277,6 @@ setopt EXTENDED_GLOB
 setopt TRANSIENT_RPROMPT
 setopt INTERACTIVE_COMMENTS
 
-
-bindkey "^[[H" beginning-of-line # home key
-bindkey "^[[F" end-of-line # end key
-bindkey "^[[3~" delete-char # delete key
-
 autoload -U compinit     # completion
 autoload -U terminfo     # terminfo keys
 zmodload -i zsh/complist # menu completion
@@ -296,6 +291,7 @@ if [ "$TERM" = "linux" ] ; then
 	echo -en "\e]P0232323"
 fi
 
+source ~/.zkbd
 ~/coding/scripts/splash.sh
 eval "$(starship init zsh)"
 (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
