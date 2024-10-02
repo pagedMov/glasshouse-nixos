@@ -228,7 +228,7 @@ nixswitch() {
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	builtin cd $OLDPWD
-	if [ "$?" -eq "0" ]; then 
+	if [ $? -eq 0 ]; then 
 		sounds_enabled && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
 	else
 		sounds_enabled && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)

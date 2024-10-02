@@ -53,7 +53,6 @@
 	security.sudo.extraConfig = ''
 pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	'';
-aasdasdads
 
 	users.users.pagedmov = {
 		isNormalUser = true;
