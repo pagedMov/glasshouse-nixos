@@ -56,6 +56,7 @@
 			zsh-syntax-highlighting
 			zsh-history-substring-search
 			zsh-autosuggestions
+			snes9x-gtk
 			libreoffice
 			nvim
 			toilet
