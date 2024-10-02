@@ -132,7 +132,8 @@ ls() {
 # cd and ls after
 cd() {
 	export SOUNDS_ENABLED=0
-	builtin cd "$@" && ls
+	ls "$@"
+	builtin cd "$@" 
 	export SOUNDS_ENABLED=1
 	sounds_enabled && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
 }
