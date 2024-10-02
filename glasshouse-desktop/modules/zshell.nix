@@ -131,7 +131,7 @@ ls() {
 
 # cd and ls after
 cd() {
-	builtin cd "$@" && command ls --group-directories-first --color=always -F1 "$@" | sort -f -k1
+	command ls --group-directories-first --color=always -F1 "$@" | sort -f -k1 && builtin cd "$@"
 	sounds_enabled && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
 }
 src() {
@@ -184,8 +184,9 @@ safe_rm() {
             fi
 
             # Perform the removal if no checks or confirmation is "y"
+			played_sound=0
             if [ "$check" = false ] || [ "$confirm" = "y" ]; then
-				sounds_enabled && (aplay ~/sound/sys/rm.wav > /dev/null 2>&1 &)
+				[ $played_sound -eq 0 ] && sounds_enabled && (aplay ~/sound/sys/rm.wav > /dev/null 2>&1 &) && played_sound=1
                 /run/current-system/sw/bin/rm -rfv "$dir"
             else
                 echo "Operation cancelled for '$dir'."
