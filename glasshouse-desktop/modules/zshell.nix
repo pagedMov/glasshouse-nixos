@@ -186,9 +186,9 @@ safe_rm() {
             fi
 
             # Perform the removal if no checks or confirmation is "y"
-			played_sound=0
             if [ "$check" = false ] || [ "$confirm" = "y" ]; then
-				[ $played_sound -eq 0 ] && sounds_enabled && (aplay ~/sound/sys/rm.wav > /dev/null 2>&1 &) && played_sound=1
+				sounds_enabled && (aplay ~/sound/sys/rm.wav > /dev/null 2>&1 &) && played_sound=1
+				export SOUNDS_ENABLED=0
                 /run/current-system/sw/bin/rm -rfv "$dir"
             else
                 echo "Operation cancelled for '$dir'."
@@ -197,6 +197,7 @@ safe_rm() {
             echo "'$dir' does not exist or is not accessible."
         fi
     done
+	export SOUNDS_ENABLED=1
 }
 
 
