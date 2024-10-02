@@ -203,6 +203,15 @@ safe_rm() {
     done
 }
 
+nix-beep() {
+	sounds_enabled && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
+	nix "$@" 
+	if [ "$?" -eq "0" ]; then 
+		sounds_enabled && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
+	else
+		sounds_enabled && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
+	fi
+}
 
 nixswitch() {
 	sounds_enabled && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
@@ -219,7 +228,11 @@ nixswitch() {
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	builtin cd $OLDPWD
-	sounds_enabled && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
+	if [ "$?" -eq "0" ]; then 
+		sounds_enabled && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
+	else
+		sounds_enabled && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
+	fi
 }
 journal() {
 	# journal for keeping track of stuff I do that isn't declared in my nix config
