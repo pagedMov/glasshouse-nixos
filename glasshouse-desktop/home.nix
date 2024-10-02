@@ -35,7 +35,6 @@
 			uhk-agent
 			dunst
 			rofi
-			cargo
 			sqlite
 			starship
 			ranger
