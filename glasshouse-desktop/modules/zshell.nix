@@ -126,13 +126,13 @@ wiki_update() {
 # Functions
 ls() {
   command ls --group-directories-first --color=always -F1 "$@" | sort -f -k1
-  sounds_enabled && aplay ~/sound/sys/ls.wav
+  sounds_enabled && aplay ~/sound/sys/ls.wav 2> /dev/null
 }
 
 # cd and ls after
 cd() {
 	builtin cd "$@" && ls
-	sounds_enabled && aplay ~/sound/sys/cd.wav
+	sounds_enabled && aplay ~/sound/sys/cd.wav 2> /dev/null
 }
 src() {
 	autoload -U zrecompile
@@ -185,7 +185,7 @@ safe_rm() {
 
             # Perform the removal if no checks or confirmation is "y"
             if [ "$check" = false ] || [ "$confirm" = "y" ]; then
-				check_sounds && aplay ~/sound/sys/rm.wav
+				check_sounds && aplay ~/sound/sys/rm.wav 2> /dev/null
                 /run/current-system/sw/bin/rm -rfv "$dir"
             else
                 echo "Operation cancelled for '$dir'."
@@ -198,7 +198,7 @@ safe_rm() {
 
 
 nixswitch() {
-	sounds_enabled && aplay ~/sound/sys/nixswitch-start.wav
+	sounds_enabled && aplay ~/sound/sys/nixswitch-start.wav 2> /dev/null
 	builtin cd "$HOME/sysflakes"
 	nix flake update
 	
@@ -212,7 +212,7 @@ nixswitch() {
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	builtin cd $OLDPWD
-	sounds_enabled && aplay ~/sound/sys/update.wav
+	sounds_enabled && aplay ~/sound/sys/update.wav 2> /dev/null
 }
 journal() {
 	# journal for keeping track of stuff I do that isn't declared in my nix config
