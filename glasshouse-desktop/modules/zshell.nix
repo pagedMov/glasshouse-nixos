@@ -284,7 +284,7 @@ fi
 
 ~/coding/scripts/splash.sh
 eval "$(starship init zsh)"
-(aplay ~/sound/sh-source.wav > /dev/null 2>&1 &)
+(aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
 		'';
 
 		# Options
