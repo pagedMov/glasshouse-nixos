@@ -62,6 +62,7 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	fonts.packages = with pkgs; [ times-newer-roman nerdfonts jetbrains-mono ];
 	environment.systemPackages = with pkgs; [
 		parted
+		mullvad
 		vim 
 		pass
 		gnumake
