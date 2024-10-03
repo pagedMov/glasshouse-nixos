@@ -48,8 +48,11 @@
 		alsa.enable = true;
 		alsa.support32Bit = true;
 	};
-	services.udev.enable = true;
-	services.dbus.enable = true;
+	services = {
+		udev.enable = true;
+		dbus.enable = true;
+		mullvad-vpn.enable = true;
+	};
 	security.sudo.extraConfig = ''
 pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	'';
