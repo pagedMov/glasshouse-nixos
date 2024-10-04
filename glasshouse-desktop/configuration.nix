@@ -16,6 +16,10 @@
 			hosts = {
 				"192.168.1.163" = [ "glasshouse.info" ];
 			};
+		firewall = {
+			enable = true;
+			allowedTCPPorts = [ 30000 ];
+		};
 	};
 
 	programs.nix-ld = {
