@@ -291,8 +291,8 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1728075541,
-        "narHash": "sha256-DHXAeBn6hMLjxaVavSNZQXR0C0l37fCzEzTtdMtNQUc=",
+        "lastModified": 1728188103,
+        "narHash": "sha256-Za7zy9HabCWNEBEtNLMQCZ0VksED11P0FhoU/axvobo=",
         "path": "/home/pagedmov/sysflakes/glasshouse-desktop/derivations/nix-autobahn",
         "type": "path"
       },
