@@ -1,5 +1,5 @@
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
 	imports =
@@ -14,7 +14,7 @@
 		networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 		hostName = "glasshouse";
 			hosts = {
-				"192.168.1.163" = [ "glasshouse.info" ];
+				"192.168.1.163" = [ "glasshaus" ];
 			};
 		firewall = {
 			enable = true;
@@ -26,6 +26,7 @@
 		enable = true;
 		libraries = with pkgs; [
 			stdenv.cc.cc
+			ffmpeg-full
 		];
 	};
 
@@ -95,7 +96,9 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 		pyright
 		protontricks
 		protonmail-bridge
+		nix-index
 		playerctl
+		tree
 		pavucontrol
 		pamixer
 		p7zip
@@ -127,6 +130,7 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 		libclang
 		cava
 		quintom-cursor-theme
+		nixos-option
 	];
 
 
@@ -137,6 +141,15 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	programs.gnupg.agent = {
 		enable = true;
 		enableSSHSupport = true;
+	};
+	services.foundryvtt = {
+		enable = true;
+		hostName = "wumbodnd";
+		package = inputs.foundryvtt.packages.${pkgs.system}.foundryvtt_12;
+		minifyStaticFiles = true;
+		proxyPort = 443;
+		proxySSL = false;
+		upnp = false;
 	};
 
 	system.stateVersion = "24.05"; # Did you read the comment?

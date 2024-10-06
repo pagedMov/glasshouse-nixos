@@ -12,7 +12,7 @@
 			STARSHIP_CONFIG = /home/pagedmov/.config/starship/starship.toml;
 			FZF_DEFAULT_COMMAND = "find $HOME \( -path \"$HOME/.steam\" -o -path \"$HOME/.mozilla\" -o -path \"$HOME/go\" \) -prune -o -type f -print";
 			GIT_TOKEN = "$(cat supersecret/git-token)";
-			PROMPT_COMMAND = "if [[ $? != 0 ]]; then sounds_enabled && (aplay ~/sound/sys/error.wav 2> /dev/null &); fi";
+			PROMPT_COMMAND = "if [[ $? != 0 ]]; then s_check && (aplay ~/sound/sys/error.wav 2> /dev/null &); fi";
 		};
 
 		shellAliases = {
@@ -50,7 +50,6 @@
 			nixconf = "nvim $HOME/sysflakes/glasshouse-desktop/configuration.nix";
 			viflake = "nvim flake.nix";
 			nvimcfg = "ranger $HOME/sysflakes/glasshouse-desktop/dotfiles/packages/nixvim/";
-			nix = "nix-beep";
 		};
 
 		initExtraFirst = ''
@@ -65,6 +64,7 @@ if [[ $- != *i* ]]; then
 	return
 fi
 
+
 typeset -g comppath="$HOME/.cache"
 typeset -g compfile="$comppath/.zcompdump"
 
@@ -74,7 +74,6 @@ else
 	mkdir -p "$comppath"
 fi
 
-sounds_enabled() {[ "$SOUNDS_ENABLED" -eq "1" ]}
 
 
 preexec() {
@@ -90,6 +89,8 @@ preexec() {
     
     echo "$cmd_count" > "$cmdcounter"
 }
+
+s_check() { [ $SOUNDS_ENABLED -eq 1 ] }
 
 snd_restart() {
 	echo -n "Restarting wireplumber service... "
@@ -127,7 +128,7 @@ wiki_update() {
 # Functions
 ls() {
   command ls --group-directories-first --color=always -F1 "$@" | sort -f -k1
-  sounds_enabled && (aplay ~/sound/sys/ls.wav > /dev/null 2>&1 &)
+  s_check && (aplay ~/sound/sys/ls.wav > /dev/null 2>&1 &)
 }
 
 # cd and ls after
@@ -136,7 +137,7 @@ cd() {
 	ls "$@"
 	builtin cd "$@" 
 	export SOUNDS_ENABLED=1
-	sounds_enabled && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
+	s_check && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
 }
 src() {
 	autoload -U zrecompile
@@ -204,34 +205,25 @@ safe_rm() {
     done
 }
 
-nix-beep() {
-	sounds_enabled && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
-	nix "$@" 
-	if [ "$?" -eq "0" ]; then 
-		sounds_enabled && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
-	else
-		sounds_enabled && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
-	fi
-}
-
 nixswitch() {
-	sounds_enabled && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
+	s_check && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
 	builtin cd "$HOME/sysflakes"
 	nix flake update
 	
 	gen=$(readlink /nix/var/nix/profiles/system | sed 's/.*system-\([0-9]*\)-link/\1/')
 	gen=$((gen + 1))
-	
-	if git diff --cached --quiet ; then
+
+	git diff --cached --quiet
+	if [ $? -eq 1 ]; then
 		git add .
 		git commit -m "Commit for generation $gen"
 		git push
 	fi
 	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
 	if [ $? -eq 0 ]; then 
-		sounds_enabled && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
+		s_check && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
 	else
-		sounds_enabled && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
+		s_check && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
 	fi
 	builtin cd $OLDPWD
 }
@@ -294,7 +286,7 @@ fi
 source ~/.zkbd
 ~/coding/scripts/splash.sh
 eval "$(starship init zsh)"
-(aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
+s_check && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
 		'';
 
 		# Options

@@ -1,4 +1,4 @@
-{ config, pkgs, nvim, toilet, ... }:
+{ config, pkgs, nvim, toilet, nix-autobahn, ... }:
 
 {
 # Home Manager needs a bit of information about you and the paths it should
@@ -61,6 +61,7 @@
 			libreoffice
 			nvim
 			toilet
+			nix-autobahn
 		];
 
 		pointerCursor = {
