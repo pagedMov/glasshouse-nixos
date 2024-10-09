@@ -284,6 +284,7 @@ if [ "$TERM" = "linux" ] ; then
 	echo -en "\e]P0232323"
 fi
 
+clear
 source ~/.zkbd
 ~/coding/scripts/splash.sh
 eval "$(starship init zsh)"
