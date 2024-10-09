@@ -137,6 +137,7 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 		fail2ban
 		cmake
 		clang
+		nix-prefetch-scripts
 		ffmpeg-full
 		pkg-config
 		openssl
