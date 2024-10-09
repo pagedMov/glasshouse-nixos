@@ -13,6 +13,7 @@
 		floaterm.enable = true;
 		fugitive.enable = true;
 		rustaceanvim.enable = true;
+		firenvim.enable = true;
 		dap = {
 			enable = true;
 			extensions.dap-ui.enable = true;

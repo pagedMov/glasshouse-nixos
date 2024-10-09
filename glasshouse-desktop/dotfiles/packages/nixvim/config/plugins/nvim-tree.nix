@@ -1,8 +1,8 @@
 {
 	plugins.nvim-tree = { 
 			enable = true; 
-			hijackUnnamedBufferWhenOpening = true;
-			openOnSetup = true;
+			hijackUnnamedBufferWhenOpening = false;
+			openOnSetup = false;
 			onAttach = { __raw = ''
 			function(bufnr)
 local api = require('nvim-tree.api')

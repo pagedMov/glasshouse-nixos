@@ -12,9 +12,9 @@
 
 	networking = {
 		networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-		hostName = "glasshouse";
+		hostName = "glasshaus";
 			hosts = {
-				"192.168.1.163" = [ "glasshaus" ];
+				"192.168.1.163" = [ "glasshaus.info" ];
 			};
 		firewall = {
 			enable = true;
@@ -30,9 +30,15 @@
 		];
 	};
 
-	environment.variables = {
-		XCURSOR_SIZE = "24";
-		PATH = "${pkgs.clang-tools}/bin:$PATH";
+	environment = {
+		variables = {
+			XCURSOR_SIZE = "24";
+			PATH = "${pkgs.clang-tools}/bin:$PATH";
+		};
+		shells = with pkgs; [
+			zsh
+			bash
+		];
 	};
 
 
@@ -46,23 +52,28 @@
 # Enable sound.
 	#hardware.pulseaudio.enable = true;
 # OR
-	services.pipewire = {
-		enable = true;
-		pulse.enable = true;
-		wireplumber.enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-	};
+
 	services = {
+		pipewire = {
+				enable = true;
+				pulse.enable = true;
+				wireplumber.enable = true;
+				alsa.enable = true;
+				alsa.support32Bit = true;
+			};
 		udev.enable = true;
 		dbus.enable = true;
 		mullvad-vpn.enable = true;
 	};
+
+	hardware.keyboard.uhk.enable = true;
+	hardware.amdgpu.amdvlk.enable = true;
 	security.sudo.extraConfig = ''
 pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	'';
 	users.users.pagedmov = {
 		isNormalUser = true;
+		defaultUserShell = pkgs.zsh;
 		extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
 	};
 
@@ -71,6 +82,10 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	environment.systemPackages = with pkgs; [
 		parted
 		mullvad
+		fuse
+		wineWowPackages.full
+		vulkan-loader
+		mesa
 		vim 
 		pass
 		gnumake

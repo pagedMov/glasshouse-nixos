@@ -12,6 +12,7 @@
 		enableNixpkgsReleaseCheck = false;
 		sessionVariables = {
 			GTK_THEME = "Adwaita:dark";
+			SHELL = "/etc/profiles/per-user/pagedmov/bin/zsh";
 		};
 
 
@@ -59,6 +60,7 @@
 			snes9x-gtk
 			rustup
 			libreoffice
+			handbrake
 			nvim
 			toilet
 			nix-autobahn

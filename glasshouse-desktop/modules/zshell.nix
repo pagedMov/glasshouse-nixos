@@ -213,7 +213,7 @@ nixswitch() {
 	gen=$(readlink /nix/var/nix/profiles/system | sed 's/.*system-\([0-9]*\)-link/\1/')
 	gen=$((gen + 1))
 
-	git diff --cached --quiet
+	git diff --quiet
 	if [ $? -eq 1 ]; then
 		git add .
 		git commit -m "Commit for generation $gen"
