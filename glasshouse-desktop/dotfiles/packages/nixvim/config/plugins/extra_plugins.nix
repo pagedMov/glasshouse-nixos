@@ -4,7 +4,7 @@
 	extraPlugins = [
 		(pkgs.vimUtils.buildVimPlugin { # vimwiki
 			name = "vimwiki";
-			src = pkgs.fetchFromGithub {
+			src = pkgs.fetchFromGitHub {
 				owner = "vimwiki";
 				repo = "vimwiki";
 				rev = "dev";
