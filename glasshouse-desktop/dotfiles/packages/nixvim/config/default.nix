@@ -9,6 +9,7 @@
 		./plugins/plugins.nix
 		./plugins/nvim-tree.nix
 		./plugins/telescope.nix
+		./plugins/extra_plugins.nix
 		./options.nix
 		./keymaps.nix
 		./autocmd.nix
