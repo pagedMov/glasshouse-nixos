@@ -67,10 +67,18 @@
 		udev.enable = true;
 		dbus.enable = true;
 		mullvad-vpn.enable = true;
+		blueman.enable = true;
 	};
 
-	hardware.keyboard.uhk.enable = true;
-	hardware.amdgpu.amdvlk.enable = true;
+	hardware = { 
+		keyboard.uhk.enable = true;
+		amdgpu.amdvlk.enable = true;
+		bluetooth = {
+			enable = true;
+			powerOnBoot = true;
+		};
+	};
+	
 	security.sudo.extraConfig = ''
 pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	'';
