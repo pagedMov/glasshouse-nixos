@@ -56,6 +56,7 @@
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
 export UPDATE_ZSH_DAYS=7
+unalias ls
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
