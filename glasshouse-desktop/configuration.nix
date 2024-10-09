@@ -22,12 +22,15 @@
 		};
 	};
 
-	programs.nix-ld = {
-		enable = true;
-		libraries = with pkgs; [
-			stdenv.cc.cc
-			ffmpeg-full
-		];
+	programs = {
+		zsh.enable = true;
+		nix-ld = {
+			enable = true;
+			libraries = with pkgs; [
+				stdenv.cc.cc
+				ffmpeg-full
+			];
+		};
 	};
 
 	environment = {
@@ -73,7 +76,7 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	'';
 	users.users.pagedmov = {
 		isNormalUser = true;
-		defaultUserShell = pkgs.zsh;
+		shell = pkgs.zsh;
 		extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
 	};
 
@@ -92,7 +95,6 @@ pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 		wget
 		alsa-utils
 		alsa-lib
-		zsh
 		git
 		kitty
 		xwaylandvideobridge
