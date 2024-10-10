@@ -11,6 +11,7 @@
 	 ++ [ (import ./kitty.nix)        ]
 	 ++ [ (import ./spicetify.nix)    ]
 	 ++ [ (import ./starship.nix)     ]
+	 ++ [ (import ./scripts)     	  ]
 	 ++ [ (import ./swaync/swaync.nix)]
 	 ++ [ (import ./userpkgs.nix)     ]
 	 ++ [ (import ./waybar) 	      ]

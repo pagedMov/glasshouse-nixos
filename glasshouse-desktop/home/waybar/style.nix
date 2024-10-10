@@ -5,10 +5,9 @@ let custom = {
     font_size = "15px";
     font_weight = "bold";
     text_color = "#cdd6f4";
-    secondary_accent= "89b4fa";
-    tertiary_accent = "f5f5f5";
-    background = "11111B";
-    opacity = "0.98";
+    secondary_accent= "#89b4fa";
+    tertiary_accent = "#f5f5f5";
+    background = "#11111B";
 };
 in 
 {
@@ -22,11 +21,10 @@ in
         min-height: 0px;
         font-family: ${custom.font};
         font-weight: ${custom.font_weight};
-        opacity: ${custom.opacity};
     }
 
     window#waybar {
-        background: none;
+		background: ${custom.background};
     }
 
     #workspaces {

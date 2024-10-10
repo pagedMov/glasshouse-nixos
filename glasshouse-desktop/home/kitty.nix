@@ -17,6 +17,7 @@
       window_padding_width = 10;
       scrollback_lines = 10000;
       enable_audio_bell = false;
+	  allow_remote_control = true;
       mouse_hide_wait = 60;
       
       ## Tabs

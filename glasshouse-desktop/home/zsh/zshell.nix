@@ -54,19 +54,21 @@
 			hmconf = "nvim $HOME/sysflakes/glasshouse-desktop/home";
 			viflake = "nvim flake.nix";
 			nvimcfg = "nvim $HOME/dots/nixvim/config";
+			zsr = "runbg kitty zsh && kitty @ close-window";
 		};
 		initExtraFirst = ''
 
 s_check() { [ $SOUNDS_ENABLED -eq 1 ] }
 
+unalias ls
 ls() {
-  command ls --group-directories-first --color=always -F1 "$@" | sort -f -k1
-  s_check && (aplay ~/sound/sys/ls.wav > /dev/null 2>&1 &)
+	eza -1 --group-directories-first --icons "@"
+	s_check && runbg aplay ~/sound/sys/ls.wav
 }
 
 cd() {
 	export SOUNDS_ENABLED=0
-	ls "$@"
+	eza -1 --group-directories-first --icons "$@"
 	builtin cd "$@" 
 	export SOUNDS_ENABLED=1
 	s_check && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
@@ -93,14 +95,18 @@ nixcommit() {
 	git diff --quiet
 	if [ $? -eq 1 ]; then
 		git add .
-		git commit -m "Commit for generation $gen"
+		git commit -m "Gen $gen: $@"
 		git push
 	fi
-	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
-	if [ $? -eq 0 ]; then 
-		s_check && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
-	else
-		s_check && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
+
+	read -p "Rebuild? y/n" confirm
+	if [ confirm = "y" ]; then
+		sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
+		if [ $? -eq 0 ]; then 
+			s_check && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
+		else
+			s_check && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
+		fi
 	fi
 	builtin cd $OLDPWD
 }
@@ -163,7 +169,6 @@ nsp() { nix-shell -p "$@" --run zsh }
 		
 		clear
 		splash
-		eval "$(starship init zsh)" 2>/dev/null
 		s_check && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
 	'';
 	};
