@@ -20,6 +20,15 @@
 				"aplay /home/pagedmov/sound/sys/login.wav &"
 			];
 
+			workspace = [
+				"1,persistent=true,monitor:HDMI-A-1"
+				"2,persistent=true,monitor:HDMI-A-1"
+				"3,persistent=true,monitor:HDMI-A-1"
+				"4,persistent=true,monitor:DP-1"
+				"5,persistent=true,monitor:DP-1"
+				"6,persistent=true,monitor:DP-1"
+			];
+
 			input = {
 				kb_layout = "us";
 				follow_mouse = 1;
@@ -44,6 +53,7 @@
 				disable_hyprland_logo = true;
 				always_follow_on_dnd = true;
 				layers_hog_keyboard_focus = true;
+				initial_workspace_tracking = 2;
 				animate_manual_resizes = false;
 				enable_swallow = true;
 				focus_on_activate = true;
