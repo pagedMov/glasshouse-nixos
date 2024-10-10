@@ -11,8 +11,19 @@
 		settings = {
 # right_format = "$cmd_duration";
 
+			format = lib.concatStrings [
+			"($username)(bold white)"
+			"($directory)"
+			];
+
+			
+			username = {
+				show_always = true;
+				style_user = "bold white";
+				format = "[$user]($style)";
+			};
 			directory = {
-				format = "[ ](bold #89b4fa)[ $path ]($style)";
+				format = "[$path](bold cyan)[/](bold green) ";
 				style = "bold #b4befe";
 			};
 
