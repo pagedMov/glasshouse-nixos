@@ -8,15 +8,17 @@
 		backupFileExtension = "backup";
 		extraSpecialArgs = { inherit inputs; };
 		users.pagedmov = {
-			imports = [ ./../home ];
-			home.username = "pagedmov";
-			home.homeDirectory = "/home/pagedmov";
-			home.stateVersion = "24.05";
 			programs.home-manager.enable = true;
-			pointerCursor = {
-				name = "Quintom_Ink";
-				size = 36;
-				package = pkgs.quintom-cursor-theme;
+			imports = [ ./../home ];
+			home = {
+				username = "pagedmov";
+				homeDirectory = "/home/pagedmov";
+				stateVersion = "24.05";
+				pointerCursor = {
+					name = "Quintom_Ink";
+					size = 36;
+					package = pkgs.quintom-cursor-theme;
+				};
 			};
 		};
 	};
