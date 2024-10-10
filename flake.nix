@@ -40,7 +40,7 @@
 		toilet.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/home/toilet";
 	};
 
-	outputs = { nixpkgs, home-manager, self, nvim, toilet, nix-autobahn, ... }@inputs: 
+	outputs = { nixpkgs, home-manager, self, nvim, toilet, ... }@inputs: 
 	let
 		system = "x86_64-linux";
         user = "pagedmov";
