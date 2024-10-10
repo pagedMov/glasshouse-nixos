@@ -40,17 +40,17 @@
         disable-scroll= true;
         format = "{icon}";
         on-click= "activate";
-        format-icons= {
-            "1"= "󰈹";
-            "2"= "";
-            "3"= "󰘙";
-            "4"= "󰙯";
-            "5"= "";
-            "6"= "";
-            urgent= "";
-            default = "";
-            sort-by-number= true;
-        };
+		format-icons= {
+			"1"= "一";  
+			"2"= "二"; 
+			"3"= "三";
+			"4"= "四";
+			"5"= "五";
+			"6"= "六";
+			urgent= "";
+			default = "";
+			sort-by-number= true;
+		};
         persistent-workspaces = {
             "1"= [];
             "2"= [];
