@@ -309,7 +309,10 @@ fi
 clear
 source ~/sysflakes/glasshouse-desktop/home/zsh/zkbd
 ~/coding/scripts/splash.sh
-eval "$(starship init zsh)"
+type starship_zle-keymap-select >/dev/null || \
+  {
+    eval "$(/usr/local/bin/starship init zsh)"
+  }
 s_check && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
 		'';
 
