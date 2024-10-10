@@ -93,22 +93,13 @@ nixcommit() {
 	gen=$((gen + 1))
 
 	git diff --quiet
-	if [ $? -eq 1 ]; then
-		git add .
-		git commit -m "Gen $gen: $@"
-		git push
+	if [ $? -eq 0 ]; then
+		echo "Nothing to commit"
+		return
 	fi
-
-	read -p "Rebuild? y/n" confirm
-	if [ confirm = "y" ]; then
-		sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
-		if [ $? -eq 0 ]; then 
-			s_check && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
-		else
-			s_check && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
-		fi
-	fi
-	builtin cd $OLDPWD
+	git add .
+	git commit -m "Gen $gen: $@"
+	git push
 }
 
 nixswitch() {
