@@ -40,7 +40,7 @@
 			general = {
 				"$mainMod" = "super";
 				layout = "dwindle";
-				gaps_in = 8;
+				gaps_in = 4;
 				gaps_out = 8;
 				border_size = 2;
 				"col.active_border" = "rgb(cba6f7) rgb(94e2d5) 45deg";
@@ -76,7 +76,7 @@
 			};
 
 			decoration = {
-				rounding = 10;
+				rounding = 7;
 				# active_opacity = 0.90;
 				# inactive_opacity = 0.90;
 				# fullscreen_opacity = 1.0;
