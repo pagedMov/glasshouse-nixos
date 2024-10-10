@@ -309,7 +309,7 @@ fi
 clear
 source ~/sysflakes/glasshouse-desktop/home/zsh/zkbd
 ~/coding/scripts/splash.sh
-eval "$(starship init zsh)"
+eval "$(starship init zsh)" 2>/dev/null
 s_check && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
 		'';
 
