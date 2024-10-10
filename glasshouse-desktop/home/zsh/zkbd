@@ -1,0 +1,52 @@
+
+#function left-beep {
+#	[[ $CURSOR -eq 0 ]] && return
+#	zle vi-backward-char
+#	(aplay /home/pagedmov/sound/sys/move_h.wav > /dev/null 2>&1 &)
+#}
+#function right-beep {
+#	zle autosuggest-accept
+#	[[ $CURSOR -eq ${#BUFFER} ]] && return
+#	zle vi-forward-char
+#	(aplay /home/pagedmov/sound/sys/move_h.wav > /dev/null 2>&1 &)
+#}
+#function up-beep {
+#	zle up-line-or-history
+#	(aplay /home/pagedmov/sound/sys/move_v.wav > /dev/null 2>&1 &)
+#}
+#function down-beep {
+#	zle down-line-or-history
+#	(aplay /home/pagedmov/sound/sys/move_v.wav > /dev/null 2>&1 &)
+#}
+#zle -N left-beep 
+#zle -N right-beep
+#zle -N up-beep
+#zle -N down-beep
+
+bindkey -v
+
+#bindkey -M viins "^[OD" left-beep
+#bindkey -M viins "^[OC" right-beep
+#bindkey -M viins "^[OB" down-beep
+#bindkey -M viins "^[OA" up-beep
+
+#bindkey -M vicmd "h" left-beep
+#bindkey -M vicmd "l" right-beep
+#bindkey -M vicmd "j" down-beep
+#bindkey -M vicmd "k" up-beep
+#ZSH_AUTOSUGGEST_ACCEPT_WIDGETS+=("right-beep")
+
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne "\e[1 q"  # Change the cursor to a block (normal mode)
+  else
+    echo -ne "\e[5 q"  # Change the cursor to a line (insert mode)
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+  zle-keymap-select 'insert'
+}
+zle -N zle-line-init
+
