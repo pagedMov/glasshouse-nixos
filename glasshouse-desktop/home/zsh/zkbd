@@ -38,15 +38,17 @@ bindkey -M vicmd "k" up-beep
 ZSH_AUTOSUGGEST_ACCEPT_WIDGETS+=("right-beep")
 
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne "\e[1 q"  # Change the cursor to a block (normal mode)
+  if [[ ${KEYMAP} == vicmd ]] || [[ $1 == 'block' ]]; then
+    echo -ne "\e[1 q"  # Change cursor to block (normal mode)
   else
-    echo -ne "\e[5 q"  # Change the cursor to a line (insert mode)
+    echo -ne "\e[5 q"  # Change cursor to line (insert mode)
   fi
 }
-zle -N zle-keymap-select
-zle-line-init() {
-  zle-keymap-select 'insert'
-}
-zle -N zle-line-init
+
+if ! typeset -f zle-line-init | grep -q 'zle-keymap-select'; then
+  zle -N zle-keymap-select
+  zle-line-init() {
+    zle-keymap-select 'insert'
+  }
+  zle -N zle-line-init
+fi
