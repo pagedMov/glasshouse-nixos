@@ -9,7 +9,6 @@
 	 ++ [ (import ./gtk.nix) 	   ]
 	 ++ [ (import ./hyprland)      ]
 	 ++ [ (import ./kitty.nix)     ]
-	 ++ [ (import ./nixvim) 	   ]
 	 ++ [ (import ./scripts) 	   ]
 	 ++ [ (import ./spicetify.nix) ]
 	 ++ [ (import ./starship.nix)  ]
