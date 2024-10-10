@@ -53,7 +53,6 @@
 				disable_hyprland_logo = true;
 				always_follow_on_dnd = true;
 				layers_hog_keyboard_focus = true;
-				initial_workspace_tracking = 2;
 				animate_manual_resizes = false;
 				enable_swallow = true;
 				focus_on_activate = true;
