@@ -38,7 +38,7 @@
 			rofi
 			sqlite
 			starship
-			ranger
+			yazi
 			zathura
 			inkscape
 			imagemagick
