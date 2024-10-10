@@ -7,7 +7,6 @@
 	 ++ [ (import ./cava.nix) 	   ]
 	 ++ [ (import ./fuzzel.nix)    ]
 	 ++ [ (import ./gtk.nix) 	   ]
-	 ++ [ (import ./home.nix) 	   ]
 	 ++ [ (import ./hyprland)      ]
 	 ++ [ (import ./kitty.nix)     ]
 	 ++ [ (import ./nixvim) 	   ]
