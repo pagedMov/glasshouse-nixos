@@ -66,6 +66,5 @@
 		wine
 		wl-clipboard
 		xpad
-		xwaylandvideobridge
 	];
 }
