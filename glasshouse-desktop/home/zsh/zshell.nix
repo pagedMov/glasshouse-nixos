@@ -78,7 +78,6 @@
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.nix-profile/bin:$PATH"
 export UPDATE_ZSH_DAYS=7
-unalias ls
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -307,7 +306,7 @@ if [ "$TERM" = "linux" ] ; then
 fi
 
 clear
-source ~/sysflakes/glasshouse-desktop/home/zsh/.zkbd
+source ~/sysflakes/glasshouse-desktop/home/zsh/zkbd
 ~/coding/scripts/splash.sh
 eval "$(starship init zsh)"
 s_check && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
