@@ -3,6 +3,12 @@
 {
 	wayland.windowManager.hyprland = {
 		settings = {
+
+			monitor = [
+				"DP-1, 1920x1080@144, 1920x0, 1"
+				"HDMI-A-1, 1920x1080, 0x0, 1"
+			];
+
 			exec-once = [
 				"waybar &"
 				"swaync &"

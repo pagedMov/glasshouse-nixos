@@ -330,11 +330,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1728584964,
-        "narHash": "sha256-40093uJyc+pf0CaOtbj5dDiyL0PQ7c5pmnGkfO6Q/hw=",
+        "lastModified": 1728588172,
+        "narHash": "sha256-wCLcOMOyiFHa4MfAT1SR8jj47GcmCXiR93kgFs38bVY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d47d33254fbf4fdbdee9f1f14095f689662e479d",
+        "rev": "8bb5d53c5847d9a9b2ad1bda49f9aa9df0de282a",
         "type": "github"
       },
       "original": {
@@ -838,7 +838,7 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1728547199,
+        "lastModified": 1728587838,
         "narHash": "sha256-PmRJCfpY1PoJ3YP5IjCsQL1vc5zElFowAWJLjUwvlJc=",
         "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim",
         "type": "path"
@@ -982,7 +982,7 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1727237241,
+        "lastModified": 1728587838,
         "narHash": "sha256-S3crmqg/CDKf+QTwnZUR6udyjsvqS0P0y56wGuJmOno=",
         "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/toilet",
         "type": "path"
