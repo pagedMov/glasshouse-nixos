@@ -4,7 +4,7 @@ let
 	toilet = inputs.toilet.packages."x86_64-linux".default;
 in
 {
-	packages = with pkgs; [
+	home.packages = with pkgs; [
 		hello
 		grimblast
 		gtk3
