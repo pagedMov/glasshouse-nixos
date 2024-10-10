@@ -260,7 +260,7 @@ invoke() { nix run nixpkgs#"$@" }
 		'';
 
 		initExtraBeforeCompInit = ''
-			source ~/.zstyle
+			source ~/sysflakes/glasshouse-desktop/home/zsh/zsh-style
 		'';
 		initExtra = ''
 if [ ! -e $HOME/.zsh_history ]; then
@@ -307,7 +307,7 @@ if [ "$TERM" = "linux" ] ; then
 fi
 
 clear
-source ~/.zkbd
+source ~/sysflakes/glasshouse-desktop/home/zsh/.zkbd
 ~/coding/scripts/splash.sh
 eval "$(starship init zsh)"
 s_check && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
