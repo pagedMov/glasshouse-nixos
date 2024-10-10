@@ -1,4 +1,8 @@
 {
+	programs.zoxide = {
+		enable = true;
+		enableZshIntegration = true;
+	};
 	programs.zsh = {
 		enable = true;
 
@@ -15,10 +19,6 @@
 			PROMPT_COMMAND = "if [[ $? != 0 ]]; then s_check && (aplay ~/sound/sys/error.wav 2> /dev/null &); fi";
 		};
 
-		programs.zoxide = {
-			enable = true;
-			enableZshIntegration = true;
-		};
 
 		oh-my-zsh = {
 			enable = true;
