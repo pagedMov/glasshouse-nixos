@@ -169,7 +169,8 @@
 					"alt, grave, togglespecialworkspace, console"
 					"super, mouse_down, workspace, e+1"
 					"super, mouse_up, workspace, e-1"
-					"super, mouse:272, movewindow"
+					"super, mouse:272, moveactive"
+					"super, mouse:273, resizeactive"
 				];
 			};
 		};
