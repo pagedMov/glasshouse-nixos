@@ -170,7 +170,6 @@
 					"super, mouse_down, workspace, e+1"
 					"super, mouse_up, workspace, e-1"
 					"super, mouse:272, movewindow"
-					"super, mouse:273, resize"
 				];
 			};
 		};
