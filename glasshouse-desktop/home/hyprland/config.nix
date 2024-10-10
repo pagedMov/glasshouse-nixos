@@ -1,4 +1,4 @@
-{... }:
+{ ... }:
 
 {
 	wayland.windowManager.hyprland = {
@@ -14,10 +14,9 @@
 				"swaync &"
 				"wl-paste --watch cliphist store &"
 				"wl-clip-persist --clipboard both"
-				"swaybg -m fill -i $(find ~/Pictures/Wallpapers/ -maxdepth 1 -type f) &"
 				"systemctl --user import-environment &"
 				"hash dbus-update-activation-environment 2>/dev/null &"
-		"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
+				"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
 				"aplay /home/pagedmov/sound/sys/login.wav &"
 			];
 
@@ -126,13 +125,12 @@
 					"super, up, exec, pactl set-sink-volume @default_sink@ +10%"
 					"super, down, exec, pactl set-sink-volume @default_sink@ -10%"
 					"super, print, exec, grimblast copy area"
-					"super, a, exec, yazi"
+					"super, a, exec, firefox"
 					"super, q, exec, kitty --title Kitty"
 					"super, d, exec, /home/pagedmov/coding/scripts/switchmon.sh"
 					"super, c, killactive,"
 					"super shift, q, exit,"
-					"super, m, exec, $menu"
-					"super, e, exec, $filemanager"
+					"super, m, exec, fuzzel"
 					"super, r, exec, neovide"
 					"super, p, pseudo, # dwindle"
 					"super, b, togglesplit, # dwindle"
