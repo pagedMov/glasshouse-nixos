@@ -62,7 +62,7 @@ s_check() { [ $SOUNDS_ENABLED -eq 1 ] }
 
 unalias ls
 ls() {
-	eza -1 --group-directories-first --icons "@"
+	eza -1 --group-directories-first --icons "$@"
 	s_check && runbg aplay ~/sound/sys/ls.wav
 }
 
