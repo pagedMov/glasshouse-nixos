@@ -12,7 +12,6 @@
 	 ++ [ (import ./spicetify.nix)    ]
 	 ++ [ (import ./starship.nix)     ]
 	 ++ [ (import ./swaync/swaync.nix)]
-	 ++ [ (import ./toilet) 	      ]
 	 ++ [ (import ./userpkgs.nix)     ]
 	 ++ [ (import ./waybar) 	      ]
 	 ++ [ (import ./zshell.nix)       ];
