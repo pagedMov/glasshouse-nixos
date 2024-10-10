@@ -14,5 +14,5 @@
 	 ++ [ (import ./swaync/swaync.nix)]
 	 ++ [ (import ./userpkgs.nix)     ]
 	 ++ [ (import ./waybar) 	      ]
-	 ++ [ (import ./zshell.nix)       ];
+	 ++ [ (import ./zsh/zshell.nix)   ];
 }
