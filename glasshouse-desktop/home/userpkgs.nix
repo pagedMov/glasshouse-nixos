@@ -8,7 +8,6 @@ in
 		hello
 		gtk3
 		adwaita-icon-theme
-		waybar
 		uhk-agent
 		dunst
 		rofi
