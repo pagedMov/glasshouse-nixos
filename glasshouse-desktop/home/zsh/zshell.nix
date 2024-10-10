@@ -24,7 +24,7 @@
 
 		enableCompletion = true;
 		history = {
-			path = ".zsh_history";
+			path = "$HOME/.zsh_history";
 			save = 10000;
 			size = 10000;
 			share = true;
@@ -100,6 +100,7 @@ nixcommit() {
 	git add .
 	git commit -m "Gen $gen: $@"
 	git push
+	builtin cd -
 }
 
 nixswitch() {
