@@ -2,7 +2,7 @@
 
 {
   programs.waybar.settings.mainBar = {
-    position= "bottom";
+    position= "top";
     layer= "top";
     height= 5;
     margin-top= 0;
