@@ -13,7 +13,6 @@ in
 		rofi
 		sqlite
 		starship
-		yazi
 		zathura
 		inkscape
 		imagemagick

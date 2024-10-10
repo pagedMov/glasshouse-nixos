@@ -12,6 +12,7 @@
 	 ++ [ (import ./spicetify.nix)    ]
 	 ++ [ (import ./starship.nix)     ]
 	 ++ [ (import ./scripts)     	  ]
+	 ++ [ (import ./yazi.nix)         ]
 	 ++ [ (import ./swaync/swaync.nix)]
 	 ++ [ (import ./userpkgs.nix)     ]
 	 ++ [ (import ./waybar) 	      ]
