@@ -36,9 +36,8 @@
 		};
 
 		#glasshouse-desktop dots
-		nvim.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/nixvim";
-		nix-autobahn.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/derivations/nix-autobahn";
-		toilet.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/dotfiles/toilet";
+		nvim.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim";
+		toilet.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/home/toilet";
 	};
 
 	outputs = { nixpkgs, home-manager, self, nvim, toilet, nix-autobahn, ... }@inputs: 
