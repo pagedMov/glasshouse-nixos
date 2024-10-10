@@ -6,7 +6,6 @@ in
 {
 	home.packages = with pkgs; [
 		hello
-		grimblast
 		gtk3
 		adwaita-icon-theme
 		waybar
