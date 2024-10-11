@@ -15,6 +15,9 @@
 			VISUAL = "/nixbin/nvim";
 			LANG = "en_US.UTF-8";
 			BROWSER = "/nixbin/firefox";
+			NVIM = "~/dots/nixvim/config/";
+			HYPRCONF = "~/dots/hyprland/";
+			SYSCONF = "~/sysflakes/glasshouse-desktop/sys";
 		};
 
 		oh-my-zsh = {
@@ -56,7 +59,6 @@
 			hmconf = "nvim $HOME/sysflakes/glasshouse-desktop/home";
 			viflake = "nvim flake.nix";
 			nvimcfg = "nvim $HOME/dots/nixvim/config";
-			zsr = "runbg kitty zsh && kitty @ close-window";
 		};
 	initExtra = ''
 		if [ ! -e $HOME/.zsh_history ]; then
