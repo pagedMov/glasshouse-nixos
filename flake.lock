@@ -81,6 +81,22 @@
         "type": "github"
       }
     },
+    "catppuccin-yazi": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722538198,
+        "narHash": "sha256-oJo52hMSK7mr5f0DtnyaN1FVOSKKUOHWCT80V1qfyrU=",
+        "owner": "catppuccin",
+        "repo": "yazi",
+        "rev": "37dec9bf1f7e52e0d593c225827b9dbc71ce504c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "yazi",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "nixpkgs": [
@@ -838,8 +854,8 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1728600794,
-        "narHash": "sha256-PmRJCfpY1PoJ3YP5IjCsQL1vc5zElFowAWJLjUwvlJc=",
+        "lastModified": 1728630754,
+        "narHash": "sha256-4AcRtmk2axQHKMd07X8fEPXCgiqv0hst7n/bg37CDfI=",
         "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim",
         "type": "path"
       },
@@ -901,6 +917,7 @@
         "catppuccin-bat": "catppuccin-bat",
         "catppuccin-cava": "catppuccin-cava",
         "catppuccin-starship": "catppuccin-starship",
+        "catppuccin-yazi": "catppuccin-yazi",
         "home-manager": "home-manager",
         "hypr-contrib": "hypr-contrib",
         "hyprland": "hyprland",

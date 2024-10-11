@@ -1,12 +1,6 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-# need:
-#vim-markdown
-#vim-sneak
-#vim-slash
-#undotree
-#automkdr.nvim
 	extraPlugins = [
 		(pkgs.vimUtils.buildVimPlugin { # vimwiki
 			name = "vimwiki";

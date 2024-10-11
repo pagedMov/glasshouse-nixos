@@ -1,6 +1,12 @@
 {
-		colorschemes.kanagawa = {
-			enable = true;
+		colorschemes = {
+			catppuccin = {
+				enable = true;
+				settings.flavour = "mocha";
+			};
+			kanagawa = {
+				enable = false;
+			};
 		};
 		
 		diagnostics.signs = false;

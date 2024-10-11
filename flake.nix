@@ -18,18 +18,21 @@
 		};
 
 		catppuccin-bat = {
-		  url = "github:catppuccin/bat";
-		  flake = false;
+			url = "github:catppuccin/bat";
+			flake = false;
 		};
 		catppuccin-cava = {
-		  url = "github:catppuccin/cava";
-		  flake = false;
+			url = "github:catppuccin/cava";
+			flake = false;
 		};
 		catppuccin-starship = {
-		  url = "github:catppuccin/starship";
-		  flake = false;
+			url = "github:catppuccin/starship";
+			flake = false;
 		};
-
+		catppuccin-yazi = {
+			url = "github:catppuccin/yazi";
+			flake = false;
+		};
 		spicetify-nix = {
 			url = "github:gerg-l/spicetify-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
