@@ -11,7 +11,7 @@ git diff --quiet
 if [ $? -eq 0 ]; then
 	scheck && runbg aplay ~/media/sound/sys/warning.wav
 	echo "Nothing to commit"
-	return
+	exit
 fi
 git add .
 git commit -m "Gen $gen: $@"

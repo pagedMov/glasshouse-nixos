@@ -2,7 +2,7 @@
 
 
 echo "This will delete all unused paths in the nix store and delete any files in the gtrash folder."
-echo "\033[1;4;38;2;230;69;83mThis process is irreversible.\033[0m Are you sure?"
+echo -e "\033[1;4;38;2;243;139;168mThis process is irreversible.\033[0m Are you sure?"
 select yn in "Yes" "No"; do
 	case $yn in
 		Yes ) echo "Sweeping system...";scheck && runbg aplay "$HOME/media/sound/sys/collectgarbage.wav";break;;
@@ -12,10 +12,15 @@ done
 output=$(nix-collect-garbage | tee /dev/tty)
 
 nix_freed=$(echo "$output" | grep -oP '\d+(\.\d+)? MiB freed' | cut -d' ' -f1)
-rm_freed=$(du ~/.local/share/Trash/files/* ~/steamlib/.Trash-1000/files/* 2> /dev/null | awk '{sum += $1} END {print sum}')
-rm_freed=$(echo "scale=2; $rm_freed / 1000" | bc)
-/run/current-system/sw/bin/rm -rfv ~/.local/share/Trash/files/*
-/run/current-system/sw/bin/rm -rfv ~/steamlib/.Trash-1000/files/*
+
+if [ "$(ls -A ~/.local/share/Trash/files/ 2>/dev/null)" ]; then
+    rm_freed=$(du ~/.local/share/Trash/files 2> /dev/null)
+	rm_freed=$(echo "scale=2; $rm_freed / 1000" | bc)
+	/run/current-system/sw/bin/rm -rfv ~/.local/share/Trash/files
+	mkdir ~/.local/share/Trash/files
+else
+	rm_freed="0"
+fi
 total_freed=$(echo "$nix_freed + $rm_freed" | bc)
-echo "System cleaning complete, freed $total_freed MiB in total"
+echo -e "System cleaning complete, freed \033[1;4;38;2;166;227;161m$total_freed MiB\033[0m in total"
 scheck && runbg aplay "$HOME/media/sound/sys/rm.wav"
