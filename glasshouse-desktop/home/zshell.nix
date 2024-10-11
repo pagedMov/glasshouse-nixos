@@ -51,7 +51,7 @@
 			psg = "ps aux | grep -v grep | grep -i -e VSZ -e" ;
 			mkdir = "mkdir -p";
 			pk = "pkill -9 -f";
-			zrc = "nvim $HOME/dots/zsh/zshell.nix";
+			zrc = "nvim $HOME/dots/zshell.nix";
 			svcu = "systemctl --user";
 			svc = "sudo systemctl";
 			hyprconf = "nvim $HOME/dots/hyprland/config.nix";
@@ -65,7 +65,7 @@
 		unalias ls
 		ls() {
 			eza -1 --group-directories-first --icons "$@"
-			scheck && runbg aplay ~/sound/sys/ls.wav
+			scheck && runbg aplay ~/media/sound/sys/ls.wav
 		}
 
 		cd() {
@@ -73,7 +73,7 @@
 			eza -1 --group-directories-first --icons "$@"
 			builtin cd "$@" || exit
 			export SOUNDS_ENABLED=1
-			scheck && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
+			scheck && (aplay ~/media/sound/sys/cd.wav > /dev/null 2>&1 &)
 		}
 		if [ ! -e $HOME/.zsh_history ]; then
 			touch $HOME/.zsh_history
@@ -119,7 +119,7 @@
 		unalias ls
 		clear
 		splash
-		scheck && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
+		scheck && runbg aplay ~/media/sound/sys/sh-source.wav
 	'';
 	};
 

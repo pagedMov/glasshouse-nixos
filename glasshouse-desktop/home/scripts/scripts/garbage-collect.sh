@@ -5,7 +5,7 @@ echo "This will delete all unused paths in the nix store and delete any files in
 echo "\033[1;4;38;2;230;69;83mThis process is irreversible.\033[0m Are you sure?"
 select yn in "Yes" "No"; do
 	case $yn in
-		Yes ) echo "Sweeping system...";runbg aplay "$HOME/media/sound/sys/collectgarbage.wav";break;;
+		Yes ) echo "Sweeping system...";scheck && runbg aplay "$HOME/media/sound/sys/collectgarbage.wav";break;;
 		No ) echo "Canceling garbage collection."; return;;
 	esac
 done
@@ -18,4 +18,4 @@ rm_freed=$(echo "scale=2; $rm_freed / 1000" | bc)
 /run/current-system/sw/bin/rm -rfv ~/steamlib/.Trash-1000/files/*
 total_freed=$(echo "$nix_freed + $rm_freed" | bc)
 echo "System cleaning complete, freed $total_freed MiB in total"
-runbg aplay "$HOME/media/sound/sys/rm.wav"
+scheck && runbg aplay "$HOME/media/sound/sys/rm.wav"

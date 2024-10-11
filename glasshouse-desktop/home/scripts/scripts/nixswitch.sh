@@ -1,13 +1,13 @@
 #!/run/current-system/sw/bin/bash
 
-scheck && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
+scheck && runbg aplay ~/media/sound/sys/nixswitch-start.wav
 builtin cd "$HOME/sysflakes" || exit
 
 nix flake update
 sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
-if mycmd; then 
-	s_check && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
+if [ $? -eq 0 ]; then 
+	scheck && runbg aplay ~/media/sound/sys/update.wav
 else
-	s_check && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
+	scheck && runbg aplay ~/media/sound/sys/error.wav
 fi
 builtin cd "$OLDPWD" || exit

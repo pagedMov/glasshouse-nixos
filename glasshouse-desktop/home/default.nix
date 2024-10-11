@@ -17,5 +17,5 @@
 	 ++ [ (import ./userpkgs.nix)     ]
 	 ++ [ (import ./waybar) 	      ]
 	 ++ [ (import ./eza.nix) 	      ]
-	 ++ [ (import ./zsh/zshell.nix)   ];
+	 ++ [ (import ./zshell.nix)   ];
 }
