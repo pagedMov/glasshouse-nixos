@@ -58,92 +58,6 @@
 			nvimcfg = "nvim $HOME/dots/nixvim/config";
 			zsr = "runbg kitty zsh && kitty @ close-window";
 		};
-		initExtraFirst = ''
-
-s_check() { [ $SOUNDS_ENABLED -eq 1 ] }
-
-unalias ls
-ls() {
-	eza -1 --group-directories-first --icons "$@"
-	s_check && runbg aplay ~/sound/sys/ls.wav
-}
-
-garbage-collect() {
-	echo "This will delete all unused paths in the nix store and delete any files in the gtrash folder."
-	echo "\033[1;4;38;2;230;69;83mThis process is irreversible.\033[0m Are you sure? "
-	select yn in "Yes" "No"; do
-		case $yn in
-			Yes ) echo "Sweeping system...";break;;
-			No ) echo "Canceling garbage collection."; return;;
-		esac
-	done
-	output=$(nix-collect-garbage | tee /dev/tty)
-
-	nix_freed=$(echo "$output" | grep -oP '\d+(\.\d+)? MiB freed' | cut -d' ' -f1)
-	rm_freed=$(du ~/.local/share/Trash/files/* ~/steamlib/.Trash-1000/files/* 2> /dev/null | awk '{sum += $1} END {print sum}')
-	rm_freed=$(echo "scale=2; $rm_freed / 1000" | bc)
-	/run/current-system/sw/bin/rm -rfv ~/.local/share/Trash/files/*
-	/run/current-system/sw/bin/rm -rfv ~/steamlib/.Trash-1000/files/*
-	total_freed=$(echo "$nix_freed + $rm_freed" | bc)
-	echo "System cleaning complete, freed $total_freed MiB in total"
-}
-
-cd() {
-	export SOUNDS_ENABLED=0
-	eza -1 --group-directories-first --icons "$@"
-	builtin cd "$@" 
-	export SOUNDS_ENABLED=1
-	s_check && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
-}
-
-mcd() {
-	mkdir -p $1
-	cd $1
-}
-
-crs() {
-	cargo test && \
-	cargo run
-}
-
-nixcommit() {
-	s_check && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
-	builtin cd "$HOME/sysflakes"
-	nix flake update
-	
-	gen=$(readlink /nix/var/nix/profiles/system | sed 's/.*system-\([0-9]*\)-link/\1/')
-	gen=$((gen + 1))
-
-	git diff --quiet
-	if [ $? -eq 0 ]; then
-		echo "Nothing to commit"
-		return
-	fi
-	git add .
-	git commit -m "Gen $gen: $@"
-	git push
-	builtin cd -
-}
-
-nixswitch() {
-	s_check && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
-	builtin cd "$HOME/sysflakes"
-
-	nix flake update
-	sudo nixos-rebuild switch --flake "$HOME/sysflakes#glasshouse"
-	if [ $? -eq 0 ]; then 
-		s_check && (aplay ~/sound/sys/update.wav > /dev/null 2>&1 &)
-	else
-		s_check && (aplay ~/sound/sys/error.wav > /dev/null 2>&1 &)
-	fi
-	builtin cd $OLDPWD
-}
-
-invoke() { nix run nixpkgs#$"@" }
-
-nsp() { nix-shell -p "$@" --run zsh }
-		'';
-
 	initExtra = ''
 		if [ ! -e $HOME/.zsh_history ]; then
 			touch $HOME/.zsh_history
@@ -152,6 +66,8 @@ nsp() { nix-shell -p "$@" --run zsh }
 		setopt APPEND_HISTORY     # Append history to the history file (don't overwrite)
 		setopt INC_APPEND_HISTORY # Append to the history file incrementally
 		setopt SHARE_HISTORY      # Share history between all zsh sessions
+
+		sessionVariables = {
 		setopt CORRECT
 		setopt NO_NOMATCH
 		setopt LIST_PACKED
@@ -187,7 +103,7 @@ nsp() { nix-shell -p "$@" --run zsh }
 		unalias ls
 		clear
 		splash
-		s_check && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
+		scheck && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
 	'';
 	};
 

@@ -136,7 +136,7 @@
 					"super, print, exec, grimblast copy area"
 					"super, a, exec, firefox"
 					"super, q, exec, kitty --title Kitty"
-					"super, d, exec, /home/pagedmov/coding/scripts/switchmon.sh"
+					"super, d, exec, switchmon"
 					"super, c, killactive,"
 					"super shift, q, exit,"
 					"super, m, exec, fuzzel"

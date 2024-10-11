@@ -41,6 +41,7 @@
 		nix-search-cli
 		openssl
 		p7zip
+		jq
 		pamixer
 		parted
 		pass
