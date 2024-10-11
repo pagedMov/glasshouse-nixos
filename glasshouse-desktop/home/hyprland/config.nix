@@ -138,6 +138,7 @@
 					"super, q, exec, kitty --title Kitty"
 					"super, d, exec, switchmon"
 					"super, c, killactive,"
+					"super, e, exec, [float;size 45% 55%;move 10 50] kitty btop"
 					"super shift, q, exit,"
 					"super, m, exec, fuzzel"
 					"super, r, exec, neovide"
