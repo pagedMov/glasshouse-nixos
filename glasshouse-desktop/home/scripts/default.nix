@@ -1,76 +1,84 @@
 {pkgs, ...}: let
-  wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./scripts/wall-change.sh);
-  wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" (builtins.readFile ./scripts/wallpaper-picker.sh);
-  
-  runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
-  music = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/music.sh);
-  lofi = pkgs.writeScriptBin "lofi" (builtins.readFile ./scripts/lofi.sh);
+	wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./scripts/wall-change.sh);
+	wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" (builtins.readFile ./scripts/wallpaper-picker.sh);
 
-  splash = pkgs.writeShellScriptBin "splash" (builtins.readFile ./scripts/splash.sh);
-  switchmon = pkgs.writeShellScriptBin "switchmon" (builtins.readFile ./scripts/switchmon.sh);
-  nixswitch = pkgs.writeShellScriptBin "nixswitch" (builtins.readFile ./scripts/nixswitch.sh);
-  garbage-collect = pkgs.writeShellScriptBin "garbage-collect" (builtins.readFile ./scripts/garbage-collect.sh);
-  scheck = pkgs.writeShellScriptBin "scheck" (builtins.readFile ./scripts/s_check.sh);
-  mcd = pkgs.writeShellScriptBin "mcd" (builtins.readFile ./scripts/mcd.sh);
-  crs = pkgs.writeShellScriptBin "crs" (builtins.readFile ./scripts/crs.sh);
-  nixcommit = pkgs.writeShellScriptBin "nixcommit" (builtins.readFile ./scripts/nixcommit.sh);
-  invoke = pkgs.writeShellScriptBin "invoke" (builtins.readFile ./scripts/invoke.sh);
-  nsp = pkgs.writeShellScriptBin "nsp" (builtins.readFile ./scripts/nsp.sh);
-  
-  
-  toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ./scripts/toggle_blur.sh);
-  toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (builtins.readFile ./scripts/toggle_oppacity.sh);
-  
-  maxfetch = pkgs.writeScriptBin "maxfetch" (builtins.readFile ./scripts/maxfetch.sh);
-  
-  compress = pkgs.writeScriptBin "compress" (builtins.readFile ./scripts/compress.sh);
-  extract = pkgs.writeScriptBin "extract" (builtins.readFile ./scripts/extract.sh);
-  
-  shutdown-script = pkgs.writeScriptBin "shutdown-script" (builtins.readFile ./scripts/shutdown-script.sh);
-  
-  show-keybinds = pkgs.writeScriptBin "show-keybinds" (builtins.readFile ./scripts/keybinds.sh);
-  
-  vm-start = pkgs.writeScriptBin "vm-start" (builtins.readFile ./scripts/vm-start.sh);
+	runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
+	music = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/music.sh);
+	lofi = pkgs.writeScriptBin "lofi" (builtins.readFile ./scripts/lofi.sh);
 
-  ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
-  
-  record = pkgs.writeScriptBin "record" (builtins.readFile ./scripts/record.sh);
+	splash = pkgs.writeShellScriptBin "splash" (builtins.readFile ./scripts/splash.sh);
+	switchmon = pkgs.writeShellScriptBin "switchmon" (builtins.readFile ./scripts/switchmon.sh);
+	nixswitch = pkgs.writeShellScriptBin "nixswitch" (builtins.readFile ./scripts/nixswitch.sh);
+	garbage-collect = pkgs.writeShellScriptBin "garbage-collect" (builtins.readFile ./scripts/garbage-collect.sh);
+	scheck = pkgs.writeShellScriptBin "scheck" (builtins.readFile ./scripts/s_check.sh);
+	mcd = pkgs.writeShellScriptBin "mcd" (builtins.readFile ./scripts/mcd.sh);
+	crs = pkgs.writeShellScriptBin "crs" (builtins.readFile ./scripts/crs.sh);
+	nixcommit = pkgs.writeShellScriptBin "nixcommit" (builtins.readFile ./scripts/nixcommit.sh);
+	invoke = pkgs.writeShellScriptBin "invoke" (builtins.readFile ./scripts/invoke.sh);
+	nsp = pkgs.writeShellScriptBin "nsp" (builtins.readFile ./scripts/nsp.sh);
+	nixp = pkgs.writeShellScriptBin "nixp" (builtins.readFile ./scripts/nixp.sh);
+	nixr = pkgs.writeShellScriptBin "nixr" (builtins.readFile ./scripts/nixr.sh);
+	homep = pkgs.writeShellScriptBin "homep" (builtins.readFile ./scripts/homep.sh);
+	homer = pkgs.writeShellScriptBin "homer" (builtins.readFile ./scripts/homer.sh);
+
+
+	toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ./scripts/toggle_blur.sh);
+	toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (builtins.readFile ./scripts/toggle_oppacity.sh);
+
+	maxfetch = pkgs.writeScriptBin "maxfetch" (builtins.readFile ./scripts/maxfetch.sh);
+
+	compress = pkgs.writeScriptBin "compress" (builtins.readFile ./scripts/compress.sh);
+	extract = pkgs.writeScriptBin "extract" (builtins.readFile ./scripts/extract.sh);
+
+	shutdown-script = pkgs.writeScriptBin "shutdown-script" (builtins.readFile ./scripts/shutdown-script.sh);
+
+	show-keybinds = pkgs.writeScriptBin "show-keybinds" (builtins.readFile ./scripts/keybinds.sh);
+
+	vm-start = pkgs.writeScriptBin "vm-start" (builtins.readFile ./scripts/vm-start.sh);
+
+	ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
+
+	record = pkgs.writeScriptBin "record" (builtins.readFile ./scripts/record.sh);
 in {
-  home.packages = [
-	nixswitch 
-	garbage-collect 
-	scheck 
-	mcd 
-	crs 
-	nixcommit 
-	invoke 
-	nsp 
-    wall-change
-    wallpaper-picker
-    
-    runbg
-    music
-    lofi
+	home.packages = [
+		nixswitch 
+			garbage-collect 
+			scheck 
+			mcd 
+			crs 
+			nixcommit 
+			invoke 
+			nsp 
+			wall-change
+			wallpaper-picker
+			nixp
+			nixr
+			homep
+			homer
 
-	splash
-	switchmon
-  
-    toggle_blur
-    toggle_oppacity
+			runbg
+			music
+			lofi
 
-    maxfetch
+			splash
+			switchmon
 
-    compress
-    extract
+			toggle_blur
+			toggle_oppacity
 
-    shutdown-script
-    
-    show-keybinds
+			maxfetch
 
-    vm-start
+			compress
+			extract
 
-    ascii
+			shutdown-script
 
-    record
-  ];
+			show-keybinds
+
+			vm-start
+
+			ascii
+
+			record
+			];
 }

@@ -108,9 +108,9 @@
 
 				bezier = [
 					"fluent_decel, 0, 0.2, 0.4, 1"
-						"easeOutCirc, 0, 0.55, 0.45, 1"
-						"easeOutCubic, 0.33, 1, 0.68, 1"
-						"easeinoutsine, 0.37, 0, 0.63, 1"
+					"easeOutCirc, 0, 0.55, 0.45, 1"
+					"easeOutCubic, 0.33, 1, 0.68, 1"
+					"easeinoutsine, 0.37, 0, 0.63, 1"
 				];
 
 				animation = [
