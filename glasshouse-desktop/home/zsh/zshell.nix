@@ -165,6 +165,7 @@ nsp() { nix-shell -p "$@" --run zsh }
 		clear
 		splash
 		s_check && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
+		unalias ls
 	'';
 	};
 
