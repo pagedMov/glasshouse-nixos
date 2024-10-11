@@ -1,6 +1,6 @@
 #!/run/current-system/sw/bin/bash
 
-s_check && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
+scheck && (aplay ~/sound/sys/nixswitch-start.wav > /dev/null 2>&1 &)
 builtin cd "$HOME/sysflakes" || exit
 nix flake update
 
