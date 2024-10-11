@@ -61,6 +61,19 @@
 			nvimcfg = "nvim $HOME/dots/nixvim/config";
 		};
 	initExtra = ''
+
+		ls() {
+			eza -1 --group-directories-first --icons "$@"
+			s_check && runbg aplay ~/sound/sys/ls.wav
+		}
+
+		cd() {
+			export SOUNDS_ENABLED=0
+			eza -1 --group-directories-first --icons "$@"
+			builtin cd "$@" || exit
+			export SOUNDS_ENABLED=1
+			s_check && (aplay ~/sound/sys/cd.wav > /dev/null 2>&1 &)
+		}
 		if [ ! -e $HOME/.zsh_history ]; then
 			touch $HOME/.zsh_history
 			chmod 600 $HOME/.zsh_history
