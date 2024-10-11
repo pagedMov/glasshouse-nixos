@@ -158,7 +158,10 @@ nsp() { nix-shell -p "$@" --run zsh }
 		autoload -U down-line-or-beginning-search; zle -N down-line-or-beginning-search
 
 		bindkey -v
-		
+		type starship_zle-keymap-select >/dev/null || \
+		{
+			eval "$(starship init zsh)"
+		}
 		clear
 		splash
 		s_check && (aplay ~/sound/sys/sh-source.wav > /dev/null 2>&1 &)
