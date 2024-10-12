@@ -854,13 +854,13 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1728747549,
+        "lastModified": 1,
         "narHash": "sha256-9n6nu8BS4MWpoQLyDqyGXaeJb6G9IzwQgbFjwvBdPL0=",
-        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim",
+        "path": "./pkgs/nixvim",
         "type": "path"
       },
       "original": {
-        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim",
+        "path": "./pkgs/nixvim",
         "type": "path"
       }
     },
@@ -999,13 +999,13 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1728587838,
+        "lastModified": 1,
         "narHash": "sha256-S3crmqg/CDKf+QTwnZUR6udyjsvqS0P0y56wGuJmOno=",
-        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/toilet",
+        "path": "./pkgs/toilet",
         "type": "path"
       },
       "original": {
-        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/toilet",
+        "path": "./pkgs/toilet",
         "type": "path"
       }
     },
