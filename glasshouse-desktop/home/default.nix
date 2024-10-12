@@ -1,4 +1,4 @@
-{ nur, inputs, username, system, ... }:
+{ nur, self, inputs, username, system, ... }:
 
 {
 	imports = 

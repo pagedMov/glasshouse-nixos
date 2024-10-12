@@ -1,4 +1,4 @@
-{ ... }:
+{ self, ... }:
 
 {
 	programs.zoxide = {
@@ -15,9 +15,9 @@
 			VISUAL = "/nixbin/nvim";
 			LANG = "en_US.UTF-8";
 			BROWSER = "/nixbin/firefox";
-			NVIM = "~/dots/nixvim/config/";
-			HYPRCONF = "~/dots/hyprland/";
-			SYSCONF = "~/sysflakes/glasshouse-desktop/sys";
+			NVIM = "${self}/nixvim/config/";
+			HYPRCONF = "${self}/hyprland/";
+			SYSCONF = "${self}/glasshouse-desktop/sys";
 		};
 
 		oh-my-zsh = {
@@ -65,7 +65,7 @@
 		unalias ls
 		ls() {
 			eza -1 --group-directories-first --icons "$@"
-			scheck && runbg aplay ~/media/sound/sys/ls.wav
+			scheck && runbg aplay ${self}/media/sound/ls.wav
 		}
 
 		cd() {
@@ -73,7 +73,7 @@
 			eza -1 --group-directories-first --icons "$@"
 			builtin cd "$@" || exit
 			export SOUNDS_ENABLED=1
-			scheck && (aplay ~/media/sound/sys/cd.wav > /dev/null 2>&1 &)
+			scheck && runbg aplay ${self}/media/sound/cd.wav
 		}
 		if [ ! -e $HOME/.zsh_history ]; then
 			touch $HOME/.zsh_history
@@ -119,7 +119,7 @@
 		unalias ls
 		clear
 		splash
-		scheck && runbg aplay ~/media/sound/sys/sh-source.wav
+		scheck && runbg aplay ${self}/media/sound/sh-source.wav
 	'';
 	};
 

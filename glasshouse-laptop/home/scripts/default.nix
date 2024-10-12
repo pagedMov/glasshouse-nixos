@@ -1,84 +1,60 @@
-{pkgs, ...}: let
-	wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./scripts/wall-change.sh);
-	wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" (builtins.readFile ./scripts/wallpaper-picker.sh);
+{ ... }:  
 
-	runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
-	music = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/music.sh);
-	lofi = pkgs.writeScriptBin "lofi" (builtins.readFile ./scripts/lofi.sh);
-
-	splash = pkgs.writeShellScriptBin "splash" (builtins.readFile ./scripts/splash.sh);
-	switchmon = pkgs.writeShellScriptBin "switchmon" (builtins.readFile ./scripts/switchmon.sh);
-	nixswitch = pkgs.writeShellScriptBin "nixswitch" (builtins.readFile ./scripts/nixswitch.sh);
-	garbage-collect = pkgs.writeShellScriptBin "garbage-collect" (builtins.readFile ./scripts/garbage-collect.sh);
-	scheck = pkgs.writeShellScriptBin "scheck" (builtins.readFile ./scripts/s_check.sh);
-	mcd = pkgs.writeShellScriptBin "mcd" (builtins.readFile ./scripts/mcd.sh);
-	crs = pkgs.writeShellScriptBin "crs" (builtins.readFile ./scripts/crs.sh);
-	nixcommit = pkgs.writeShellScriptBin "nixcommit" (builtins.readFile ./scripts/nixcommit.sh);
-	invoke = pkgs.writeShellScriptBin "invoke" (builtins.readFile ./scripts/invoke.sh);
-	nsp = pkgs.writeShellScriptBin "nsp" (builtins.readFile ./scripts/nsp.sh);
-	nixp = pkgs.writeShellScriptBin "nixp" (builtins.readFile ./scripts/nixp.sh);
-	nixr = pkgs.writeShellScriptBin "nixr" (builtins.readFile ./scripts/nixr.sh);
-	homep = pkgs.writeShellScriptBin "homep" (builtins.readFile ./scripts/homep.sh);
-	homer = pkgs.writeShellScriptBin "homer" (builtins.readFile ./scripts/homer.sh);
-
-
-	toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ./scripts/toggle_blur.sh);
-	toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (builtins.readFile ./scripts/toggle_oppacity.sh);
-
-	maxfetch = pkgs.writeScriptBin "maxfetch" (builtins.readFile ./scripts/maxfetch.sh);
-
-	compress = pkgs.writeScriptBin "compress" (builtins.readFile ./scripts/compress.sh);
-	extract = pkgs.writeScriptBin "extract" (builtins.readFile ./scripts/extract.sh);
-
-	shutdown-script = pkgs.writeScriptBin "shutdown-script" (builtins.readFile ./scripts/shutdown-script.sh);
-
-	show-keybinds = pkgs.writeScriptBin "show-keybinds" (builtins.readFile ./scripts/keybinds.sh);
-
-	vm-start = pkgs.writeScriptBin "vm-start" (builtins.readFile ./scripts/vm-start.sh);
-
-	ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
-
-	record = pkgs.writeScriptBin "record" (builtins.readFile ./scripts/record.sh);
-in {
+let
+	compress = import ./compress.nix;
+	crs = import ./crs.nix;
+	extract = import ./extract.nix;
+	garbage-collect = import ./garbage-collect.nix;
+	homep = import ./homep.nix;
+	homer = import ./homer.nix;
+	invoke = import ./invoke.nix;
+	lofi = import ./lofi.nix;
+	maxfetch = import ./maxfetch.nix;
+	mcd = import ./mcd.nix;
+	music = import ./music.nix;
+	nixcommit = import ./nixcommit.nix;
+	nixp = import ./nixp.nix;
+	nixr = import ./nixr.nix;
+	nixswitch = import ./nixswitch.nix;
+	nsp = import ./nsp.nix;
+	record = import ./record.nix;
+	runbg = import ./runbg.nix;
+	s_check = import ./s_check.nix;
+	shutdown-script = import ./shutdown-script.nix;
+	splash = import ./splash.nix;
+	switchmon = import ./switchmon.nix;
+	toggle_blur = import ./toggle_blur.nix;
+	toggle_float = import ./toggle_float.nix;
+	toggle_oppacity = import ./toggle_oppacity.nix;
+	toggle_waybar = import ./toggle_waybar.nix;
+in
+{
 	home.packages = [
 		nixswitch 
-			garbage-collect 
-			scheck 
-			mcd 
-			crs 
-			nixcommit 
-			invoke 
-			nsp 
-			wall-change
-			wallpaper-picker
-			nixp
-			nixr
-			homep
-			homer
-
-			runbg
-			music
-			lofi
-
-			splash
-			switchmon
-
-			toggle_blur
-			toggle_oppacity
-
-			maxfetch
-
-			compress
-			extract
-
-			shutdown-script
-
-			show-keybinds
-
-			vm-start
-
-			ascii
-
-			record
-			];
+		garbage-collect 
+		mcd 
+		crs 
+		nixcommit 
+		invoke 
+		nsp 
+		nixp
+		nixr
+		homep
+		s_check
+		homer
+		runbg
+		music
+		lofi
+		splash
+		switchmon
+		toggle_blur
+		toggle_float
+		toggle_oppacity
+		toggle_waybar
+		maxfetch
+		compress
+		extract
+		shutdown-script
+		record
+	];
 }
