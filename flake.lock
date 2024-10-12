@@ -855,10 +855,13 @@
       },
       "locked": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "lastModified": 1,
         "narHash": "sha256-4AcRtmk2axQHKMd07X8fEPXCgiqv0hst7n/bg37CDfI=",
         "path": "./pkgs/nixvim",
 =======
+=======
+>>>>>>> Stashed changes
         "lastModified": 1728747549,
         "narHash": "sha256-9n6nu8BS4MWpoQLyDqyGXaeJb6G9IzwQgbFjwvBdPL0=",
         "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim",
