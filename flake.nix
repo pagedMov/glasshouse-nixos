@@ -3,7 +3,7 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+		nur.url = "github:nix-community/NUR";
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -43,7 +43,7 @@
 		toilet.url = "path:./pkgs/toilet";
 	};
 
-	outputs = { nixpkgs, home-manager, self, nvim, toilet, ... }@inputs: 
+	outputs = { nixpkgs, nur, home-manager, self, nvim, toilet, ... }@inputs: 
 	let
 		system = "x86_64-linux";
         username = "pagedmov";
@@ -57,6 +57,7 @@
 				inherit system;
 				modules = [ 
 					./glasshouse-desktop/sys 
+					nur.nixosModules.nur
 				];
 			};
 			

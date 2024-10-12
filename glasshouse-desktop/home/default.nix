@@ -1,9 +1,10 @@
-{ inputs, username, system, ... }:
+{ nur, inputs, username, system, ... }:
 
 {
 	imports = 
 		[ (import ./btop.nix) 	      ]
 	 ++ [ (import ./bat.nix) 	      ]
+	 ++ [ (import ./firefox.nix) 	  ]
 	 ++ [ (import ./cava.nix) 	      ]
 	 ++ [ (import ./fuzzel.nix)       ]
 	 ++ [ (import ./gtk.nix) 	      ]

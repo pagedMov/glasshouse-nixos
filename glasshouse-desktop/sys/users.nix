@@ -1,12 +1,15 @@
 { config, inputs, pkgs, username, ... }:
 
+let
+	nur = config.nur;
+in
 {
 	imports = [ inputs.home-manager.nixosModules.home-manager ];
 	home-manager = {
 		useUserPackages = true;
 		useGlobalPkgs = true;
 		backupFileExtension = "backup";
-		extraSpecialArgs = { inherit inputs username; };
+		extraSpecialArgs = { inherit inputs username nur; };
 		users.${username} = {
 			programs.home-manager.enable = true;
 			imports = [ ./../home ];

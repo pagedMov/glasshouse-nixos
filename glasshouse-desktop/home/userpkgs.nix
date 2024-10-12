@@ -5,7 +5,6 @@ let
 in
 {
 	home.packages = with pkgs; [
-		hello
 		gtk3
 		adwaita-icon-theme
 		uhk-agent
@@ -16,7 +15,6 @@ in
 		zathura
 		inkscape
 		imagemagick
-		firefox
 		yt-dlp
 		vlc
 		speedtest-cli

@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, self, username, ... }:
+{ inputs, nixpkgs, config, username, ... }:
 
 {
 	imports = 
