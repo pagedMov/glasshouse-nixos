@@ -1,3 +1,7 @@
+{ self, pkgs }:
+
+
+pkgs.writeShellScriptBin "music" (''
 #!/usr/bin/env bash
 
 if (ps aux | grep audacious | grep -v grep > /dev/null) then
@@ -8,3 +12,4 @@ else
     audtool playlist-repeat-status |grep "on" || audtool playlist-repeat-toggle
     audtool playlist-shuffle-status|grep "on" || audtool playlist-shuffle-toggle
 fi
+	'')

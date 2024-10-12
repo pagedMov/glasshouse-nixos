@@ -1,3 +1,7 @@
+{ self, pkgs }:
+
+
+pkgs.writeShellScriptBin "homep" (''
 #!/run/current-system/sw/bin/bash
 
 # Ensure the package manifest is generated or updated
@@ -13,8 +17,8 @@ selected_packages=$(cat /tmp/nixpkgs_manifest.txt | fzf -m)
 if [ -n "$selected_packages" ]; then
     echo "$selected_packages" | while read -r package; do
         # Append each selected package to the Nix config file
-        sed -i "/^\t]/i \ \t\t$package" "$HOME/sysflakes/glasshouse-desktop/sys/packages.nix"
-        echo "Added $package to the Nix configuration."
+        sed -i "/^\t]/i \ \t\t$package" "$HOME/sysflakes/glasshouse-desktop/home/userpkgs.nix"
+        echo "Added $package to the Home Manager configuration."
     done
 
 	echo "Packages added successfully. Rebuild system config?"
@@ -28,3 +32,4 @@ if [ -n "$selected_packages" ]; then
 else
     echo "No packages selected."
 fi
+	'')

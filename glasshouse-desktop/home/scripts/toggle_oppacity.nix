@@ -1,3 +1,7 @@
+{ self, pkgs }:
+
+
+pkgs.writeShellScriptBin "toggle_oppacity" (''
 #!/usr/bin/env bash
 
 if hyprctl getoption decoration:active_opacity | grep "float: 1" >/dev/null ; then
@@ -7,3 +11,4 @@ else
     hyprctl keyword decoration:active_opacity 1 >/dev/null
     hyprctl keyword decoration:inactive_opacity 1 >/dev/null
 fi
+	'')

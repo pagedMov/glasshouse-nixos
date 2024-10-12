@@ -1,3 +1,7 @@
+{ self, pkgs }:
+
+
+pkgs.writeShellScriptBin "toggle_waybar" (''
 #!/usr/bin/env bash
 
 SERVICE=".waybar-wrapped"
@@ -8,3 +12,4 @@ then
 else
   runbg waybar
 fi
+	'')

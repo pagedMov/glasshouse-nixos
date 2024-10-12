@@ -141,6 +141,7 @@
 					"super, c, killactive,"
 					"super, e, exec, [float;size 45% 70%;move 10 50] kitty btop"
 					"super, n, exec, [float;size 50% 35%;move 10 50] pavucontrol"
+					"super, p, exec, aplay ~/media/sound/soundtest.wav"
 					"super shift, q, exit,"
 					"super, m, exec, fuzzel"
 					"super, r, exec, neovide"

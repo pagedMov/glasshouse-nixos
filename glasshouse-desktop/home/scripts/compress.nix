@@ -1,3 +1,7 @@
+{ self, pkgs }:
+
+
+pkgs.writeShellScriptBin "compress" (''
 #!/usr/bin/env bash
 
 if (( $# == 1 )) then
@@ -8,3 +12,4 @@ if (( $# == 1 )) then
 else
     echo "Wrong number of arguments..."
 fi
+	'')

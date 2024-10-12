@@ -1,3 +1,7 @@
+{ self, pkgs }:
+
+
+pkgs.writeShellScriptBin "lofi" (''
 #!/usr/bin/env bash
 
 if (ps aux | grep mpv | grep -v grep > /dev/null) then
@@ -5,3 +9,4 @@ if (ps aux | grep mpv | grep -v grep > /dev/null) then
 else
     runbg mpv --no-video https://www.youtube.com/live/jfKfPfyJRdk?si=OF0HKrYFFj33BzMo
 fi
+	'')

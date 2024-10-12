@@ -1,3 +1,7 @@
+{ self, pkgs }:
+
+
+pkgs.writeShellScriptBin "runbg" (''
 #!/usr/bin/env bash
 
 [ $# -eq 0 ] && {  # $# is number of args
@@ -14,3 +18,4 @@ tty -s && exec </dev/null      # if stdin is a terminal, redirect from null
 tty -s <&1 && exec >/dev/null  # if stdout is a terminal, redirect to null
 tty -s <&2 && exec 2>&1        # stderr to stdout (which might not be null)
 "$prog" "$@" &  # $@ is all args
+	'')

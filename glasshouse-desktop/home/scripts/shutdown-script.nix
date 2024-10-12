@@ -1,3 +1,7 @@
+{ self, pkgs }:
+
+
+pkgs.writeShellScriptBin "shutdown-script" (''
 #!/usr/bin/env zsh
 
 respond="$(echo " Shutdown\n Restart\n Cancel" | rofi -dmenu)"
@@ -13,3 +17,4 @@ then
 else
     notify-send "cancel shutdown"
 fi
+	'')

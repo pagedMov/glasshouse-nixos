@@ -1,3 +1,7 @@
+{ self, pkgs }:
+
+
+pkgs.writeShellScriptBin "toggle_blur" (''
 #!/usr/bin/env bash
 
 if hyprctl getoption decoration:blur:enabled | grep "int: 1" >/dev/null ; then
@@ -5,3 +9,4 @@ if hyprctl getoption decoration:blur:enabled | grep "int: 1" >/dev/null ; then
 else
     hyprctl keyword decoration:blur:enabled true >/dev/null
 fi
+	'')
