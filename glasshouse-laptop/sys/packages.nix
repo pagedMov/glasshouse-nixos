@@ -31,7 +31,6 @@
 		lsof
 		lua-language-server
 		luarocks
-		mesa
 		mpd
 		mullvad
 		neofetch
@@ -62,7 +61,6 @@
 		usbutils
 		vim
 		vscode-langservers-extracted
-		vulkan-loader
 		wget
 		wine
 		wl-clipboard

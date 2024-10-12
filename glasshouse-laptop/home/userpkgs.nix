@@ -8,13 +8,10 @@ in
 		hello
 		gtk3
 		adwaita-icon-theme
-		uhk-agent
 		dunst
-		rofi
 		sqlite
 		starship
 		zathura
-		inkscape
 		imagemagick
 		firefox
 		yt-dlp
@@ -24,12 +21,10 @@ in
 		qbittorrent
 		obs-studio
 		neovide
-		chromium
 		zsh
 		zsh-syntax-highlighting
 		zsh-history-substring-search
 		zsh-autosuggestions
-		audacity
 		snes9x-gtk
 		rustup
 		libreoffice
