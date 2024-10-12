@@ -5,11 +5,13 @@
 		enable = true;
 		enableZshIntegration = false;
 		settings = {
-# right_format = "$cmd_duration";
+		# right_format = "";
 
 			format = lib.concatStrings [
-			"($username)(bold white)"
-			"($directory)"
+				"($username)(bold white)($cmd_duration)($character)$line_break"
+				"($git_branch)($git_status)$line_break"
+				"($directory)$line_break"
+				"[   ](bold #89b4fa)"
 			];
 
 			
@@ -24,18 +26,24 @@
 			};
 
 			character = {
-				success_symbol = "[ ](bold #89b4fa)[ ➜](bold green)";
-				error_symbol = "[ ](bold #89b4fa)[ ➜](bold red)";
+				success_symbol = "[ -> ](bold green)";
+				error_symbol = "[ -> ✗](bold red)";
 # error_symbol = "[ ](bold #89dceb)[ ✗](bold red)";
 			};
 
 			cmd_duration = {
-				format = "[󰔛 $duration]($style)";
+				format = "[ 󰔛 $duration]($style)";
 				disabled = false;
 				style = "bg:none fg:#f9e2af";
 				show_notifications = false;
 				min_time_to_notify = 60000;
-			};        
+			};
+			git_branch = {
+				format = "on [$symbol$branch](bold purple)";  
+				symbol = " ";  
+				truncation_length = 15;
+				style = "bold purple";
+			};
 
 			palette = "catppuccin_mocha";
 		} // builtins.fromTOML (builtins.readFile "${inputs.catppuccin-starship}/themes/mocha.toml");

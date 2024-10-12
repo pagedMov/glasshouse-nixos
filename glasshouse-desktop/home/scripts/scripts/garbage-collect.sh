@@ -14,7 +14,7 @@ output=$(nix-collect-garbage | tee /dev/tty)
 nix_freed=$(echo "$output" | grep -oP '\d+(\.\d+)? MiB freed' | cut -d' ' -f1)
 
 if [ "$(ls -A ~/.local/share/Trash/files/ 2>/dev/null)" ]; then
-    rm_freed=$(du ~/.local/share/Trash/files 2> /dev/null)
+    rm_freed=$(du ~/.local/share/Trash/files 2> /dev/null | awk '{print $1}')
 	rm_freed=$(echo "scale=2; $rm_freed / 1000" | bc)
 	/run/current-system/sw/bin/rm -rfv ~/.local/share/Trash/files
 	mkdir ~/.local/share/Trash/files
