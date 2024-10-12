@@ -38,31 +38,34 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		agenix.url = "github:ryantm/agenix";
-
 		#glasshouse-desktop dots
 		nvim.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim";
 		toilet.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/home/toilet";
 	};
 
-	outputs = { nixpkgs, home-manager, self, agenix, nvim, toilet, ... }@inputs: 
+	outputs = { nixpkgs, home-manager, self, nvim, toilet, ... }@inputs: 
 	let
 		system = "x86_64-linux";
         username = "pagedmov";
-		allowed-unfree-packages = [
-             "foundryvtt"
-           ];
 	in
 	{
 		nixosConfigurations = {
-			glasshouse = nixpkgs.lib.nixosSystem {
+			glasshouse-desktop = nixpkgs.lib.nixosSystem {
 				specialArgs = { 
-					inherit self inputs allowed-unfree-packages username;
+					inherit self inputs username;
 				};
 				inherit system;
 				modules = [ 
 					./glasshouse-desktop/sys 
-					agenix.nixosModules.default 
+				];
+			};
+			
+			glasshouse-laptop = nixpkgs.lib.nixosSystem {
+				specialArgs = {
+					inherit self inputs username;
+				};
+				modules = [
+					./glasshouse-laptop/sys
 				];
 			};
 		};
