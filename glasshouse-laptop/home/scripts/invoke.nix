@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	invoke = pkgs.writeShellScriptBin "invoke" (''

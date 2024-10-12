@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	extract = pkgs.writeShellScriptBin "extract" (''

@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	toggle_float = pkgs.writeShellScriptBin "toggle_float" (''

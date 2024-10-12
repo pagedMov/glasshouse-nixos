@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	homep = pkgs.writeShellScriptBin "homep" (''

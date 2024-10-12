@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	maxfetch = pkgs.writeShellScriptBin "maxfetch" (''

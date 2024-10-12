@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	power-menu = pkgs.writeShellScriptBin "power-menu" (''

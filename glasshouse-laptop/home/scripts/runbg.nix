@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	runbg = pkgs.writeShellScriptBin "runbg" (''

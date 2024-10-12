@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	nsp = pkgs.writeShellScriptBin "nsp" (''

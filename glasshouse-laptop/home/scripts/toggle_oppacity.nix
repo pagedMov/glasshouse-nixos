@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	toggle_oppacity = pkgs.writeShellScriptBin "toggle_oppacity" (''

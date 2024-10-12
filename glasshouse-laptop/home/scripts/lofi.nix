@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	lofi = pkgs.writeShellScriptBin "lofi" (''

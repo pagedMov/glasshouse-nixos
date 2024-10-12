@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	music = pkgs.writeShellScriptBin "music" (''

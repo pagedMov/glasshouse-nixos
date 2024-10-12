@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	garbage-collect = pkgs.writeShellScriptBin "garbage-collect" (''

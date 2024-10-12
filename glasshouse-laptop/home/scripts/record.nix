@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	record = pkgs.writeShellScriptBin "record" (''

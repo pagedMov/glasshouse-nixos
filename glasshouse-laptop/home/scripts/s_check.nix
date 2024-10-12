@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	s_check = pkgs.writeShellScriptBin "s_check" (''

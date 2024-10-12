@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	keybinds = pkgs.writeShellScriptBin "keybinds" (''

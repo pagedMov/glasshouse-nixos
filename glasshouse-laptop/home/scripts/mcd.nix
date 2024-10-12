@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	mcd = pkgs.writeShellScriptBin "mcd" (''

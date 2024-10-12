@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	toggle_waybar = pkgs.writeShellScriptBin "toggle_waybar" (''

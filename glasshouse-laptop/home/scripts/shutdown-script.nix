@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	shutdown-script = pkgs.writeShellScriptBin "shutdown-script" (''

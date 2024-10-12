@@ -1,10 +1,10 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	nixcommit = pkgs.writeShellScriptBin "nixcommit" (''
 #!/run/current-system/sw/bin/bash
 
-scheck && runbg aplay ~/media/sound/sys/nixswitch-start.wav
+scheck && runbg aplay ${self}/media/sound/nixswitch-start.wav
 builtin cd "$HOME/sysflakes" || exit
 nix flake update
 if [ -n "$2" ]; then
@@ -17,14 +17,14 @@ gen=$((gen + 1))
 
 diffcheck=$(git status | grep "working tree clean")
 if [ -n "$diffcheck" ]; then
-	scheck && runbg aplay ~/media/sound/sys/warning.wav
+	scheck && runbg aplay ${self}/media/sound/warning.wav
 	echo "Nothing to commit"
 	exit
 fi
 git add .
 git commit -m "Gen $gen: $1"
 git push
-scheck && runbg aplay ~/media/sound/sys/gitpush.wav
+scheck && runbg aplay ${self}/media/sound/gitpush.wav
 builtin cd - || exit
 	'');
 }

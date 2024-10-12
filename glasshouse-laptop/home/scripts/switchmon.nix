@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	switchmon = pkgs.writeShellScriptBin "switchmon" (''

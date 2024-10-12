@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	compress = pkgs.writeShellScriptBin "compress" (''

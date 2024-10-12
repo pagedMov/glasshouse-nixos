@@ -1,4 +1,4 @@
-{ pkgs }:
+{ self, pkgs }:
 
 {
 	toggle_blur = pkgs.writeShellScriptBin "toggle_blur" (''
