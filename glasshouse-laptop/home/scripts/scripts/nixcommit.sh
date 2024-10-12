@@ -18,7 +18,7 @@ if [ -n "$diffcheck" ]; then
 	exit
 fi
 git add .
-git commit -m "(Laptop) Gen $gen: $1"
+git commit -m "Gen $gen: $1"
 git push
 scheck && runbg aplay ~/media/sound/sys/gitpush.wav
 builtin cd - || exit

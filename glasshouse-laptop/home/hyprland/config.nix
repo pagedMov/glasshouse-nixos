@@ -5,7 +5,8 @@
 		settings = {
 
 			monitor = [
-				"eDP-1, 1920x1080@144, 1920x0, 1"
+				"DP-1, 1920x1080@144, 1920x0, 1"
+				"HDMI-A-1, 1920x1080, 0x0, 1"
 			];
 
 			exec-once = [
@@ -20,12 +21,12 @@
 			];
 
 			workspace = [
-				"1,persistent=true,monitor:eDP-1"
-				"2,persistent=true,monitor:eDP-1"
-				"3,persistent=true,monitor:eDP-1"
-				"4,persistent=true,monitor:eDP-1"
-				"5,persistent=true,monitor:eDP-1"
-				"6,persistent=true,monitor:eDP-1"
+				"1,persistent=true,monitor:HDMI-A-1"
+				"2,persistent=true,monitor:HDMI-A-1"
+				"3,persistent=true,monitor:HDMI-A-1"
+				"4,persistent=true,monitor:DP-1"
+				"5,persistent=true,monitor:DP-1"
+				"6,persistent=true,monitor:DP-1"
 			];
 
 			input = {
