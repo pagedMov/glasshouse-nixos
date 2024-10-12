@@ -38,9 +38,9 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		#glasshouse-desktop dots
-		nvim.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim";
-		toilet.url = "path:/home/pagedmov/sysflakes/glasshouse-desktop/home/toilet";
+		#glasshouse dots
+		nvim.url = "path:./pkgs/nixvim";
+		toilet.url = "path:./pkgs/toilet";
 	};
 
 	outputs = { nixpkgs, home-manager, self, nvim, toilet, ... }@inputs: 

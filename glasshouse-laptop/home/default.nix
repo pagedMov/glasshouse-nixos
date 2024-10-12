@@ -17,5 +17,6 @@
 	 ++ [ (import ./userpkgs.nix)     ]
 	 ++ [ (import ./waybar) 	      ]
 	 ++ [ (import ./eza.nix) 	      ]
-	 ++ [ (import ./zshell.nix)       ];
+	 ++ [ (import ./zshell.nix)       ]
+	 ++ [ (import ./git.nix)          ];
 }

@@ -10,7 +10,8 @@
 	 ++ [ (import ./programs.nix) ]
 	 ++ [ (import ./services.nix) ]
 	 ++ [ (import ./system.nix) ]
-	 ++ [ (import ./users.nix) ];
+	 ++ [ (import ./users.nix) ]
+	 ++ [ (import ./keyd.nix) ];
 
 	environment.systemPackages = with pkgs; [
 		acpi

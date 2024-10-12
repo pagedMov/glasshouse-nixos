@@ -10,8 +10,7 @@
 			preload = [ "/home/${username}/Pictures/Wallpapers/cat-leaves.png" ];
 
 			wallpaper = [
-				"DP-1,/home/${username}/Pictures/Wallpapers/cat-leaves.png" 
-				"HDMI-A-1,/home/${username}/Pictures/Wallpapers/cat-leaves.png" 
+				"eDP-1,/home/${username}/Pictures/Wallpapers/cat-leaves.png" 
 			];
 		};
 	};
