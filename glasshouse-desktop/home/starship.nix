@@ -5,13 +5,14 @@
 		enable = true;
 		enableZshIntegration = false;
 		settings = {
+			add_newline = true;
 		# right_format = "";
 
 			format = lib.concatStrings [
-				"($username)(bold white)($cmd_duration)($character)$line_break"
-				"($git_branch)($git_status)$line_break"
-				"($directory)$line_break"
-				"[   ](bold #89b4fa)"
+				"($username)(bold white)($cmd_duration)($character)"
+				"($git_branch)($git_status)"
+				"($directory)"
+				"$line_break[   ](bold #89b4fa)"
 			];
 
 			
@@ -21,7 +22,7 @@
 				format = "[$user]($style)";
 			};
 			directory = {
-				format = "[$path](bold cyan)[/](bold green) ";
+				format = "\n[$path](bold cyan)[/](bold green) ";
 				style = "bold #b4befe";
 			};
 
@@ -39,7 +40,7 @@
 				min_time_to_notify = 60000;
 			};
 			git_branch = {
-				format = "on [$symbol$branch](bold purple)";  
+				format = "\non [$symbol$branch](bold purple)";  
 				symbol = " ";  
 				truncation_length = 15;
 				style = "bold purple";

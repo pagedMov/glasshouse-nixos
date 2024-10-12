@@ -11,6 +11,7 @@
     margin-right= 0;
     modules-left= [
         "custom/launcher" 
+		"custom/separator"
         "hyprland/workspaces"
     ];
     modules-center= [
@@ -18,12 +19,15 @@
     ];
     modules-right= [
         "tray" 
+		"custom/separator"
         "cpu"
         "memory"
         "disk"
+		"custom/separator"
         "pulseaudio" 
         "battery"
         "network"
+		"custom/separator"
         "custom/notification"
     ];
     clock= {
@@ -136,5 +140,10 @@
         on-click-right = "swaync-client -d -sw";
         escape = true;
     };
+	"custom/separator" =  {
+		exec = "echo ' | '";
+		interval = 600; 
+		tooltip = false;
+	};
   };
 }
