@@ -6,11 +6,11 @@
 		enableZshIntegration = false;
 		settings = {
 			add_newline = true;
-		# right_format = "";
+			right_format = "($custom)";
 
 			format = lib.concatStrings [
 				"($username)(bold white)($cmd_duration)($character)"
-				"($git_branch)($git_status)"
+				"($git_branch)($git_status)($rust)($nix-shell)"
 				"($directory)"
 				"$line_break[   ](bold #89b4fa)"
 			];
@@ -39,11 +39,19 @@
 				show_notifications = false;
 				min_time_to_notify = 60000;
 			};
+
 			git_branch = {
 				format = "\non [$symbol$branch](bold purple)";  
 				symbol = " ";  
 				truncation_length = 15;
 				style = "bold purple";
+			};
+
+			custom.shellver = {
+				command = "zsh --version";
+				when = ''test $SHELL = "/run/current-system/sw/bin/zsh"'';
+				symbol = "";
+				style = "bold magenta";
 			};
 
 			palette = "catppuccin_mocha";
