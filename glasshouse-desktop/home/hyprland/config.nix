@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 
 {
 	wayland.windowManager.hyprland = {
@@ -17,7 +17,7 @@
 				"systemctl --user import-environment &"
 				"hash dbus-update-activation-environment 2>/dev/null &"
 				"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
-				"aplay /home/pagedmov/sound/sys/login.wav &"
+				"aplay /home/${username}/sound/sys/login.wav &"
 			];
 
 			workspace = [
@@ -138,7 +138,7 @@
 					"super, q, exec, kitty --title Kitty"
 					"super, d, exec, switchmon"
 					"super, c, killactive,"
-					"super, e, exec, [float;size 45% 55%;move 10 50] kitty btop"
+					"super, e, exec, [float;size 45% 70%;move 10 50] kitty btop"
 					"super shift, q, exit,"
 					"super, m, exec, fuzzel"
 					"super, r, exec, neovide"
@@ -146,7 +146,7 @@
 					"super, b, togglesplit, # dwindle"
 					"super, f, togglefloating"
 					"super, g, fullscreen"
-					"super, home, exec, /home/pagedmov/scripts/home.sh"
+					"super, home, exec, /home/${username}/scripts/home.sh"
 					"super, h, movefocus, l"
 					"super, l, movefocus, r"
 					"super, k, movefocus, u"

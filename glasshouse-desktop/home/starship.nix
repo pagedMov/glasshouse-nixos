@@ -12,7 +12,7 @@
 				"($username)(bold white)($cmd_duration)($character)"
 				"($git_branch)($git_status)($rust)($nix-shell)"
 				"($directory)"
-				"$line_break[   ](bold #89b4fa)"
+				"$line_break[ > ](bold #89b4fa)"
 			];
 
 			

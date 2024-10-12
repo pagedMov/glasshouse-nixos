@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, username, ... }:
 
 {
 	imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -6,13 +6,13 @@
 		useUserPackages = true;
 		useGlobalPkgs = true;
 		backupFileExtension = "backup";
-		extraSpecialArgs = { inherit inputs; };
-		users.pagedmov = {
+		extraSpecialArgs = { inherit inputs username; };
+		users.${username} = {
 			programs.home-manager.enable = true;
 			imports = [ ./../home ];
 			home = {
-				username = "pagedmov";
-				homeDirectory = "/home/pagedmov";
+				username = "${username}";
+				homeDirectory = "/home/${username}";
 				stateVersion = "24.05";
 				pointerCursor = {
 					name = "Quintom_Ink";
@@ -22,13 +22,13 @@
 			};
 		};
 	};
-	users.users.pagedmov = {
+	users.users.${username} = {
 		isNormalUser = true;
 		shell = pkgs.zsh;
 		extraGroups = [ "wheel" ]; 
 	};
 	security.sudo.extraConfig = ''
-		pagedmov ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
+		${username} ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 	'';
-	nix.settings.allowed-users = [ "pagedmov" ];
+	nix.settings.allowed-users = [ "${username}" ];
 }

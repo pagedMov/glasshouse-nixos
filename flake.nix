@@ -46,7 +46,7 @@
 	outputs = { nixpkgs, home-manager, self, nvim, toilet, ... }@inputs: 
 	let
 		system = "x86_64-linux";
-        user = "pagedmov";
+        username = "pagedmov";
 		allowed-unfree-packages = [
              "foundryvtt"
            ];
@@ -55,9 +55,7 @@
 		nixosConfigurations = {
 			glasshouse = nixpkgs.lib.nixosSystem {
 				specialArgs = { 
-					inherit self;
-					inherit inputs;
-					inherit allowed-unfree-packages user; 
+					inherit self inputs allowed-unfree-packages username;
 				};
 				inherit system;
 				modules = [ ./glasshouse-desktop/sys ];
