@@ -854,9 +854,15 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
+<<<<<<< Updated upstream
         "lastModified": 1,
         "narHash": "sha256-bjrRxs4ja1ulvgjlWN5IwfGdAVOwYQR6YSPCRVje52E=",
         "path": "./pkgs/nixvim",
+=======
+        "lastModified": 1728747549,
+        "narHash": "sha256-9n6nu8BS4MWpoQLyDqyGXaeJb6G9IzwQgbFjwvBdPL0=",
+        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim",
+>>>>>>> Stashed changes
         "type": "path"
       },
       "original": {
