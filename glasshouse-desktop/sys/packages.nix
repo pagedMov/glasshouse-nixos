@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
 	environment.systemPackages = with pkgs; [
@@ -67,5 +67,6 @@
 		wine
 		wl-clipboard
 		xpad
+ 		libnotify
 	];
 }
