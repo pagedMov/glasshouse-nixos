@@ -1,6 +1,7 @@
 {
 	imports = [
 		./plugins/alpha.nix
+		./plugins/vim-matchup.nix
 		./plugins/coq.nix
 		./plugins/barbar.nix
 		./plugins/cmp.nix

@@ -346,11 +346,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1728685293,
-        "narHash": "sha256-1WowL96pksT/XCi+ZXHgqiQ9NiU5oxWuNIQYWqOoEYc=",
+        "lastModified": 1728726232,
+        "narHash": "sha256-8ZWr1HpciQsrFjvPMvZl0W+b0dilZOqXPoKa2Ux36bc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2b13611eaed8326789f76f70d21d06fbb14e3e47",
+        "rev": "d57112db877f07387ce7104b5ac346ede556d2d7",
         "type": "github"
       },
       "original": {
@@ -442,11 +442,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1728692991,
-        "narHash": "sha256-lPjl4phydWEjM3PUUqMkDbna/oxNnKJp6+I21TWtxbc=",
+        "lastModified": 1728742719,
+        "narHash": "sha256-t9xlU0hrWSrQenblkg0Mq1wBx4I6A2IdgoVT3/kAx2I=",
         "ref": "refs/heads/main",
-        "rev": "ee8116ac5dc412dce924a0163074ce7988dd0cfc",
-        "revCount": 5330,
+        "rev": "c3f7c9bbb52b9ad3d24ccfcc5c552ed16c9985a5",
+        "revCount": 5331,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -854,9 +854,15 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
+<<<<<<< Updated upstream
         "lastModified": 1,
         "narHash": "sha256-4AcRtmk2axQHKMd07X8fEPXCgiqv0hst7n/bg37CDfI=",
         "path": "./pkgs/nixvim",
+=======
+        "lastModified": 1728747549,
+        "narHash": "sha256-9n6nu8BS4MWpoQLyDqyGXaeJb6G9IzwQgbFjwvBdPL0=",
+        "path": "/home/pagedmov/sysflakes/glasshouse-desktop/home/nixvim",
+>>>>>>> Stashed changes
         "type": "path"
       },
       "original": {
