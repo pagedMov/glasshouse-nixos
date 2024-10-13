@@ -2,13 +2,13 @@
 
 {
 	imports = 
-		[ (import ./bootloader.nix) ]
-	 ++ [ (import ./fonts.nix) ]
-	 ++ [ (import ./hardware.nix) ]
-	 ++ [ (import ./network.nix) ]
-	 ++ [ (import ./packages.nix) ]
-	 ++ [ (import ./programs.nix) ]
-	 ++ [ (import ./services.nix) ]
-	 ++ [ (import ./system.nix) ]
-	 ++ [ (import ./users.nix) ];
+		[ (import ./hardware/bootloader.nix) ]
+	 ++ [ (import ./software/fonts.nix) 	 ]
+	 ++ [ (import ./hardware/hardware.nix)   ]
+	 ++ [ (import ./hardware/network.nix) 	 ]
+	 ++ [ (import ./software/packages.nix)   ]
+	 ++ [ (import ./software/programs.nix)   ]
+	 ++ [ (import ./software/services.nix)   ]
+	 ++ [ (import ./hardware/system.nix)     ]
+	 ++ [ (import ./software/users.nix)      ];
 }
