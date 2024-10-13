@@ -4,15 +4,42 @@
 	imports = [
 		./../../modules/sys 
 		./hardware.nix
-		(import ./nixswitch.nix { self = self; pkgs = pkgs; })
 	];
 
-	environment.systemPackages = with pkgs; [
-		acpi
-		brightnessctl
-		cpupower-gui
-		powertop
-	];
+	system.stateVersion = "24.05"; 
+	nixpkgs.config.allowUnfree = true;
+	nix = {
+		settings = {
+			auto-optimise-store = true;
+			experimental-features = [ "nix-command" "flakes" ];
+			substituters = [ "https://nix-gaming.cachix.org" ];
+		};
+		gc = {
+			automatic = true;
+			dates = "weekly";
+			options = "--delete-older-than 7d";
+		};
+	};
+
+	environment = {
+		variables = {
+			XCURSOR_SIZE = "24";
+			PATH = "${pkgs.clang-tools}/bin:$PATH";
+		};
+		shells = with pkgs; [
+			zsh
+			bash
+		];
+		systemPackages = with pkgs; [
+			acpi
+			brightnessctl
+			cpupower-gui
+			powertop
+		];
+	};
+
+	time.timeZone = "America/New_York";
+	i18n.defaultLocale = "en_US.UTF-8";
 
 	services = {    
 		power-profiles-daemon.enable = true;
