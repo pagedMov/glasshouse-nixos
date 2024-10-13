@@ -56,7 +56,7 @@
 				};
 				inherit system;
 				modules = [ 
-					./glasshouse-desktop/sys 
+					./hosts/desktop
 					nur.nixosModules.nur
 				];
 			};
@@ -66,7 +66,8 @@
 					inherit self inputs username;
 				};
 				modules = [
-					./glasshouse-laptop/sys
+					./hosts/laptop
+					nur.nixosModules.nur
 				];
 			};
 		};
