@@ -68,5 +68,6 @@
 		wl-clipboard
 		xpad
  		libnotify
+ 		file
 	];
 }

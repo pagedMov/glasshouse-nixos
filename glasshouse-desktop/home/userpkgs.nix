@@ -36,5 +36,6 @@ in
 		ripgrep
 		nvim
 		toilet
+ 		python3
 	];
 }
