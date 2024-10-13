@@ -50,8 +50,9 @@
 	in
 	{
 		nixosConfigurations = {
-			glasshouse-desktop = nixpkgs.lib.nixosSystem {
+			desktop = nixpkgs.lib.nixosSystem {
 				specialArgs = { 
+					host = "desktop";
 					inherit self inputs username;
 				};
 				inherit system;
@@ -61,8 +62,9 @@
 				];
 			};
 			
-			glasshouse-laptop = nixpkgs.lib.nixosSystem {
+			laptop = nixpkgs.lib.nixosSystem {
 				specialArgs = {
+					host = "laptop";
 					inherit self inputs username;
 				};
 				modules = [

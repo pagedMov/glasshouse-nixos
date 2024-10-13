@@ -1,5 +1,5 @@
 
-{ pkgs, self, ... }:
+{ host, inputs, username, nur, pkgs, self, ... }:
 
 {
 	imports = [ 

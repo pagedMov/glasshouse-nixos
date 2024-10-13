@@ -1,4 +1,4 @@
-{ self, pkgs }:
+{ self, pkgs, host}:
 
 
 pkgs.writeShellScriptBin "nixcommit" (''
@@ -22,7 +22,7 @@ if [ -n "$diffcheck" ]; then
 	exit
 fi
 git add .
-git commit -m "Gen $gen: $1"
+git commit -m "(${host}) Gen $gen: $1"
 git push
 scheck && runbg aplay ${self}/media/sound/gitpush.wav
 builtin cd - || exit

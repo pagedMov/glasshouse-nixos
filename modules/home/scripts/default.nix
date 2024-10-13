@@ -1,4 +1,4 @@
-{ self, pkgs, ... }:  
+{ host, self, pkgs, ... }:  
 
 let
 	compress = 		  (import ./commands/compress.nix 			{ self = self; pkgs = pkgs;});
@@ -13,10 +13,8 @@ let
 	homep = 		  (import ./nix/homep.nix 					{ self = self; pkgs = pkgs;});
 	homer = 		  (import ./nix/homer.nix 					{ self = self; pkgs = pkgs;});
 	nsp = 			  (import ./nix/nsp.nix 					{ self = self; pkgs = pkgs;});
-	nixswitch = 	  (import ./nix/nixswitch.nix 				{ self = self; pkgs = pkgs;});
 	nixr = 			  (import ./nix/nixr.nix 					{ self = self; pkgs = pkgs;});
 	nixp = 			  (import ./nix/nixp.nix 					{ self = self; pkgs = pkgs;});
-	nixcommit = 	  (import ./nix/nixcommit.nix 				{ self = self; pkgs = pkgs;});
 	lofi = 			  (import ./wm-controls/lofi.nix 			{ self = self; pkgs = pkgs;});
 	music = 		  (import ./wm-controls/music.nix 			{ self = self; pkgs = pkgs;});
 	shutdown-script = (import ./wm-controls/shutdown-script.nix { self = self; pkgs = pkgs;});
@@ -25,6 +23,8 @@ let
 	toggle_float =    (import ./wm-controls/toggle_float.nix 	{ self = self; pkgs = pkgs;});
 	toggle_oppacity = (import ./wm-controls/toggle_oppacity.nix { self = self; pkgs = pkgs;});
 	toggle_waybar =   (import ./wm-controls/toggle_waybar.nix   { self = self; pkgs = pkgs;});
+	nixswitch = 	  (import ./nix/nixswitch.nix 				{ host = host; self = self; pkgs = pkgs;});
+	nixcommit = 	  (import ./nix/nixcommit.nix 				{ host = host; self = self; pkgs = pkgs;});
 in
 {
 	home.packages = [

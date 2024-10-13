@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, username, self, ... }:
+{ config, inputs, pkgs, username, self, host, ... }:
 
 let
 	nur = config.nur;
@@ -9,10 +9,13 @@ in
 		useUserPackages = true;
 		useGlobalPkgs = true;
 		backupFileExtension = "backup";
-		extraSpecialArgs = { inherit self inputs username nur; };
+		extraSpecialArgs = { inherit self inputs host username nur; };
 		users.${username} = {
 			programs.home-manager.enable = true;
-			imports = [ ./../../home ];
+			imports = 
+				if (host == "desktop") then 
+					[ ./../../home/desktop.nix ]
+				else [./../../home/laptop.nix ];
 			home = {
 				username = "${username}";
 				homeDirectory = "/home/${username}";

@@ -1,9 +1,10 @@
-{ inputs, pkgs, config, self, username, ... }:
+{ host, inputs, pkgs, config, self, username, ... }:
 
 {
 	imports = [
 		./../../modules/sys 
 		./hardware.nix
+		(import ./nixswitch.nix { self = self; pkgs = pkgs; })
 	];
 
 	environment.systemPackages = with pkgs; [
