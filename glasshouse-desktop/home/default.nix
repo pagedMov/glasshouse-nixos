@@ -1,22 +1,25 @@
 { nur, self, inputs, username, system, ... }:
 
+
+
+
 {
 	imports = 
-		[ (import ./btop.nix) 	         ]
-	 ++ [ (import ./bat.nix) 	         ]
-	 ++ [ (import ./firefox/firefox.nix) ]
-	 ++ [ (import ./cava.nix) 	         ]
-	 ++ [ (import ./fuzzel.nix)          ]
-	 ++ [ (import ./gtk.nix) 	         ]
-	 ++ [ (import ./hyprland)            ]
-	 ++ [ (import ./kitty.nix)           ]
-	 ++ [ (import ./spicetify.nix)       ]
-	 ++ [ (import ./starship.nix)        ]
-	 ++ [ (import ./scripts)     	     ]
-	 ++ [ (import ./yazi.nix)            ]
-	 ++ [ (import ./swaync/swaync.nix)   ]
-	 ++ [ (import ./userpkgs.nix)        ]
-	 ++ [ (import ./waybar) 	         ]
-	 ++ [ (import ./eza.nix) 	         ]
-	 ++ [ (import ./zshell.nix)          ];
+		[ (import ./programs/btop.nix) 	       ]
+	 ++ [ (import ./programs/yazi.nix)         ]
+	 ++ [ (import ./programs/kitty.nix)        ]
+	 ++ [ (import ./programs/fuzzel.nix)       ]
+	 ++ [ (import ./programs/eza.nix) 	       ]
+	 ++ [ (import ./programs/cava.nix) 	       ]
+	 ++ [ (import ./programs/bat.nix) 	       ]
+	 ++ [ (import ./environment/gtk.nix) 	   ]
+	 ++ [ (import ./environment/spicetify.nix) ]
+	 ++ [ (import ./environment/starship.nix)  ]
+	 ++ [ (import ./environment/userpkgs.nix)  ]
+	 ++ [ (import ./environment/zshell.nix)    ]
+	 ++ [ (import ./firefox/firefox.nix)       ]
+	 ++ [ (import ./hyprland)                  ]
+	 ++ [ (import ./scripts)     	           ]
+	 ++ [ (import ./swaync/swaync.nix)         ]
+	 ++ [ (import ./waybar) 	               ];
 }
