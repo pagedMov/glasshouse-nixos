@@ -13,6 +13,7 @@ in
 		imagemagick
 		yt-dlp
 		vlc
+		lolcat
 		speedtest-cli
 		vesktop
 		qbittorrent
