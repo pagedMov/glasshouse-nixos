@@ -6,14 +6,10 @@ in
 {
 	home.packages = with pkgs; [
 		gtk3
-		adwaita-icon-theme
 		uhk-agent
-		dunst
-		rofi
 		sqlite
-		starship
 		zathura
-		inkscape
+		gimp
 		imagemagick
 		yt-dlp
 		vlc
@@ -22,7 +18,6 @@ in
 		qbittorrent
 		obs-studio
 		neovide
-		chromium
 		zsh
 		zsh-syntax-highlighting
 		zsh-history-substring-search

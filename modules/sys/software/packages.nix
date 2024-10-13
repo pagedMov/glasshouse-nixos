@@ -13,7 +13,6 @@
 		feh
 		ffmpeg-full
 		fuse
-		fzf
 		git
 		gnumake
 		gst_all_1.gstreamer
@@ -44,7 +43,6 @@
 		jq
 		pamixer
 		parted
-		pass
 		pavucontrol
 		pkg-config
 		playerctl
