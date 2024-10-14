@@ -16,6 +16,7 @@ let
 	nsp = 			  (import ./nix/nsp.nix 					{ self = self; pkgs = pkgs;});
 	nixr = 			  (import ./nix/nixr.nix 					{ self = self; pkgs = pkgs;});
 	nixp = 			  (import ./nix/nixp.nix 					{ self = self; pkgs = pkgs;});
+	hyprland =        (import ./wm-controls/hyprland.nix        { pkgs=pkgs; });
 	lofi = 			  (import ./wm-controls/lofi.nix 			{ self = self; pkgs = pkgs;});
 	music = 		  (import ./wm-controls/music.nix 			{ self = self; pkgs = pkgs;});
 	shutdown-script = (import ./wm-controls/shutdown-script.nix { self = self; pkgs = pkgs;});
@@ -36,6 +37,7 @@ in
 		garbage-collect 
 		homep
 		homer
+		hyprland
 		invoke 
 		lofi
 		mcd 

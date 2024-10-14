@@ -1,4 +1,4 @@
-{ host, nur, self, inputs, username, config, ... }:
+{ host, nur, self, inputs, username, config, home-manager, ... }:
 
 
 
