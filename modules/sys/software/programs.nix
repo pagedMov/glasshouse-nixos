@@ -2,7 +2,6 @@
 
 {
 	programs = {
-		steam.enable = true;
 		hyprland.enable = true;
 		zsh.enable = true;
 		nix-ld = {

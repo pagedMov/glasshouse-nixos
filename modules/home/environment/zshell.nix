@@ -40,6 +40,7 @@
 
 		shellAliases = {
 			grep = "grep --color=auto";
+			vi = "nvim";
 			mv = "mv -v";
 			cp = "cp -vr";
 			gt = "gtrash";

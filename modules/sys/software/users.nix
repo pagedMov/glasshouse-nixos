@@ -2,9 +2,11 @@
 
 let
 	nur = config.nur;
+	steamcfg = if (host == "desktop") then [ ./steam.nix ] else [];
 in
 {
-	imports = [ inputs.home-manager.nixosModules.home-manager ];
+	imports = [ inputs.home-manager.nixosModules.home-manager ] 
+		++ steamcfg;
 	home-manager = {
 		useUserPackages = true;
 		useGlobalPkgs = true;

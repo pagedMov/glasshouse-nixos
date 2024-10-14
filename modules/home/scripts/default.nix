@@ -2,6 +2,7 @@
 
 let
 	compress = 		  (import ./commands/compress.nix 			{ self = self; pkgs = pkgs;});
+	passhelper = 		  (import ./wm-controls/passhelper.nix 			{ self = self; pkgs = pkgs;});
 	crs = 			  (import ./commands/crs.nix 				{ self = self; pkgs = pkgs;});
 	extract = 		  (import ./commands/extract.nix 			{ self = self; pkgs = pkgs;});
 	invoke = 		  (import ./commands/invoke.nix 			{ self = self; pkgs = pkgs;});
@@ -29,6 +30,7 @@ in
 {
 	home.packages = [
 		compress
+		passhelper
 		crs 
 		extract
 		garbage-collect 
