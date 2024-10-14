@@ -40,6 +40,7 @@
 
 		shellAliases = {
 			grep = "grep --color=auto";
+			yazi = "y";
 			vi = "nvim";
 			mv = "mv -v";
 			cp = "cp -vr";
@@ -67,6 +68,15 @@
 		ls() {
 			eza -1 --group-directories-first --icons "$@"
 			scheck && runbg aplay ${self}/media/sound/ls.wav
+		}
+
+		y() {
+			local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+			yazi "$@" --cwd-file="$tmp"
+			if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+				builtin cd -- "$cwd"
+			fi
+			rm -f -- "$tmp"
 		}
 
 		cd() {

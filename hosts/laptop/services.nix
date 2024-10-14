@@ -2,6 +2,17 @@
 
 { 
 	services = {   
+
+		keyd = {
+			enable = true;
+			keyboards.default = {
+				ids = [ "*" ];
+				settings.main = {
+					capslock = "esc";
+				};
+			};
+		};
+		
 		power-profiles-daemon.enable = true;
 
 		upower = {

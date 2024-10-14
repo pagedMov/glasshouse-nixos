@@ -2,11 +2,9 @@
 
 let
 	nur = config.nur;
-	steamcfg = if (host == "desktop") then [ ./steam.nix ] else [];
 in
 {
-	imports = [ inputs.home-manager.nixosModules.home-manager ] 
-		++ steamcfg;
+	imports = [ inputs.home-manager.nixosModules.home-manager ];
 	home-manager = {
 		useUserPackages = true;
 		useGlobalPkgs = true;
@@ -14,10 +12,7 @@ in
 		extraSpecialArgs = { inherit self inputs host username nur; };
 		users.${username} = {
 			programs.home-manager.enable = true;
-			imports = 
-				if (host == "desktop") then 
-					[ ./../../home/desktop.nix ]
-				else [./../../home/laptop.nix ];
+			imports = [ ./../../home ];
 			home = {
 				username = "${username}";
 				homeDirectory = "/home/${username}";
