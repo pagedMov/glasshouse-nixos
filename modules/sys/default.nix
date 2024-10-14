@@ -3,8 +3,9 @@
 {
 	imports = 
 		[ (import ./hardware/bootloader.nix) ]
-	 ++ [ (import ./software/fonts.nix) 	 ]
 	 ++ [ (import ./hardware/network.nix) 	 ]
+	 ++ [ (import ./software/fonts.nix) 	 ]
+	 ++ [ (import ./software/sddm.nix) 	 	 ]
 	 ++ [ (import ./software/packages.nix)   ]
 	 ++ [ (import ./software/programs.nix)   ]
 	 ++ [ (import ./software/services.nix)   ]
