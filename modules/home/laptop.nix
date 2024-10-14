@@ -12,6 +12,7 @@
 	 ++ [ (import ./programs/eza.nix) 	             ]
 	 ++ [ (import ./programs/cava.nix) 	             ]
 	 ++ [ (import ./programs/bat.nix) 	             ]
+	 ++ [ (import ./programs/git.nix) 	             ]
 	 ++ [ (import ./environment/gtk.nix) 	         ]
 	 ++ [ (import ./environment/spicetify.nix)       ]
 	 ++ [ (import ./environment/starship.nix)        ]
