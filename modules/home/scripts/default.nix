@@ -25,7 +25,7 @@ let
 	toggle_float =    (import ./wm-controls/toggle_float.nix 	{ self = self; pkgs = pkgs;});
 	toggle_oppacity = (import ./wm-controls/toggle_oppacity.nix { self = self; pkgs = pkgs;});
 	toggle_waybar =   (import ./wm-controls/toggle_waybar.nix   { self = self; pkgs = pkgs;});
-	nixswitch = 	  (import ./nix/nixswitch.nix 				{ host = host; self = self; pkgs = pkgs;});
+	rebuild = 	  (import ./nix/rebuild.nix 				{ host = host; self = self; pkgs = pkgs;});
 	nixcommit = 	  (import ./nix/nixcommit.nix 				{ host = host; self = self; pkgs = pkgs;});
 in
 {
@@ -45,7 +45,7 @@ in
 		nixcommit 
 		nixp
 		nixr
-		nixswitch 
+		rebuild 
 		nsp 
 		runbg
 		scheck
