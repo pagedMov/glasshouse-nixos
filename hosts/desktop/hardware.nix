@@ -46,7 +46,10 @@
 	hardware = { 
 		cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 		keyboard.uhk.enable = true;
-		amdgpu.amdvlk.enable = true;
+		amdgpu.amdvlk = {
+			enable = false;
+			support32Bit.enable = true;
+		};
 		bluetooth = {
 			enable = true;
 			powerOnBoot = true;
