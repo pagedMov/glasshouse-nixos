@@ -9,6 +9,7 @@
 			html.enable = true;
 			jsonls.enable = true;
 			lua-ls.enable = true;
+			marksman.enable = true;
 			nil-ls.enable = true;
 			pyright.enable = true;
 			sqls.enable = true;

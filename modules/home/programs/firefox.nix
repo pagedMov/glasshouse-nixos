@@ -26,14 +26,31 @@
 		profiles.${username} = {
 			name = "${username}";
 			bookmarks = [
-				{ name = "NixOS Options";
-					url = "https://search.nixos.org/options";
-				}
-				{ name = "Home Manager Options";
-					url = "https://home-manager-options.extranix.com/";
-				}
-				{ name = "Nixvim Docs";
-					url = "https://nix-community.github.io/nixvim/";
+				{ name = "Nix sites";
+					toolbar = true;
+					bookmarks = [
+						{ name = "NixOS Options";
+							url = "https://search.nixos.org/options";
+						}
+						{ name = "Home Manager Options";
+							url = "https://home-manager-options.extranix.com/";
+						}
+						{ name = "Nixvim Docs";
+							url = "https://nix-community.github.io/nixvim/";
+						}
+						{ name = "Noogle";
+							url = "https://noogle.dev/";
+						}
+						{ name = "NixOS Wiki";
+							url = "https://nixos.wiki/";
+						}
+						{ name = "NixOS Manual";
+							url = "https://nixos.org/manual/nixos/stable";
+						}
+						{ name = "Nixpkgs Reference";
+							url = "https://nixos.org/manual/nixpkgs/stable";
+						}
+					];
 				}
 				{ name = "Rust Manual";
 					url = "https://doc.rust-lang.org/book/ch01-03-hello-cargo.html";
