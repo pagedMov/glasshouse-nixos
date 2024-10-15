@@ -27,6 +27,7 @@ let
 	toggle_waybar =   (import ./wm-controls/toggle_waybar.nix   { self = self; pkgs = pkgs;});
 	rebuild = 	  (import ./nix/rebuild.nix 				{ host = host; self = self; pkgs = pkgs;});
 	nixcommit = 	  (import ./nix/nixcommit.nix 				{ host = host; self = self; pkgs = pkgs;});
+	nixpush = 	  (import ./nix/nixpush.nix 				{ self = self; pkgs = pkgs;});
 in
 {
 	home.packages = [
@@ -44,6 +45,7 @@ in
 		music
 		nixcommit 
 		nixp
+		nixpush
 		nixr
 		rebuild 
 		nsp 

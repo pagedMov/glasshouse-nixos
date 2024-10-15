@@ -27,6 +27,9 @@ if [ -z "$1" ]; then
 	commits=$(git log origin/$(git rev-parse --abbrev-ref HEAD)..HEAD --oneline)
 	if [ -n "$commits" ]; then
 		git commit --fixup HEAD
+		echo "No commit message given"
+		echo "Squashing into most recent commit"
+		git rebase --autosquash master
 	else
 		echo "No prior local commits to squash into, please provide a commit message"
 		exit
