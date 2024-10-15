@@ -15,6 +15,6 @@ pass_string=$(find $HOME/.password-store -type f | sed 's|.*/.password-store/||;
 	# pass it through fmt for soft word wrapping
 pass -c "$pass_string" | fmt -w 45
 /run/current-system/sw/bin/rm /tmp/passhelperfile
-sleep 1.5
+sleep 0.5
 exit 0
 '')
