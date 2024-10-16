@@ -1,9 +1,10 @@
-{ self, pkgs }:
+{
+  self,
+  pkgs,
+}:
+pkgs.writeShellScriptBin "crs" ''
+  #!/run/current-system/sw/bin/bash
 
-
-pkgs.writeShellScriptBin "crs" (''
-#!/run/current-system/sw/bin/bash
-
-cargo test && \
-cargo run
-	'')
+  cargo test && \
+  cargo run
+''

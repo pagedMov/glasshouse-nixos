@@ -1,9 +1,7 @@
-{ pkgs, ... }:
-
-{
-	fonts.packages = with pkgs; [ 
-		times-newer-roman
-		nerdfonts 
-		jetbrains-mono 
-	];
+{pkgs, ...}: {
+  fonts.packages = with pkgs; [
+    times-newer-roman
+    nerdfonts
+    jetbrains-mono
+  ];
 }

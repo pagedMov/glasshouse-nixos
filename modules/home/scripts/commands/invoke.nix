@@ -1,8 +1,9 @@
-{ self, pkgs }:
+{
+  self,
+  pkgs,
+}:
+pkgs.writeShellScriptBin "invoke" ''
+  #!/run/current-system/sw/bin/bash
 
-
-pkgs.writeShellScriptBin "invoke" (''
-#!/run/current-system/sw/bin/bash
-
-nix run nixpkgs#$"@" 
-	'')
+  nix run nixpkgs#$"@"
+''

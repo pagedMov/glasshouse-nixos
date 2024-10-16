@@ -1,11 +1,12 @@
-{ self, pkgs }:
+{
+  self,
+  pkgs,
+}:
+pkgs.writeShellScriptBin "keybinds" ''
+  #!/usr/bin/env bash
 
-
-pkgs.writeShellScriptBin "keybinds" (''
-#!/usr/bin/env bash
-
-config_file=~/.config/hypr/hyprland.conf
-keybinds=$(grep -oP '(?<=bind=).*' $config_file)
-keybinds=$(echo "$keybinds" | sed 's/,\([^,]*\)$/ = \1/' | sed 's/, exec//g' | sed 's/^,//g')
-rofi -dmenu -theme-str 'window {width: 50%;}' <<< "$keybinds"
-	'')
+  config_file=~/.config/hypr/hyprland.conf
+  keybinds=$(grep -oP '(?<=bind=).*' $config_file)
+  keybinds=$(echo "$keybinds" | sed 's/,\([^,]*\)$/ = \1/' | sed 's/, exec//g' | sed 's/^,//g')
+  rofi -dmenu -theme-str 'window {width: 50%;}' <<< "$keybinds"
+''

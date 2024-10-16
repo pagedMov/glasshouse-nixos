@@ -1,8 +1,9 @@
-{ self, pkgs }:
+{
+  self,
+  pkgs,
+}:
+pkgs.writeShellScriptBin "scheck" ''
+  #!/run/current-system/sw/bin/bash
 
-
-pkgs.writeShellScriptBin "scheck" (''
-#!/run/current-system/sw/bin/bash
-
-[ "$SOUNDS_ENABLED" -eq 1 ]
-	'')
+  [ "$SOUNDS_ENABLED" -eq 1 ]
+''

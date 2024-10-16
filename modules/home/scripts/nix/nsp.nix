@@ -1,8 +1,9 @@
-{ self, pkgs }:
+{
+  self,
+  pkgs,
+}:
+pkgs.writeShellScriptBin "nsp" ''
+  #!/run/current-system/sw/bin/bash
 
-
-pkgs.writeShellScriptBin "nsp" (''
-#!/run/current-system/sw/bin/bash
-
-nix-shell -p "$@" --run zsh 
-	'')
+  nix-shell -p "$@" --run zsh
+''
