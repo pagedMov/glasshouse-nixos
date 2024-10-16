@@ -24,8 +24,8 @@
     vim.opt.relativenumber = true
     vim.opt.hlsearch = true
     vim.opt.incsearch = true
-    vim.opt.shiftwidth = 4
-    vim.opt.tabstop = 4
+    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 2
     vim.opt.termguicolors = true
     vim.opt.ruler = true
     vim.opt.scrolloff = 6
@@ -33,7 +33,7 @@
     vim.opt.foldmethod = "manual"
     vim.opt.wrap = true
     vim.opt.linebreak = true
-    vim.opt.textwidth = 135
+    vim.opt.textwidth = 0
     vim.opt.breakat = " \t!@*-+;:,./?"
 
     vim.g.mapleader = "!"
