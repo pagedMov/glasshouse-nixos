@@ -36,6 +36,7 @@
 			"/var/lib/nixos"
 			"/var/lib/systemd/coredump/"
 			"/etc/NetworkManager/system-connections"
+			"/mnt"
 		];
 		files = [
 			"/etc/machine-id"

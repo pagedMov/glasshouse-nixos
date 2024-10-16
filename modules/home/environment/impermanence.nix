@@ -3,7 +3,7 @@
 {
 	home.persistence."/persist/home" = {
 		directories = [
-			"sysflake"
+			".sysflake"
 			".password-store"
 			".local/share/keyrings"
 			".local/share/direnv"
@@ -14,6 +14,7 @@
 			"Documents"
 			"Music"
 			"Downloads"
+			"Misc"
 			{
 				directory = ".local/share/Steam";
 				method = "symlink";
