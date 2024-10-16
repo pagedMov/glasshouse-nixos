@@ -30,31 +30,61 @@
       name = "${username}";
       bookmarks = [
         {
-          name = "NixOS Options";
-          url = "https://search.nixos.org/options";
-        }
-        {
-          name = "Home Manager Options";
-          url = "https://home-manager-options.extranix.com/";
-        }
-        {
-          name = "Nixvim Docs";
-          url = "https://nix-community.github.io/nixvim/";
+          name = "Nix Sites";
+          toolbar = true;
+          bookmarks = [
+            {
+              name = "NixOS Wiki";
+              url = "https://nixos.wiki/wiki/Main_Page";
+            }
+            {
+              name = "Nixpkgs Reference Manual";
+              url = "https://nixos.org/manual/nixpkgs/stable/";
+            }
+            {
+              name = "NixOS Manual";
+              url = "https://nixos.org/manual/nixos/stable/";
+            }
+            {
+              name = "NixOS Options";
+              url = "https://search.nixos.org/options";
+            }
+            {
+              name = "Home Manager Options";
+              url = "https://home-manager-options.extranix.com/";
+            }
+            {
+              name = "Nixpkgs Package Search";
+              url = "https://search.nixos.org/packages";
+            }
+            {
+              name = "Noogle - Nixpkgs Function Docs";
+              url = "https://noogle.dev";
+            }
+            {
+              name = "Nixvim Docs";
+              url = "https://nix-community.github.io/nixvim/";
+            }
+          ];
         }
         {
           name = "Rust Manual";
+          toolbar = true;
           url = "https://doc.rust-lang.org/book/ch01-03-hello-cargo.html";
         }
         {
           name = "ChatGPT";
+          toolbar = true;
           url = "https://chatgpt.com/";
         }
         {
           name = "DataAnnotation";
+          toolbar = true;
           url = "https://app.dataannotation.tech/users/sign_in";
         }
         {
           name = "Nerd Fonts Cheatsheet";
+          toolbar = true;
           url = "https://www.nerdfonts.com/cheat-sheet";
         }
       ];
@@ -68,7 +98,6 @@
         firenvim
         privacy-badger
         new-tab-override
-        tampermonkey
       ];
       extraConfig = ''
          "browser.startup.homepage" = "${self}/glasshouse-desktop/home/firefox/homepage.html";
