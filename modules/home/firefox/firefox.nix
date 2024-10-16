@@ -69,22 +69,18 @@
         }
         {
           name = "Rust Manual";
-          toolbar = true;
           url = "https://doc.rust-lang.org/book/ch01-03-hello-cargo.html";
         }
         {
           name = "ChatGPT";
-          toolbar = true;
           url = "https://chatgpt.com/";
         }
         {
           name = "DataAnnotation";
-          toolbar = true;
           url = "https://app.dataannotation.tech/users/sign_in";
         }
         {
           name = "Nerd Fonts Cheatsheet";
-          toolbar = true;
           url = "https://www.nerdfonts.com/cheat-sheet";
         }
       ];
