@@ -870,7 +870,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-Cp+apszVyMt3AIJSc7YFfxO2KhPvVQ63s3f8Uzkrfs8=",
+        "narHash": "sha256-9Ajo8TveKRz2KN9eO9AgpMuPMl0g9pf/ehU6NKFxDiQ=",
         "path": "./pkgs/nixvim",
         "type": "path"
       },
