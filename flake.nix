@@ -4,13 +4,15 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
+    impermanence.url = "github:nix-community/impermanence";
+    hypr-contrib.url = "github:hyprwm/contrib";
+    hyprpicker.url = "github:hyprwm/hyprpicker";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hypr-contrib.url = "github:hyprwm/contrib";
-    hyprpicker.url = "github:hyprwm/hyprpicker";
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
@@ -21,18 +23,22 @@
       url = "github:catppuccin/bat";
       flake = false;
     };
+
     catppuccin-cava = {
       url = "github:catppuccin/cava";
       flake = false;
     };
+
     catppuccin-starship = {
       url = "github:catppuccin/starship";
       flake = false;
     };
+
     catppuccin-yazi = {
       url = "github:catppuccin/yazi";
       flake = false;
     };
+
     spicetify-nix = {
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,11 +46,6 @@
 
     disko = {
       url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    impermanence = {
-      url = "github:nix-community/impermanence";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

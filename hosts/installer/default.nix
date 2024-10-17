@@ -38,8 +38,17 @@ let
 
 		nixos-install --root /mnt --flake /mnt/etc/nixos#mercury --no-root-password
 
+		echo
+		echo "Preliminary installation successful!"
+		echo "Beginning secondary installation phase... "
+		echo
+
 		cp -r /mnt/etc/nixos /mnt/persist/home/.sysflake
 		rm -rf /mnt/etc/nixos/*
+
+		nixos-enter
+		NIXOS_SWITCH_USE_DIRTY_ENV=1 nixos-rebuild boot --flake /persist/home/.sysflake#mercury
+		exit
 
 		echo "INSTALLATION COMPLETE ! !" | toilet -f 3d -w 120 | lolcat -a -s 180
 		echo "You can now reboot into your new system."
