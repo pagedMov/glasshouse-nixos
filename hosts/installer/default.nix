@@ -46,9 +46,11 @@ let
 		cp -r /mnt/etc/nixos /mnt/persist/home/.sysflake
 		rm -rf /mnt/etc/nixos/*
 
-		nixos-enter
-		NIXOS_SWITCH_USE_DIRTY_ENV=1 nixos-rebuild boot --flake /persist/home/.sysflake#mercury
-		exit
+		nixos-enter <<EOF
+chmod -R 770 /persist
+chown -R :persist /persist
+NIXOS_SWITCH_USE_DIRTY_ENV=1 nixos-rebuild boot --flake /persist/home/.sysflake#mercury
+EOF
 
 		echo "INSTALLATION COMPLETE ! !" | toilet -f 3d -w 120 | lolcat -a -s 180
 		echo "You can now reboot into your new system."
