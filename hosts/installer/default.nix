@@ -16,19 +16,19 @@ let
 		echo "Downloading partition map... "
 		curl https://raw.githubusercontent.com/vimjoyer/impermanent-setup/main/final/disko.nix > disko.nix
 
-		lsblk
+		lsblk -d -o NAME,SIZE
 		echo
 		echo "This script is about to format and partition a hard drive."
-		sleep 1.5
+		sleep 2
 		echo -e "\033[4;31mThis process is irreversible and will destroy all data on the drive.\033[0m"
-		sleep 1.5
+		sleep 2
 		echo "Make absolutely sure that you know which drive you are choosing. Abort with Ctrl+C if you aren't sure which one to use."
-		sleep 1.5
+		sleep 2
 		echo -n "Which drive do you wish to sacrifice? "
 		read -r drive
 
 		# commence formatting
-		nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/install_pwd/disko.nix --arg device "\"$drive\""
+		nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/install_pwd/disko.nix --arg device "\"/dev/$drive\""
 
 		# set up home directory in /mnt/persist, create /persist/etc/nixos, cd to /etc/nixos and install my flake config
 		mkdir -p /mnt/persist/{etc/nixos,home}
