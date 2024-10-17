@@ -8,7 +8,6 @@ pkgs.writeShellScriptBin "nixcommit" ''
 
   scheck && runbg aplay ${self}/media/sound/nixswitch-start.wav
   pushd "${self}" || exit
-  nix flake update
 
   if [ -n "$2" ]; then
   	echo "too many arguments"
