@@ -11,6 +11,5 @@
     ./../../modules/sys
     ./hardware.nix
     ./settings.nix
-    ./steam.nix
   ];
 }
