@@ -9,7 +9,7 @@
 }: {
   imports = [
     ./../../modules/sys
-    # ./hardware.nix
+    ./hardware.nix
     ./impermanence.nix
     ./settings.nix
     ./steam.nix

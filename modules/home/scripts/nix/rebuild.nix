@@ -8,10 +8,10 @@ pkgs.writeShellScriptBin "rebuild" ''
 
   scheck && runbg aplay ${self}/media/sound/nixswitch-start.wav
   set -e
-  pushd "$HOME/sysflakes"
+  pushd "$HOME/.sysflake"
 
   nix flake update
-  sudo nixos-rebuild switch --flake "$HOME/sysflakes#${host}"
+  sudo nixos-rebuild switch --flake "$HOME/.sysflake#${host}"
   if [ $? -eq 0 ]; then
   	scheck && runbg aplay ${self}/media/sound/update.wav
   else

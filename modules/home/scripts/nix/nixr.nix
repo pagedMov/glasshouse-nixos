@@ -5,11 +5,11 @@
 pkgs.writeShellScriptBin "nixr" ''
   #!/run/current-system/sw/bin/bash
 
-  selected_packages=$(sed -n '/\[/,/\]/p' "$HOME/sysflakes/glasshouse-desktop/sys/packages.nix" | sed '1d;$d' | fzf -m)
+  selected_packages=$(sed -n '/\[/,/\]/p' "${self}/modules/sys/packages.nix" | sed '1d;$d' | fzf -m)
 
   if [ -n "$selected_packages" ]; then
   	echo "$selected_packages" | while read -r package; do
-  		sed -i "/\b$package\b/d" "$HOME/sysflakes/glasshouse-desktop/sys/packages.nix"
+  		sed -i "/\b$package\b/d" "${self}/modules/sys/packages.nix"
   		echo "Removed $package from the Nix configuration."
   	done
 

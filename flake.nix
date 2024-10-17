@@ -67,7 +67,7 @@
     nixosConfigurations = {
       oganesson = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          host = "desktop";
+          host = "oganesson";
           inherit self inputs username;
         };
         inherit system;
@@ -82,7 +82,7 @@
 
       mercury = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          host = "laptop";
+          host = "mercury";
           inherit self inputs username;
         };
         modules = [
