@@ -906,11 +906,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-9Ajo8TveKRz2KN9eO9AgpMuPMl0g9pf/ehU6NKFxDiQ=",
-        "path": "./pkgs/nixvim",
+        "path": "/nix/store/c6ykrw85haxqb84djnqqlkwjpwrnzwij-source/pkgs/nixvim",
         "type": "path"
       },
       "original": {
-        "path": "./pkgs/nixvim",
+        "path": "/nix/store/c6ykrw85haxqb84djnqqlkwjpwrnzwij-source/pkgs/nixvim",
         "type": "path"
       }
     },
@@ -1054,11 +1054,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-G8k9Ue2ZggJXD17cDXQubY+b4utp2YLnSpQWe06mR4E=",
-        "path": "./pkgs/toilet",
+        "path": "/nix/store/c6ykrw85haxqb84djnqqlkwjpwrnzwij-source/pkgs/toilet",
         "type": "path"
       },
       "original": {
-        "path": "./pkgs/toilet",
+        "path": "/nix/store/c6ykrw85haxqb84djnqqlkwjpwrnzwij-source/pkgs/toilet",
         "type": "path"
       }
     },

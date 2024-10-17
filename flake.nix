@@ -48,8 +48,8 @@
     };
 
     #glasshouse-desktop dots
-    nvim.url = "path:./pkgs/nixvim";
-    toilet.url = "path:./pkgs/toilet";
+    nvim.url = "git+file:.?dir=pkgs/nixvim";
+    toilet.url = "git+file:.?dir=pkgs/toilet";
   };
 
   outputs = {
