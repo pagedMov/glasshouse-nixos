@@ -90,6 +90,18 @@
           nur.nixosModules.nur
         ];
       };
+
+			installer = nixpkgs.lib.nixosSystem {
+				specialArgs = {
+					host = "installer";
+					inherit self inputs;
+				};
+				modules = [
+					./hosts/installer
+					inputs.disko.nixosModules.default
+					inputs.impermanence.nixosModules.impermanence
+				];
+			};
     };
   };
 }

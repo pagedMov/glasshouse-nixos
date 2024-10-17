@@ -48,7 +48,7 @@
       psg = "ps aux | grep -v grep | grep -i -e VSZ -e";
       mkdir = "mkdir -p";
       pk = "pkill -9 -f";
-      zrc = "nvim $HOME/dots/zshell.nix";
+      zrc = "nvim ${self}/modules/home/environment/zshell.nix";
       svcu = "systemctl --user";
       svc = "sudo systemctl";
       viflake = "nvim flake.nix";

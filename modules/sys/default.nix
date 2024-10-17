@@ -10,6 +10,7 @@
   imports =
     [(import ./hardware/bootloader.nix)]
     ++ [(import ./hardware/network.nix)]
+    ++ [(import ./hardware/impermanence.nix)]
     ++ [(import ./software/fonts.nix)]
     ++ [(import ./software/sddm.nix)]
     ++ [(import ./software/packages.nix)]
