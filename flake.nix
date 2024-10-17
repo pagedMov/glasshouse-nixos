@@ -87,6 +87,9 @@
         };
         modules = [
           ./hosts/laptop
+          inputs.disko.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
+          (import ./disko.nix {device = "/dev/nvme0n1";})
           nur.nixosModules.nur
         ];
       };
