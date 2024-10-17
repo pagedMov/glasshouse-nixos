@@ -36,7 +36,7 @@ let
 		rm -rf ./nixos
 		git clone https://github.com/pagedMov/pagedmov-nix-cfg.git ./nixos
 
-		nixos-install --root /mnt --flake /mnt/etc/nixos#oganesson
+		nixos-install --root /mnt --flake /mnt/etc/nixos#mercury
 
 		echo "INSTALLATION COMPLETE \! \!" | toilet -f Slant | lolcat -a -s 60
 		echo "You can reboot into your new system."
