@@ -904,14 +904,19 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-9Ajo8TveKRz2KN9eO9AgpMuPMl0g9pf/ehU6NKFxDiQ=",
-        "path": "/nix/store/c6ykrw85haxqb84djnqqlkwjpwrnzwij-source/pkgs/nixvim",
-        "type": "path"
+        "dir": "pkgs/nixvim",
+        "lastModified": 1729138752,
+        "narHash": "sha256-HHtKG4kAGH3CThDdKE2TceaSlGk+lRHMD2vNsaeIWJQ=",
+        "ref": "refs/heads/master",
+        "rev": "b10333ff96443813bed575c79efd8013a4fcd56a",
+        "revCount": 321,
+        "type": "git",
+        "url": "file:.?dir=pkgs/nixvim"
       },
       "original": {
-        "path": "/nix/store/c6ykrw85haxqb84djnqqlkwjpwrnzwij-source/pkgs/nixvim",
-        "type": "path"
+        "dir": "pkgs/nixvim",
+        "type": "git",
+        "url": "file:.?dir=pkgs/nixvim"
       }
     },
     "pre-commit-hooks": {
@@ -1052,14 +1057,19 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-G8k9Ue2ZggJXD17cDXQubY+b4utp2YLnSpQWe06mR4E=",
-        "path": "/nix/store/c6ykrw85haxqb84djnqqlkwjpwrnzwij-source/pkgs/toilet",
-        "type": "path"
+        "dir": "pkgs/toilet",
+        "lastModified": 1729138752,
+        "narHash": "sha256-HHtKG4kAGH3CThDdKE2TceaSlGk+lRHMD2vNsaeIWJQ=",
+        "ref": "refs/heads/master",
+        "rev": "b10333ff96443813bed575c79efd8013a4fcd56a",
+        "revCount": 321,
+        "type": "git",
+        "url": "file:.?dir=pkgs/toilet"
       },
       "original": {
-        "path": "/nix/store/c6ykrw85haxqb84djnqqlkwjpwrnzwij-source/pkgs/toilet",
-        "type": "path"
+        "dir": "pkgs/toilet",
+        "type": "git",
+        "url": "file:.?dir=pkgs/toilet"
       }
     },
     "treefmt-nix": {
