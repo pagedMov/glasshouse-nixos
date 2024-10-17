@@ -20,6 +20,7 @@
       "Downloads"
       "Games"
       "Misc"
+			"Virtualization"
       {
         directory = ".local/share/Steam";
         method = "symlink";

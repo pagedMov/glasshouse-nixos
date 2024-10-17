@@ -38,6 +38,7 @@
     mullvad
     mesa
     neofetch
+		nh
     nix-index
 		nix-output-monitor
     nix-prefetch-scripts
@@ -73,5 +74,6 @@
     xpad
     libnotify
     file
+		libvirt-glib
   ];
 }
