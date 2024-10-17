@@ -7,7 +7,14 @@
   config,
   home-manager,
   ...
-}: {
+}: 
+
+let
+	desktop_modules = if (host == "onagesson") then
+		[(import ./programs/steam.nix)] else
+		[];
+in
+{
   imports =
     [(import ./programs/btop.nix)]
     ++ [(import ./programs/yazi.nix)]
@@ -30,5 +37,6 @@
     ++ [(import ./hyprland)]
     ++ [(import ./scripts)]
     ++ [(import ./swaync/swaync.nix)]
-    ++ [(import ./waybar)];
+    ++ [(import ./waybar)]
+		++ desktop_modules;
 }

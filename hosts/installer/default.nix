@@ -34,15 +34,14 @@ let
 		mkdir -p /mnt/persist/{etc/nixos,home}
 		mkdir -p /mnt/etc
 		cd /mnt/etc/
-		rm -rf ./nixos
 		git clone https://github.com/pagedMov/pagedmov-nix-cfg.git ./nixos
 
-		nixos-install --root /mnt --flake /mnt/etc/nixos#mercury --no-root-password |& nom
+		nixos-install --root /mnt --flake /mnt/etc/nixos#mercury --no-root-password
 
 		cp -r /mnt/etc/nixos /mnt/persist/home/.sysflake
 		rm -rf /mnt/etc/nixos/*
 
-		echo "INSTALLATION COMPLETE \! \!" | toilet -f Slant | lolcat -a -s 60
+		echo "INSTALLATION COMPLETE ! !" | toilet -f 3d -w 120 | lolcat -a -s 180
 		echo "You can now reboot into your new system."
 		echo "The system configuration flake will be found in your home folder under .sysflake"
 	'';
