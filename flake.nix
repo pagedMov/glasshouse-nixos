@@ -38,9 +38,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+		nvim = {
+			url = "github:pagedMov/pagedmov-nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+		};
+
     #glasshouse-desktop dots
-    nvim.url = "path:./pkgs/nixvim";
-    toilet.url = "path:./pkgs/toilet";
+    toilet = {
+			url = "github:pagedMov/toilet-extra-fonts";
+      inputs.nixpkgs.follows = "nixpkgs";
+		};
   };
 
   outputs = {
