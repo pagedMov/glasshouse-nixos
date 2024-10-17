@@ -18,7 +18,7 @@ pkgs.writeShellScriptBin "homep" ''
   if [ -n "$selected_packages" ]; then
       echo "$selected_packages" | while read -r package; do
           # Append each selected package to the Nix config file
-          sed -i "/^\t]/i \ \t\t$package" "$HOME/sysflakes/glasshouse-desktop/home/userpkgs.nix"
+          sed -i "/^\t]/i \ \t\t$package" "${self}/modules/home/userpkgs.nix"
           echo "Added $package to the Home Manager configuration."
       done
 

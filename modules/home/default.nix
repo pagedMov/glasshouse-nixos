@@ -21,6 +21,7 @@
     ++ [(import ./programs/password-store.nix)]
     ++ [(import ./programs/autojump.nix)]
     ++ [(import ./environment/gtk.nix)]
+    ++ [(import ./environment/impermanence.nix)]
     ++ [(import ./environment/spicetify.nix)]
     ++ [(import ./environment/starship.nix)]
     ++ [(import ./environment/desktop_userpkgs.nix)]

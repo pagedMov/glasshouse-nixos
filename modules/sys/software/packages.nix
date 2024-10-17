@@ -36,6 +36,7 @@
     mesa
     mpd
     mullvad
+    mesa
     neofetch
     nix-index
     nix-prefetch-scripts

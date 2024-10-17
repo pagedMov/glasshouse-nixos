@@ -18,7 +18,7 @@ pkgs.writeShellScriptBin "nixp" ''
   if [ -n "$selected_packages" ]; then
       echo "$selected_packages" | while read -r package; do
           # Append each selected package to the Nix config file
-          sed -i "/^\t]/i \ \t\t$package" "$HOME/sysflakes/glasshouse-desktop/sys/packages.nix"
+          sed -i "/^\t]/i \ \t\t$package" "${self}/modules/sys/packages.nix"
           echo "Added $package to the Nix configuration."
       done
 

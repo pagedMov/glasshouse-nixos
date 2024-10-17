@@ -38,6 +38,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    impermanence = {
+      url = "github:nix-community/impermanence";
+    };
+
     #glasshouse-desktop dots
     nvim.url = "path:./pkgs/nixvim";
     toilet.url = "path:./pkgs/toilet";
@@ -56,21 +65,24 @@
     username = "pagedmov";
   in {
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
+      oganesson = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          host = "desktop";
+          host = "oganesson";
           inherit self inputs username;
         };
         inherit system;
         modules = [
           ./hosts/desktop
+          inputs.disko.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
+          (import ./disko.nix {device = "/dev/nvme0n1";})
           nur.nixosModules.nur
         ];
       };
 
-      laptop = nixpkgs.lib.nixosSystem {
+      mercury = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          host = "laptop";
+          host = "mercury";
           inherit self inputs username;
         };
         modules = [

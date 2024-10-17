@@ -7,7 +7,7 @@ pkgs.writeShellScriptBin "nixcommit" ''
   #!/run/current-system/sw/bin/bash
 
   scheck && runbg aplay ${self}/media/sound/nixswitch-start.wav
-  builtin cd "$HOME/sysflakes" || exit
+  pushd "${self}" || exit
   nix flake update
 
   if [ -n "$2" ]; then
@@ -45,5 +45,5 @@ pkgs.writeShellScriptBin "nixcommit" ''
   fi
 
   scheck && runbg aplay ${self}/media/sound/gitcommit.wav
-  builtin cd - || exit
+  popd || exit
 ''

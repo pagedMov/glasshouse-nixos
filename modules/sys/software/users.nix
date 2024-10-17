@@ -17,7 +17,10 @@ in {
     extraSpecialArgs = {inherit self inputs host username nur;};
     users.${username} = {
       programs.home-manager.enable = true;
-      imports = [./../../home];
+      imports = [
+        inputs.impermanence.nixosModules.home-manager.impermanence
+        ./../../home
+      ];
       home = {
         username = "${username}";
         homeDirectory = "/home/${username}";
@@ -30,10 +33,17 @@ in {
       };
     };
   };
-  users.users.${username} = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = ["wheel"];
+  users = {
+    groups.persist = {};
+    users = {
+      root.hashedPassword = "$y$j9T$/eZO.0cE2EcsF4od78laE/$A3kqgNhr6LkUZHI/0MXAhk.SSKk7QsCIwH/l6xeryy8";
+      ${username} = {
+        isNormalUser = true;
+        hashedPassword = "$y$j9T$pdvRk/.3GbwvcPw0NTdwW0$ugclmwwlOO7iKLcJY4DkyD2tX6.LS26LHQ//0W1zLQ.";
+        shell = pkgs.zsh;
+        extraGroups = ["wheel" "persist"];
+      };
+    };
   };
   security.sudo.extraConfig = ''
     ${username} ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild

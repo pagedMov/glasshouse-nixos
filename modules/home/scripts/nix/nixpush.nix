@@ -7,7 +7,7 @@ pkgs.writeShellScriptBin "nixpush" ''
 
   scheck && runbg aplay ${self}/media/sound/nixswitch-start.wav
   set -e
-  pushd "$HOME/sysflakes"
+  pushd "${self}"
 
   commits=$(git log origin/$(git rev-parse --abbrev-ref HEAD)..HEAD --oneline)
   if [ -z "$commits" ]; then

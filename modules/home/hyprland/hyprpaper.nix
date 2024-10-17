@@ -1,6 +1,7 @@
 {
   host,
   username,
+  self,
   ...
 }: {
   services.hyprpaper = {
@@ -9,16 +10,16 @@
       ipc = "on";
       splash = false;
       splash_offset = 2.0;
-      preload = ["/home/${username}/Pictures/Wallpapers/cat-leaves.png"];
+      preload = ["${self}/media/wallpapers/catppuccin/cat-leaves.png"];
 
       wallpaper =
-        if (host == "desktop")
+        if (host == "oganesson")
         then [
-          "DP-1,/home/${username}/Pictures/Wallpapers/cat-leaves.png"
-          "HDMI-A-1,/home/${username}/Pictures/Wallpapers/cat-leaves.png"
+          "DP-1,${self}/media/wallpapers/catppuccin/cat-leaves.png"
+          "HDMI-A-1,${self}/media/wallpapers/catppuccin/cat-leaves.png"
         ]
         else [
-          "eDP-1,/home/${username}/Pictures/Wallpapers/cat-leaves.png"
+          "eDP-1,${self}/media/wallpapers/catppuccin/cat-leaves.png"
         ];
     };
   };
