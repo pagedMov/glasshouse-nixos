@@ -904,19 +904,14 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "dir": "pkgs/nixvim",
-        "lastModified": 1729138752,
-        "narHash": "sha256-HHtKG4kAGH3CThDdKE2TceaSlGk+lRHMD2vNsaeIWJQ=",
-        "ref": "refs/heads/master",
-        "rev": "b10333ff96443813bed575c79efd8013a4fcd56a",
-        "revCount": 321,
-        "type": "git",
-        "url": "file:.?dir=pkgs/nixvim"
+        "lastModified": 1,
+        "narHash": "sha256-9Ajo8TveKRz2KN9eO9AgpMuPMl0g9pf/ehU6NKFxDiQ=",
+        "path": "pkgs/nixvim",
+        "type": "path"
       },
       "original": {
-        "dir": "pkgs/nixvim",
-        "type": "git",
-        "url": "file:.?dir=pkgs/nixvim"
+        "path": "pkgs/nixvim",
+        "type": "path"
       }
     },
     "pre-commit-hooks": {
@@ -1057,19 +1052,14 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "dir": "pkgs/toilet",
-        "lastModified": 1729138752,
-        "narHash": "sha256-HHtKG4kAGH3CThDdKE2TceaSlGk+lRHMD2vNsaeIWJQ=",
-        "ref": "refs/heads/master",
-        "rev": "b10333ff96443813bed575c79efd8013a4fcd56a",
-        "revCount": 321,
-        "type": "git",
-        "url": "file:.?dir=pkgs/toilet"
+        "lastModified": 1,
+        "narHash": "sha256-G8k9Ue2ZggJXD17cDXQubY+b4utp2YLnSpQWe06mR4E=",
+        "path": "pkgs/toilet",
+        "type": "path"
       },
       "original": {
-        "dir": "pkgs/toilet",
-        "type": "git",
-        "url": "file:.?dir=pkgs/toilet"
+        "path": "pkgs/toilet",
+        "type": "path"
       }
     },
     "treefmt-nix": {

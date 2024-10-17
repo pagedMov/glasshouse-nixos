@@ -9,7 +9,8 @@ let
 		trap 'echo "Aborting installation."; exit 1' INT
 
 		# set up working directory
-		mkdir /tmp/install_pwd && cd /tmp/install_pwd
+		mkdir -p /tmp/install_pwd && cd /tmp/install_pwd
+		rm -rf ./*
 
 		# download disko.nix file for defining partitions
 		echo "Downloading partition map... "
@@ -36,12 +37,14 @@ let
 		rm -rf ./nixos
 		git clone https://github.com/pagedMov/pagedmov-nix-cfg.git ./nixos
 
-		nixos-install --root /mnt --flake /mnt/etc/nixos#mercury
+		nixos-install --root /mnt --flake /mnt/etc/nixos#mercury --no-root-password |& nom
+
+		cp -r /mnt/etc/nixos /mnt/persist/home/.sysflake
+		rm -rf /mnt/etc/nixos/*
 
 		echo "INSTALLATION COMPLETE \! \!" | toilet -f Slant | lolcat -a -s 60
-		echo "You can reboot into your new system."
-
-
+		echo "You can now reboot into your new system."
+		echo "The system configuration flake will be found in your home folder under .sysflake"
 	'';
 in
 {
@@ -56,10 +59,6 @@ in
 		};
 	};
 
-	users.users.root.shell = pkgs.zsh;
-	users.users.nixos.shell = pkgs.zsh;
-
-
 	networking = {
 		wireless.enable = false;
 		networkmanager.enable = true;
@@ -67,6 +66,9 @@ in
 
 	environment.systemPackages = with pkgs; [
 		nvim
+		nix-output-monitor
+		nh
+		nvd
 		lolcat
 		curl
 		wget
