@@ -37,13 +37,14 @@
 			url = "github:gerg-l/spicetify-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 		nvim = {
 			url = "github:pagedMov/pagedmov-nixvim";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-
-#glasshouse-desktop dots
 		toilet = {
 			url = "github:pagedMov/toilet-extra-fonts";
 			inputs.nixpkgs.follows = "nixpkgs";
