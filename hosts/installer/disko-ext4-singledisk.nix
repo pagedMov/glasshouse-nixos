@@ -35,7 +35,7 @@
 							content = {
 								type = "filesystem";
 								format = "ext4";
-								mountpoint = "/home";
+								mountpoint = "/nix";
 							};
 						};
 						root = {

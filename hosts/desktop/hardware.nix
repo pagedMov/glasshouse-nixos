@@ -14,12 +14,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/91413e4e-538c-4266-8a4d-bf60ec83e7b9";
+    { device = "/dev/disk/by-partlabel/disk-main-root";
       fsType = "ext4";
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/aad759e2-6c39-4350-89b9-07f2bc6eb3cc";
+    { device = "/dev/disk/by-partlabel/disk-main-ESP";
       fsType = "ext4";
     };
 
