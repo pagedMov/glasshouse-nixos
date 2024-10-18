@@ -30,8 +30,12 @@ let
 		echo -n "Which drive do you wish to sacrifice? "
 		read -r drive
 
+	size=$(lsblk -b -d -o NAME,SIZE | grep "$drive" | awk '{ printf "%.0f\n", $2 / 1024 / 1024 / 1024 }') 1024 / 1024 / 1024 }')
+	root_end=$(echo "scale=0;$size * 0.10 / 1" | bc)
+	nix_end=$(echo "scale=0;$size * 0.35 / 1" | bc)
+	
 		# commence formatting
-		nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/install_pwd/disko.nix --arg device "\"/dev/$drive\""
+		nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/install_pwd/disko.nix --arg device "\"/dev/$drive\"" --arg root_end "\"$root_end\G\"" --arg nix_end "\"$nix_end\G\"" 
 
 		# set up home directory in /mnt/persist, create /persist/etc/nixos, cd to /etc/nixos and install my flake config
 		mkdir -p /mnt/etc
