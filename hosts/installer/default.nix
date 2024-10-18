@@ -4,7 +4,7 @@ let
 	nvim = inputs.nvim.packages."x86_64-linux".default;
 	toilet = inputs.toilet.packages."x86_64-linux".default;
 	install-script = pkgs.writeShellScriptBin "movcfg-install" ''
-		#!/bin/bash
+		#!/run/current-system/sw/bin/bash
 		set -e
 		trap 'echo "Aborting installation."; exit 1' INT
 
@@ -30,12 +30,17 @@ let
 		echo -n "Which drive do you wish to sacrifice? "
 		read -r drive
 
-	size=$(lsblk -b -d -o NAME,SIZE | grep "$drive" | awk '{ printf "%.0f\n", $2 / 1024 / 1024 / 1024 }') 1024 / 1024 / 1024 }')
-	root_end=$(echo "scale=0;$size * 0.10 / 1" | bc)
-	nix_end=$(echo "scale=0;$size * 0.35 / 1" | bc)
-	
+		size=$(lsblk -b -d -o NAME,SIZE | grep "$drive" | awk '{ printf "%.0f\n", $2 / 1024 / 1024 / 1024 }')
+		root_size=$(echo "scale=0;$size * 0.10 / 1" | bc)
+		nix_size=$(echo "scale=0;$size * 0.35 / 1" | bc)
+
 		# commence formatting
-		nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/install_pwd/disko.nix --arg device "\"/dev/$drive\"" --arg root_end "\"$root_end\G\"" --arg nix_end "\"$nix_end\G\"" 
+		nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/install_pwd/disko.nix --arg device "\"/dev/$drive\"" --arg root_size "\"$root_size\G\"" --arg nix_size "\"$nix_size\G\"" 
+
+		mount /dev/disk/by-partlabel/disk-main-root /mnt
+		mkdir -p /mnt/nix && mount /dev/disk/by-partlabel/disk-main-nix /mnt/nix
+		mkdir -p /mnt/boot && mount /dev/disk/by-partlabel/disk-main-boot /mnt/boot
+		mkdir -p /mnt/home && mount /dev/disk/by-partlabel/disk-main-home /mnt/home 
 
 		# set up home directory in /mnt/persist, create /persist/etc/nixos, cd to /etc/nixos and install my flake config
 		mkdir -p /mnt/etc
@@ -55,8 +60,8 @@ let
 		ln -s /mnt/home/pagedmov/.sysflake /etc/nixos
 
 		nixos-enter <<EOF
-NIXOS_SWITCH_USE_DIRTY_ENV=1 nixos-rebuild boot --flake /persist/home/.sysflake#mercury
-EOF
+		NIXOS_SWITCH_USE_DIRTY_ENV=1 nixos-rebuild boot --flake /home/pagedmov/.sysflake#mercury
+		EOF
 
 		echo "INSTALLATION COMPLETE ! !" | toilet -f 3d -w 120 | lolcat -a -s 180
 		echo "You can now reboot into your new system."
@@ -98,6 +103,7 @@ in
 		btrfs-progs
 		dosfstools
 		parted
+		bc
 		pciutils
 		usbutils
 		toilet

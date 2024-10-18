@@ -2,7 +2,9 @@
 # Update devices to match your hardware.
 {
 	device ? throw "Set this to your disk device, e.g. /dev/sda",
-				 ...
+	root_size,
+	nix_size,
+	 ...
 }:
 
 {
@@ -29,7 +31,7 @@
 							};
 						};
 						nix = {
-							size = "35%";
+							size = "${nix_size}";
 							content = {
 								type = "filesystem";
 								format = "ext4";
@@ -37,7 +39,7 @@
 							};
 						};
 						root = {
-							size = "15%";
+							size = "${root_size}";
 							content = {
 								type = "filesystem";
 								format = "ext4";
@@ -45,7 +47,7 @@
 							};
 						};
 						home = {
-							size = "50% - 500MB";
+							size = "100%";
 							content = {
 								type = "filesystem";
 								format = "ext4";

@@ -11,7 +11,8 @@
 
 let
 	desktop_modules = if (host == "onagesson") then
-		[(import ./programs/steam.nix)] else
+		[(import ./programs/steam.nix)]
+    ++ [(import ./waybar)] else
 		[];
 in
 {
@@ -36,6 +37,5 @@ in
     ++ [(import ./hyprland)]
     ++ [(import ./scripts)]
     ++ [(import ./swaync/swaync.nix)]
-    ++ [(import ./waybar)]
 		++ desktop_modules;
 }
