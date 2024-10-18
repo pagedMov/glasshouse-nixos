@@ -3,8 +3,6 @@
     enable = true;
 
     settings = {
-      color_theme = "tokyo-night";
-      theme_background = false;
       update_ms = 500;
       vim_keys = true;
       proc_tree = true;

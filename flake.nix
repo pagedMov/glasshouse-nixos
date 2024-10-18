@@ -6,6 +6,7 @@
     nur.url = "github:nix-community/NUR";
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
+    stylix.url = "github:danth/stylix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -18,40 +19,20 @@
       submodules = true;
     };
 
-    catppuccin-bat = {
-      url = "github:catppuccin/bat";
-      flake = false;
-    };
-
-    catppuccin-cava = {
-      url = "github:catppuccin/cava";
-      flake = false;
-    };
-
-    catppuccin-starship = {
-      url = "github:catppuccin/starship";
-      flake = false;
-    };
-
-    catppuccin-yazi = {
-      url = "github:catppuccin/yazi";
-      flake = false;
-    };
-
     spicetify-nix = {
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-		nvim = {
-			url = "github:pagedMov/pagedmov-nixvim";
+    nvim = {
+      url = "github:pagedMov/pagedmov-nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
-		};
+    };
 
     toilet = {
-			url = "github:pagedMov/toilet-extra-fonts";
+      url = "github:pagedMov/toilet-extra-fonts";
       inputs.nixpkgs.follows = "nixpkgs";
-		};
+    };
   };
 
   outputs = {
@@ -61,6 +42,7 @@
     self,
     nvim,
     toilet,
+    stylix,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -75,6 +57,7 @@
         inherit system;
         modules = [
           ./hosts/desktop
+          stylix.nixosModules.stylix
           nur.nixosModules.nur
         ];
       };
@@ -86,19 +69,20 @@
         };
         modules = [
           ./hosts/laptop
+          stylix.nixosModules.stylix
           nur.nixosModules.nur
         ];
       };
 
-			installer = nixpkgs.lib.nixosSystem {
-				specialArgs = {
-					host = "installer";
-					inherit self inputs;
-				};
-				modules = [
-					./hosts/installer
-				];
-			};
+      installer = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          host = "installer";
+          inherit self inputs;
+        };
+        modules = [
+          ./hosts/installer
+        ];
+      };
     };
   };
 }

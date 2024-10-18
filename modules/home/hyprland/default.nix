@@ -10,6 +10,6 @@
 in {
   imports =
     [(import ./hyprland.nix)]
-    ++ [(import ./hyprpaper.nix)]
+#    ++ [(import ./hyprpaper.nix)]
     ++ host_config;
 }

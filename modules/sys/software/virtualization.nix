@@ -1,6 +1,4 @@
-{ username, ... }:
-
-{
-	virtualisation.libvirtd.enable = true;
-	programs.virt-manager.enable = true;
+{username, ...}: {
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 }

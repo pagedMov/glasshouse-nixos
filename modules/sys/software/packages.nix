@@ -38,13 +38,13 @@
     mullvad
     mesa
     neofetch
-		nh
+    nh
     nix-index
-		nix-output-monitor
+    nix-output-monitor
     nix-prefetch-scripts
     nixos-option
     nix-search-cli
-		nvd
+    nvd
     openssl
     p7zip
     jq
@@ -56,7 +56,6 @@
     protonmail-bridge
     protontricks
     pyright
-    quintom-cursor-theme
     socat
     sox
     stress
@@ -74,6 +73,6 @@
     xpad
     libnotify
     file
-		libvirt-glib
+    libvirt-glib
   ];
 }

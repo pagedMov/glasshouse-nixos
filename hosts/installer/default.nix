@@ -1,55 +1,58 @@
-{ lib, inputs, pkgs, modulesPath, ... }:
-
-let
-	nvim = inputs.nvim.packages."x86_64-linux".default;
-	toilet = inputs.toilet.packages."x86_64-linux".default;
-	install-script = pkgs.writeShellScriptBin "movcfg-install" (builtins.readFile ./movcfg-install.sh);
-in
 {
-	imports = [
-		"${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
-	];
-	nixpkgs.hostPlatform = "x86_64-linux";
-	system.stateVersion = "24.05";
-	nix = {
-		settings = {
-			experimental-features = ["nix-command" "flakes"];
-		};
-	};
+  lib,
+  inputs,
+  pkgs,
+  modulesPath,
+  ...
+}: let
+  nvim = inputs.nvim.packages."x86_64-linux".default;
+  toilet = inputs.toilet.packages."x86_64-linux".default;
+  install-script = pkgs.writeShellScriptBin "movcfg-install" (builtins.readFile ./movcfg-install.sh);
+in {
+  imports = [
+    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
+  ];
+  nixpkgs.hostPlatform = "x86_64-linux";
+  system.stateVersion = "24.05";
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+    };
+  };
 
-	networking = {
-		wireless.enable = false;
-		networkmanager.enable = true;
-	};
+  networking = {
+    wireless.enable = false;
+    networkmanager.enable = true;
+  };
 
-	environment.systemPackages = with pkgs; [
-		nix-output-monitor
-		nh
-		nvd
-		lolcat
-		curl
-		wget
-		coreutils
-		findutils
-		zip
-		unzip
-		util-linux
-		git
-		btrfs-progs
-		dosfstools
-		parted
-		bc
-		pciutils
-		usbutils
-		toilet
-		install-script
-		nvim
-	];
-	
-	services = {
-		openssh.enable = true; 
-		dbus.enable=true;
-	};
+  environment.systemPackages = with pkgs; [
+    nix-output-monitor
+    nh
+    nvd
+    lolcat
+    curl
+    wget
+    coreutils
+    findutils
+    zip
+    unzip
+    util-linux
+    git
+    btrfs-progs
+    dosfstools
+    parted
+    bc
+    pciutils
+    usbutils
+    toilet
+    install-script
+    nvim
+  ];
+
+  services = {
+    openssh.enable = true;
+    dbus.enable = true;
+  };
 
   programs.zsh = {
     enable = true;
@@ -60,9 +63,9 @@ in
     };
 
     enableCompletion = true;
-    
-		histFile = "$HOME/.zsh_history";
-		histSize = 10000;
+
+    histFile = "$HOME/.zsh_history";
+    histSize = 10000;
 
     autosuggestions = {
       enable = true;
@@ -80,17 +83,17 @@ in
       pk = "pkill -9 -f";
       svc = "sudo systemctl";
     };
-		promptInit = ''
+    promptInit = ''
       bindkey -v
       type starship_zle-keymap-select >/dev/null || \
       {
       	eval "$(starship init zsh)"
       }
-		'';
-		setOptions = [
-      "APPEND_HISTORY"     
-      "INC_APPEND_HISTORY" 
-      "SHARE_HISTORY"      
+    '';
+    setOptions = [
+      "APPEND_HISTORY"
+      "INC_APPEND_HISTORY"
+      "SHARE_HISTORY"
       "CORRECT"
       "NO_NOMATCH"
       "LIST_PACKED"
@@ -109,7 +112,7 @@ in
       "EXTENDED_GLOB"
       "TRANSIENT_RPROMPT"
       "INTERACTIVE_COMMENTS"
-		];
+    ];
     shellInit = ''
       export EDITOR="nvim"
       export SUDO_EDITOR="nvim"
@@ -152,61 +155,57 @@ in
       unalias ls
       clear
     '';
-	};
+  };
   programs.starship = {
     enable = true;
-    settings =
-      {
-        add_newline = true;
-        right_format = "($custom)";
+    settings = {
+      add_newline = true;
+      right_format = "($custom)";
 
-        format = lib.concatStrings [
-          "($username)(bold white)($cmd_duration)($character)"
-          "($git_branch)($git_status)($rust)($nix-shell)"
-          "($directory)"
-          "$line_break[ > ](bold #89b4fa)"
-        ];
+      format = lib.concatStrings [
+        "($username)(bold white)($cmd_duration)($character)"
+        "($git_branch)($git_status)($rust)($nix-shell)"
+        "($directory)"
+        "$line_break[ > ](bold #89b4fa)"
+      ];
 
-        username = {
-          show_always = true;
-          style_user = "bold white";
-          format = "[$user]($style)";
-        };
-        directory = {
-          format = "\n[$path](bold cyan)[/](bold green) ";
-          style = "bold #b4befe";
-        };
+      username = {
+        show_always = true;
+        style_user = "bold white";
+        format = "[$user]($style)";
+      };
+      directory = {
+        format = "\n[$path](bold cyan)[/](bold green) ";
+        style = "bold #b4befe";
+      };
 
-        character = {
-          success_symbol = "[ -> ](bold green)";
-          error_symbol = "[ -> ✗](bold red)";
-          # error_symbol = "[ ](bold #89dceb)[ ✗](bold red)";
-        };
+      character = {
+        success_symbol = "[ -> ](bold green)";
+        error_symbol = "[ -> ✗](bold red)";
+        # error_symbol = "[ ](bold #89dceb)[ ✗](bold red)";
+      };
 
-        cmd_duration = {
-          format = "[ 󰔛 $duration]($style)";
-          disabled = false;
-          style = "bg:none fg:#f9e2af";
-          show_notifications = false;
-          min_time_to_notify = 60000;
-        };
+      cmd_duration = {
+        format = "[ 󰔛 $duration]($style)";
+        disabled = false;
+        style = "bg:none fg:#f9e2af";
+        show_notifications = false;
+        min_time_to_notify = 60000;
+      };
 
-        git_branch = {
-          format = "\non [$symbol$branch](bold purple)";
-          symbol = " ";
-          truncation_length = 15;
-          style = "bold purple";
-        };
+      git_branch = {
+        format = "\non [$symbol$branch](bold purple)";
+        symbol = " ";
+        truncation_length = 15;
+        style = "bold purple";
+      };
 
-        custom.shellver = {
-          command = "zsh --version";
-          when = ''test $SHELL = "/run/current-system/sw/bin/zsh"'';
-          symbol = "";
-          style = "bold magenta";
-        };
-
-        palette = "catppuccin_mocha";
-      }
-      // builtins.fromTOML (builtins.readFile "${inputs.catppuccin-starship}/themes/mocha.toml");
+      custom.shellver = {
+        command = "zsh --version";
+        when = ''test $SHELL = "/run/current-system/sw/bin/zsh"'';
+        symbol = "";
+        style = "bold magenta";
+      };
+    };
   };
 }
