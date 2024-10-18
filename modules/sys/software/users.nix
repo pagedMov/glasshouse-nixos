@@ -41,10 +41,10 @@ in {
 	users = {
 		groups.persist = {};
 		users = {
-			root.hashedPassword = "$y$j9T$/eZO.0cE2EcsF4od78laE/$A3kqgNhr6LkUZHI/0MXAhk.SSKk7QsCIwH/l6xeryy8";
+			root.initialPassword = "1234";
 			${username} = {
 				isNormalUser = true;
-				initialPassword = "1111";
+				initialPassword = "1234";
 				shell = pkgs.zsh;
 				extraGroups = ["wheel" "persist" "libvirtd"];
 			};
