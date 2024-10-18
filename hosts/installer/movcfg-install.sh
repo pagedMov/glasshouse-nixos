@@ -169,7 +169,7 @@ ln -s /mnt/home/pagedmov/.sysflake /etc/nixos
 nixos-enter <<-HEREDOC
 chown -R pagedmov /home/pagedmov/.sysflake
 nixos-generate-config --show-hardware-config > /home/pagedmov/.sysflake/hosts/laptop/hardware.nix
-NIXOS_SWITCH_USE_DIRTY_ENV=1 nixos-rebuild boot --flake /home/pagedmov/.sysflake#mercury
+NIXOS_SWITCH_USE_DIRTY_ENV=1 nixos-rebuild boot --flake /home/pagedmov/.sysflake#$config
 HEREDOC
 
 echo "INSTALLATION COMPLETE ! !" | toilet -f 3d -w 120 | lolcat -a -s 180
