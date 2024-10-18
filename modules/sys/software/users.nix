@@ -44,7 +44,7 @@ in {
 			root.hashedPassword = "$y$j9T$/eZO.0cE2EcsF4od78laE/$A3kqgNhr6LkUZHI/0MXAhk.SSKk7QsCIwH/l6xeryy8";
 			${username} = {
 				isNormalUser = true;
-				hashedPassword = "$y$j9T$pdvRk/.3GbwvcPw0NTdwW0$ugclmwwlOO7iKLcJY4DkyD2tX6.LS26LHQ//0W1zLQ.";
+				initialPassword = "1111";
 				shell = pkgs.zsh;
 				extraGroups = ["wheel" "persist" "libvirtd"];
 			};

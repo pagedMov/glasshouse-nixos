@@ -39,10 +39,9 @@ let
 
 		mount /dev/disk/by-partlabel/disk-main-root /mnt
 		mkdir -p /mnt/nix && mount /dev/disk/by-partlabel/disk-main-nix /mnt/nix
-		mkdir -p /mnt/boot && mount /dev/disk/by-partlabel/disk-main-boot /mnt/boot
+		mkdir -p /mnt/boot && mount /dev/disk/by-partlabel/disk-main-ESP /mnt/boot
 		mkdir -p /mnt/home && mount /dev/disk/by-partlabel/disk-main-home /mnt/home 
 
-		# set up home directory in /mnt/persist, create /persist/etc/nixos, cd to /etc/nixos and install my flake config
 		mkdir -p /mnt/etc
 		cd /mnt/etc/
 		git clone https://github.com/pagedMov/pagedmov-nix-cfg.git ./nixos
@@ -51,17 +50,18 @@ let
 
 		echo
 		echo "Preliminary installation successful!"
-		echo "Beginning secondary installation phase... "
+		echo "Adapting config to your setup..."
 		echo
 
 		cp -r /mnt/etc/nixos /mnt/home/pagedmov/.sysflake
-		chown -R pagedmov /mnt/home/pagedmov/.sysflake
 		rm -rf /mnt/etc/nixos
 		ln -s /mnt/home/pagedmov/.sysflake /etc/nixos
 
-		nixos-enter <<EOF
+		nixos-enter <<HEREDOC
+		chown -R pagedmov /home/pagedmov/.sysflake
+		nixos-generate-config --show-hardware-config > /home/pagedmov/.sysflake/hosts/laptop/hardware.nix
 		NIXOS_SWITCH_USE_DIRTY_ENV=1 nixos-rebuild boot --flake /home/pagedmov/.sysflake#mercury
-		EOF
+		HEREDOC
 
 		echo "INSTALLATION COMPLETE ! !" | toilet -f 3d -w 120 | lolcat -a -s 180
 		echo "You can now reboot into your new system."
