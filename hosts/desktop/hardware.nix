@@ -19,18 +19,18 @@
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-partlabel/disk-main-ESP";
+    { device = "/dev/disk/by-partlabel/disk-main-nix";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F529-2C16";
+    { device = "/dev/disk/by-partlabel/disk-main-ESP";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/7edc690b-7e30-49d7-afbe-78354d0f7497";
+    { device = "/dev/disk/by-partlabel/disk-main-home";
       fsType = "ext4";
     };
 
