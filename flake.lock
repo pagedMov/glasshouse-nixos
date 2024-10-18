@@ -762,38 +762,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1727348695,
-        "narHash": "sha256-J+PeFKSDV+pHL7ukkfpVzCOO7mBSrrpJ3svwBFABbhI=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_6": {
-      "locked": {
-        "lastModified": 1726937504,
-        "narHash": "sha256-bvGoiQBvponpZh8ClUcmJ6QnsNKw0EMrCQJARK3bI1c=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "9357f4f23713673f310988025d9dc261c20e70c6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixvim": {
       "inputs": {
         "devshell": "devshell",
@@ -864,19 +832,24 @@
     "nvim": {
       "inputs": {
         "flake-parts": "flake-parts",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "nixvim": "nixvim",
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1,
+        "lastModified": 1729154510,
         "narHash": "sha256-9Ajo8TveKRz2KN9eO9AgpMuPMl0g9pf/ehU6NKFxDiQ=",
-        "path": "./pkgs/nixvim",
-        "type": "path"
+        "owner": "pagedMov",
+        "repo": "pagedmov-nixvim",
+        "rev": "28b2293063c2881ac07efc875e75539360500d3b",
+        "type": "github"
       },
       "original": {
-        "path": "./pkgs/nixvim",
-        "type": "path"
+        "owner": "pagedMov",
+        "repo": "pagedmov-nixvim",
+        "type": "github"
       }
     },
     "pre-commit-hooks": {
@@ -1012,17 +985,22 @@
     },
     "toilet": {
       "inputs": {
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-G8k9Ue2ZggJXD17cDXQubY+b4utp2YLnSpQWe06mR4E=",
-        "path": "./pkgs/toilet",
-        "type": "path"
+        "lastModified": 1729154419,
+        "narHash": "sha256-h+n5Xrd8fkHCztLd+QtJwKZ3+LCNVlKPSoEKw/DrCj0=",
+        "owner": "pagedMov",
+        "repo": "toilet-extra-fonts",
+        "rev": "057dda35fc9893feeea2aba47987e4f9641e4df2",
+        "type": "github"
       },
       "original": {
-        "path": "./pkgs/toilet",
-        "type": "path"
+        "owner": "pagedMov",
+        "repo": "toilet-extra-fonts",
+        "type": "github"
       }
     },
     "treefmt-nix": {
