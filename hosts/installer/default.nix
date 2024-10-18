@@ -57,7 +57,7 @@ let
 		rm -rf /mnt/etc/nixos
 		ln -s /mnt/home/pagedmov/.sysflake /etc/nixos
 
-		nixos-enter <<HEREDOC
+		nixos-enter <<-HEREDOC
 		chown -R pagedmov /home/pagedmov/.sysflake
 		nixos-generate-config --show-hardware-config > /home/pagedmov/.sysflake/hosts/laptop/hardware.nix
 		NIXOS_SWITCH_USE_DIRTY_ENV=1 nixos-rebuild boot --flake /home/pagedmov/.sysflake#mercury
@@ -135,22 +135,14 @@ in
 
     shellAliases = {
       grep = "grep --color=auto";
-      yazi = "y";
       vi = "nvim";
       mv = "mv -v";
       cp = "cp -vr";
-      gt = "gtrash";
-      gtp = "gtrash put";
-      grub-update = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
-      sr = "source ~/.zshrc";
       ".." = "cd ..";
-      rm = "echo 'use \"gtp\" instead'";
       psg = "ps aux | grep -v grep | grep -i -e VSZ -e";
       mkdir = "mkdir -p";
       pk = "pkill -9 -f";
-      svcu = "systemctl --user";
       svc = "sudo systemctl";
-      viflake = "nvim flake.nix";
     };
 		promptInit = ''
       bindkey -v

@@ -1,6 +1,8 @@
 {
   nur,
   username,
+  self,
+  ...
 }: {
   programs.firefox = {
     enable = true;
@@ -28,9 +30,21 @@
       name = "${username}";
       bookmarks = [
         {
-          name = "Nix sites";
+          name = "Nix Sites";
           toolbar = true;
           bookmarks = [
+            {
+              name = "NixOS Wiki";
+              url = "https://nixos.wiki/wiki/Main_Page";
+            }
+            {
+              name = "Nixpkgs Reference Manual";
+              url = "https://nixos.org/manual/nixpkgs/stable/";
+            }
+            {
+              name = "NixOS Manual";
+              url = "https://nixos.org/manual/nixos/stable/";
+            }
             {
               name = "NixOS Options";
               url = "https://search.nixos.org/options";
@@ -40,24 +54,16 @@
               url = "https://home-manager-options.extranix.com/";
             }
             {
+              name = "Nixpkgs Package Search";
+              url = "https://search.nixos.org/packages";
+            }
+            {
+              name = "Noogle - Nixpkgs Function Docs";
+              url = "https://noogle.dev";
+            }
+            {
               name = "Nixvim Docs";
               url = "https://nix-community.github.io/nixvim/";
-            }
-            {
-              name = "Noogle";
-              url = "https://noogle.dev/";
-            }
-            {
-              name = "NixOS Wiki";
-              url = "https://nixos.wiki/";
-            }
-            {
-              name = "NixOS Manual";
-              url = "https://nixos.org/manual/nixos/stable";
-            }
-            {
-              name = "Nixpkgs Reference";
-              url = "https://nixos.org/manual/nixpkgs/stable";
             }
           ];
         }
@@ -88,7 +94,6 @@
         firenvim
         privacy-badger
         new-tab-override
-        tampermonkey
       ];
       extraConfig = ''
          "browser.startup.homepage" = "${self}/glasshouse-desktop/home/firefox/homepage.html";
