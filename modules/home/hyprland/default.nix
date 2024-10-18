@@ -4,7 +4,7 @@
   ...
 }: let
   host_config =
-    if (host == "desktop")
+    if (host == "oganesson")
     then [./desktop.nix]
     else [./laptop.nix];
 in {

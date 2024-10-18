@@ -1,10 +1,12 @@
-{username, ...}: {
+{username, host, ...}: {
   wayland.windowManager.hyprland = {
     settings = {
-      monitor = [
+      monitor = if (host == "oganesson") then [
         "DP-1, 1920x1080@144, 1920x0, 1"
         "HDMI-A-1, 1920x1080, 0x0, 1"
-      ];
+      ] else [
+				"eDP-1, 1600x900, 0x0, 1"
+			];
 
       exec-once = [
         "waybar &"
@@ -17,14 +19,19 @@
         "aplay /home/${username}/sound/sys/login.wav &"
       ];
 
-      workspace = [
+      workspace = if (host == "oganesson") then [
         "1,persistent=true,monitor:HDMI-A-1"
         "2,persistent=true,monitor:HDMI-A-1"
         "3,persistent=true,monitor:HDMI-A-1"
         "4,persistent=true,monitor:DP-1"
         "5,persistent=true,monitor:DP-1"
         "6,persistent=true,monitor:DP-1"
-      ];
+      ] else [
+        "1,persistent=true,monitor:eDP-1"
+        "2,persistent=true,monitor:eDP-1"
+        "3,persistent=true,monitor:eDP-1"
+        "4,persistent=true,monitor:eDP-1"
+			];
 
       input = {
         kb_layout = "us";

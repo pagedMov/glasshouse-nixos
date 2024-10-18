@@ -36,11 +36,15 @@
     mesa
     mpd
     mullvad
+    mesa
     neofetch
+		nh
     nix-index
+		nix-output-monitor
     nix-prefetch-scripts
     nixos-option
     nix-search-cli
+		nvd
     openssl
     p7zip
     jq
@@ -70,5 +74,6 @@
     xpad
     libnotify
     file
+		libvirt-glib
   ];
 }

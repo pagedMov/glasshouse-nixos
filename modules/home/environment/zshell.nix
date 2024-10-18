@@ -8,14 +8,11 @@
 
     sessionVariables = {
       SOUNDS_ENABLED = "1";
-      EDITOR = "/nixbin/nvim";
-      SUDO_EDITOR = "/nixbin/nvim";
-      VISUAL = "/nixbin/nvim";
+      EDITOR = "nvim";
+      SUDO_EDITOR = "nvim";
+      VISUAL = "nvim";
       LANG = "en_US.UTF-8";
-      BROWSER = "/nixbin/firefox";
-      NVIM = "${self}/nixvim/config/";
-      HYPRCONF = "${self}/hyprland/";
-      SYSCONF = "${self}/glasshouse-desktop/sys";
+      BROWSER = "firefox";
     };
 
     oh-my-zsh = {
@@ -51,14 +48,15 @@
       psg = "ps aux | grep -v grep | grep -i -e VSZ -e";
       mkdir = "mkdir -p";
       pk = "pkill -9 -f";
-      zrc = "nvim $HOME/dots/zshell.nix";
+      zrc = "nvim ${self}/modules/home/environment/zshell.nix";
       svcu = "systemctl --user";
       svc = "sudo systemctl";
-      hyprconf = "nvim $HOME/dots/hyprland/config.nix";
-      nixconf = "nvim $HOME/sysflakes/glasshouse-desktop/sys";
-      hmconf = "nvim $HOME/sysflakes/glasshouse-desktop/home";
       viflake = "nvim flake.nix";
-      nvimcfg = "nvim $HOME/dots/nixvim/config";
+      hyprconf = "yazi ${self}/modules/home/hyprland && popd &> /dev/null";
+      hmconf = "yazi ${self}/modules/home/ && popd &> /dev/null";
+      nixconf = "yazi ${self}/modules/sys/ && popd &> /dev/null";
+      hostconf = "yazi ${self}/hosts && popd &> /dev/null";
+      nvimcfg = "yazi ${self}/pkgs/nixvim/config && popd &> /dev/null";
     };
     initExtra = ''
 

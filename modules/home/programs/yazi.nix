@@ -2219,7 +2219,7 @@
             fg_light = "#74c7ec";
           }
           {
-            name = "desktop";
+            name = "oganesson";
             text = "";
             fg_dark = "#45475a";
             fg_light = "#45475a";

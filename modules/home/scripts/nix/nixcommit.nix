@@ -7,8 +7,7 @@ pkgs.writeShellScriptBin "nixcommit" ''
   #!/run/current-system/sw/bin/bash
 
   scheck && runbg aplay ${self}/media/sound/nixswitch-start.wav
-  builtin cd "$HOME/sysflakes" || exit
-  nix flake update
+  pushd "${self}" || exit
 
   if [ -n "$2" ]; then
   	echo "too many arguments"
@@ -45,5 +44,5 @@ pkgs.writeShellScriptBin "nixcommit" ''
   fi
 
   scheck && runbg aplay ${self}/media/sound/gitcommit.wav
-  builtin cd - || exit
+  popd || exit
 ''
