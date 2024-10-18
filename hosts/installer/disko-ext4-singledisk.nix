@@ -45,7 +45,7 @@
 							};
 						};
 						home = {
-							size = "50%";
+							size = "50% - 500MB";
 							content = {
 								type = "filesystem";
 								format = "ext4";
