@@ -1,10 +1,10 @@
 {
-  config,
-  inputs,
-  pkgs,
-  username,
-  self,
   host,
+	pkgs,
+  self,
+  inputs,
+  username,
+  config,
   ...
 }: let
   nur = config.nur;
@@ -24,7 +24,9 @@ in {
       };
       programs.home-manager.enable = true;
       imports = [
-        ./../../home
+        ./programs
+				./environment
+				./scripts
       ];
       home = {
         username = "${username}";

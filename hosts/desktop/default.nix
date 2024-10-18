@@ -8,7 +8,7 @@
   ...
 }: {
   imports = [
-    ./../../modules/sys
+    ./../../modules/sys/configuration.nix
     ./hardware.nix
     ./settings.nix
   ];

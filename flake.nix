@@ -8,6 +8,11 @@
     hyprpicker.url = "github:hyprwm/hyprpicker";
     stylix.url = "github:danth/stylix";
 
+		nixvim = {
+			url = "github:nix-community/nixvim";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,11 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvim = {
-      url = "github:pagedMov/pagedmov-nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     toilet = {
       url = "github:pagedMov/toilet-extra-fonts";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,7 +40,7 @@
     nur,
     home-manager,
     self,
-    nvim,
+    nixvim,
     toilet,
     stylix,
     ...
@@ -58,6 +58,7 @@
         modules = [
           ./hosts/desktop
           stylix.nixosModules.stylix
+					nixvim.nixosModules.nixvim
           nur.nixosModules.nur
         ];
       };

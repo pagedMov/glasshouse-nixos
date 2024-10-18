@@ -4,7 +4,6 @@
   host,
   ...
 }: let
-  nvim = inputs.nvim.packages."x86_64-linux".default;
   toilet = inputs.toilet.packages."x86_64-linux".default;
   desktop_pkgs =
     if (host == "oganesson")
@@ -40,7 +39,6 @@ in {
       libreoffice
       gtrash
       ripgrep
-      nvim
       toilet
       python3
     ]
